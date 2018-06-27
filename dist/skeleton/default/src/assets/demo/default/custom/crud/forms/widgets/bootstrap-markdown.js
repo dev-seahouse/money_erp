@@ -1,21 +1,21 @@
 //== Class definition
 
-var BootstrapMarkdown = function () {
+var BootstrapMarkdown = function () {    
     //== Private functions
     var demos = function () {
-
-    };
+        
+    }
 
     return {
         // public functions
-        init: function () {
-            demos();
+        init: function() {
+            demos(); 
         }
     };
 }();
 
 //== Initialization
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {
     BootstrapMarkdown.init();
 });
 //# sourceMappingURL=bootstrap-markdown.js.map

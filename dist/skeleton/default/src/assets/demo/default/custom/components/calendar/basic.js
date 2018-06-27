@@ -1,8 +1,8 @@
-var CalendarBasic = function () {
+var CalendarBasic = function() {
 
     return {
         //main function to initiate the module
-        init: function () {
+        init: function() {
             var todayDate = moment().startOf('day');
             var YM = todayDate.format('YYYY-MM');
             var YESTERDAY = todayDate.clone().subtract(1, 'day').format('YYYY-MM-DD');
@@ -24,7 +24,7 @@ var CalendarBasic = function () {
                         title: 'All Day Event',
                         start: YM + '-01',
                         description: 'Lorem ipsum dolor sit incid idunt ut',
-                        className: "m-fc-event--danger m-fc-event--solid-warning"
+                        className: "m-fc-event--danger m-fc-event--solid-warning"  
                     },
                     {
                         title: 'Reporting',
@@ -118,15 +118,15 @@ var CalendarBasic = function () {
                     }
                 ],
 
-                eventRender: function (event, element) {
+                eventRender: function(event, element) {
                     if (element.hasClass('fc-day-grid-event')) {
                         element.data('content', event.description);
                         element.data('placement', 'top');
-                        mApp.initPopover(element);
+                        mApp.initPopover(element); 
                     } else if (element.hasClass('fc-time-grid-event')) {
-                        element.find('.fc-title').append('<div class="fc-description">' + event.description + '</div>');
+                        element.find('.fc-title').append('<div class="fc-description">' + event.description + '</div>'); 
                     } else if (element.find('.fc-list-item-title').lenght !== 0) {
-                        element.find('.fc-list-item-title').append('<div class="fc-description">' + event.description + '</div>');
+                        element.find('.fc-list-item-title').append('<div class="fc-description">' + event.description + '</div>'); 
                     }
                 }
             });
@@ -134,7 +134,7 @@ var CalendarBasic = function () {
     };
 }();
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {
     CalendarBasic.init();
 });
 //# sourceMappingURL=basic.js.map

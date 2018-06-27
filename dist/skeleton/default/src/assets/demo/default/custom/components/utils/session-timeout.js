@@ -13,7 +13,7 @@ var SessionTimeoutDemo = function () {
             countdownMessage: 'Redirecting in {timer} seconds.',
             countdownBar: true
         });
-    };
+    }
 
     return {
         //main function to initiate the module
@@ -24,7 +24,7 @@ var SessionTimeoutDemo = function () {
 
 }();
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {    
     SessionTimeoutDemo.init();
 });
 //# sourceMappingURL=session-timeout.js.map

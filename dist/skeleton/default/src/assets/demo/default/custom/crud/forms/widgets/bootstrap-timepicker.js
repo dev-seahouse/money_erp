@@ -1,7 +1,7 @@
 //== Class definition
 
 var BootstrapTimepicker = function () {
-
+    
     //== Private functions
     var demos = function () {
         // minimum setup
@@ -26,7 +26,7 @@ var BootstrapTimepicker = function () {
 
         // default time
         $('#m_timepicker_4, #m_timepicker_4_modal').timepicker({
-            defaultTime: '10:30:20 AM',
+            defaultTime: '10:30:20 AM',           
             minuteStep: 1,
             showSeconds: true,
             showMeridian: true
@@ -40,17 +40,17 @@ var BootstrapTimepicker = function () {
             showMeridian: false,
             snapToStep: true
         });
-    };
+    }
 
     return {
         // public functions
-        init: function () {
-            demos();
+        init: function() {
+            demos(); 
         }
     };
 }();
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {    
     BootstrapTimepicker.init();
 });
 //# sourceMappingURL=bootstrap-timepicker.js.map

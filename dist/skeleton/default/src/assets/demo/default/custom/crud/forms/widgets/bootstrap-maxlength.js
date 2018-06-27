@@ -1,7 +1,7 @@
 //== Class definition
 
 var BootstrapMaxlength = function () {
-
+    
     //== Private functions
     var demos = function () {
         // minimum setup
@@ -113,17 +113,17 @@ var BootstrapMaxlength = function () {
             postText: ' chars remaining.',
             validate: true
         });
-    };
+    }
 
     return {
         // public functions
-        init: function () {
-            demos();
+        init: function() {
+            demos();  
         }
     };
 }();
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {    
     BootstrapMaxlength.init();
 });
 //# sourceMappingURL=bootstrap-maxlength.js.map

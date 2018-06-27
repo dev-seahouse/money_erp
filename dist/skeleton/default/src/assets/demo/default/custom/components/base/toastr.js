@@ -1,10 +1,10 @@
 //== Class definition
-var ToastrDemo = function () {
+var ToastrDemo = function() {
 
     //== Private functions
 
     // basic demo
-    var demo = function () {
+    var demo = function() {
         var i = -1;
         var toastCount = 0;
         var $toastlast;
@@ -103,21 +103,21 @@ var ToastrDemo = function () {
             }
 
             $('#toastrOptions').text(
-                'toastr.options = '
-                + JSON.stringify(toastr.options, null, 2)
-                + ';'
-                + '\n\ntoastr.'
-                + shortCutFunction
-                + '("'
-                + msg
-                + (title ? '", "' + title : '')
-                + '");'
+                    'toastr.options = '
+                    + JSON.stringify(toastr.options, null, 2)
+                    + ';'
+                    + '\n\ntoastr.'
+                    + shortCutFunction
+                    + '("'
+                    + msg
+                    + (title ? '", "' + title : '')
+                    + '");'
             );
 
             var $toast = toastr[shortCutFunction](msg, title); // Wire up an event handler to a button in the toast, if it exists
             $toastlast = $toast;
 
-            if (typeof $toast === 'undefined') {
+            if(typeof $toast === 'undefined'){
                 return;
             }
 
@@ -134,32 +134,31 @@ var ToastrDemo = function () {
             }
             if ($toast.find('.clear').length) {
                 $toast.delegate('.clear', 'click', function () {
-                    toastr.clear($toast, {force: true});
+                    toastr.clear($toast, { force: true });
                 });
             }
         });
 
-        function getLastToast() {
+        function getLastToast(){
             return $toastlast;
         }
-
         $('#clearlasttoast').click(function () {
             toastr.clear(getLastToast());
         });
         $('#cleartoasts').click(function () {
             toastr.clear();
         });
-    };
+    }
 
     return {
         // public functions
-        init: function () {
+        init: function() {
             demo();
         }
     };
 }();
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {
     ToastrDemo.init();
 });
 //# sourceMappingURL=toastr.js.map

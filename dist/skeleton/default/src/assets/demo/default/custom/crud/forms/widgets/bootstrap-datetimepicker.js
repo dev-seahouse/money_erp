@@ -1,7 +1,7 @@
 //== Class definition
 
 var BootstrapDatetimepicker = function () {
-
+    
     //== Private functions
     var demos = function () {
         // minimal setup
@@ -105,17 +105,17 @@ var BootstrapDatetimepicker = function () {
             forceParse: 0,
             pickerPosition: 'bottom-left'
         });
-    };
+    }
 
     return {
         // public functions
-        init: function () {
-            demos();
+        init: function() {
+            demos(); 
         }
     };
 }();
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {    
     BootstrapDatetimepicker.init();
 });
 //# sourceMappingURL=bootstrap-datetimepicker.js.map

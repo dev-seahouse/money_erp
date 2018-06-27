@@ -1,7 +1,7 @@
-var CalendarExternalEvents = function () {
+var CalendarExternalEvents = function() {
 
-    var initExternalEvents = function () {
-        $('#m_calendar_external_events .fc-event').each(function () {
+    var initExternalEvents = function() {
+        $('#m_calendar_external_events .fc-event').each(function() {
 
             // store data so the calendar knows to render an event upon drop
             $(this).data('event', {
@@ -18,9 +18,9 @@ var CalendarExternalEvents = function () {
                 revertDuration: 0 //  original position after the drag
             });
         });
-    };
+    }
 
-    var initCalendar = function () {
+    var initCalendar = function() {
         var todayDate = moment().startOf('day');
         var YM = todayDate.format('YYYY-MM');
         var YESTERDAY = todayDate.clone().subtract(1, 'day').format('YYYY-MM-DD');
@@ -138,7 +138,7 @@ var CalendarExternalEvents = function () {
             editable: true,
             droppable: true, // this allows things to be dropped onto the calendar
 
-            drop: function (date, jsEvent, ui, resourceId) {
+            drop: function(date, jsEvent, ui, resourceId) {
                 var sdate = $.fullCalendar.moment(date.format());  // Create a clone of the dropped date.
                 sdate.stripTime();        // The time should already be stripped but lets do a sanity check.
                 sdate.time('08:00:00');   // Set a default start time.
@@ -157,7 +157,7 @@ var CalendarExternalEvents = function () {
                 }
             },
 
-            eventRender: function (event, element) {
+            eventRender: function(event, element) {
                 // default render
                 if (element.hasClass('fc-day-grid-event')) {
                     element.data('content', event.description);
@@ -170,18 +170,18 @@ var CalendarExternalEvents = function () {
                 }
             }
         });
-    };
+    }
 
     return {
         //main function to initiate the module
-        init: function () {
+        init: function() {
             initExternalEvents();
-            initCalendar();
+            initCalendar(); 
         }
     };
 }();
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {
     CalendarExternalEvents.init();
 });
 //# sourceMappingURL=external-events.js.map

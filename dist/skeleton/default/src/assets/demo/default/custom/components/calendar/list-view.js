@@ -1,8 +1,8 @@
-var CalendarListView = function () {
+var CalendarListView = function() {
 
     return {
         //main function to initiate the module
-        init: function () {
+        init: function() {
             var todayDate = moment().startOf('day');
             var YM = todayDate.format('YYYY-MM');
             var YESTERDAY = todayDate.clone().subtract(1, 'day').format('YYYY-MM-DD');
@@ -47,7 +47,7 @@ var CalendarListView = function () {
                         start: YM + '-03',
                         description: 'Lorem ipsum dolor sit tempor inci',
                         end: YM + '-05',
-                        className: "m-fc-event--primary"
+                        className: "m-fc-event--primary" 
                     },
                     {
                         title: 'Dinner',
@@ -118,15 +118,15 @@ var CalendarListView = function () {
                     }
                 ],
 
-                eventRender: function (event, element) {
+                eventRender: function(event, element) {
                     if (element.hasClass('fc-day-grid-event')) {
                         element.data('content', event.description);
                         element.data('placement', 'top');
-                        mApp.initPopover(element);
+                        mApp.initPopover(element); 
                     } else if (element.hasClass('fc-time-grid-event')) {
-                        element.find('.fc-title').append('<div class="fc-description">' + event.description + '</div>');
+                        element.find('.fc-title').append('<div class="fc-description">' + event.description + '</div>'); 
                     } else if (element.find('.fc-list-item-title').lenght !== 0) {
-                        element.find('.fc-list-item-title').append('<div class="fc-description">' + event.description + '</div>');
+                        element.find('.fc-list-item-title').append('<div class="fc-description">' + event.description + '</div>'); 
                     }
                 }
             });
@@ -134,7 +134,7 @@ var CalendarListView = function () {
     };
 }();
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {
     CalendarListView.init();
 });
 //# sourceMappingURL=list-view.js.map

@@ -1,8 +1,8 @@
 //== Class definition
-var amChartsChartsDemo = function () {
+var amChartsChartsDemo = function() {
 
     //== Private functions
-    var demo1 = function () {
+    var demo1 = function() {
         var chart = AmCharts.makeChart("m_amcharts_1", {
             "rtl": mUtil.isRTL(),
             "type": "serial",
@@ -78,9 +78,9 @@ var amChartsChartsDemo = function () {
             }
 
         });
-    };
+    }
 
-    var demo2 = function () {
+    var demo2 = function() {
         var chart = AmCharts.makeChart("m_amcharts_2", {
             "rtl": mUtil.isRTL(),
             "type": "serial",
@@ -166,9 +166,9 @@ var amChartsChartsDemo = function () {
                 "enabled": true
             }
         });
-    };
+    }
 
-    var demo3 = function () {
+    var demo3 = function() {
         var chart = AmCharts.makeChart("m_amcharts_3", {
             "theme": "light",
             "type": "serial",
@@ -230,9 +230,9 @@ var amChartsChartsDemo = function () {
             }
 
         });
-    };
+    }
 
-    var demo4 = function () {
+    var demo4 = function() {
         var chart = AmCharts.makeChart("m_amcharts_4", {
             "theme": "light",
             "type": "serial",
@@ -306,9 +306,9 @@ var amChartsChartsDemo = function () {
                 "enabled": true
             }
         });
-    };
+    }
 
-    var demo5 = function () {
+    var demo5 = function() {
         var chart = AmCharts.makeChart("m_amcharts_5", {
             "type": "serial",
             "theme": "light",
@@ -378,9 +378,9 @@ var amChartsChartsDemo = function () {
             }
 
         });
-    };
+    }
 
-    var demo6 = function () {
+    var demo6 = function() {
         var chart = AmCharts.makeChart("m_amcharts_6", {
             "type": "serial",
             "theme": "light",
@@ -1030,9 +1030,9 @@ var amChartsChartsDemo = function () {
         function zoomChart() {
             chart.zoomToIndexes(chart.dataProvider.length - 40, chart.dataProvider.length - 1);
         }
-    };
+    }
 
-    var demo7 = function () {
+    var demo7 = function() {
         var chartData = generateChartData();
         var chart = AmCharts.makeChart("m_amcharts_7", {
             "type": "serial",
@@ -1113,9 +1113,9 @@ var amChartsChartsDemo = function () {
             }
             return chartData;
         }
-    };
+    }
 
-    var demo8 = function () {
+    var demo8 = function() {
         var chart = AmCharts.makeChart("m_amcharts_8", {
             "type": "serial",
             "theme": "light",
@@ -1337,9 +1337,9 @@ var amChartsChartsDemo = function () {
                 "enabled": true
             }
         });
-    };
+    }
 
-    var demo9 = function () {
+    var demo9 = function() {
         var chart = AmCharts.makeChart("m_amcharts_9", {
             "type": "radar",
             "theme": "light",
@@ -1379,9 +1379,9 @@ var amChartsChartsDemo = function () {
                 "enabled": true
             }
         });
-    };
+    }
 
-    var demo10 = function () {
+    var demo10 = function() {
         var chart = AmCharts.makeChart("m_amcharts_10", {
             "type": "radar",
             "theme": "light",
@@ -1452,9 +1452,9 @@ var amChartsChartsDemo = function () {
                 "enabled": true
             }
         });
-    };
+    }
 
-    var demo11 = function () {
+    var demo11 = function() {
         var chart = AmCharts.makeChart("m_amcharts_11", {
             "type": "radar",
             "theme": "light",
@@ -1588,9 +1588,9 @@ var amChartsChartsDemo = function () {
                 "enabled": true
             }
         });
-    };
+    }
 
-    var demo12 = function () {
+    var demo12 = function() {
         var chart = AmCharts.makeChart("m_amcharts_12", {
             "type": "pie",
             "theme": "light",
@@ -1631,17 +1631,17 @@ var amChartsChartsDemo = function () {
                 "enabled": true
             }
         });
-    };
+    }
 
-    var demo13 = function () {
+    var demo13 = function() {
         /**
          * Define data for each year
          */
         var chartData = {
             "1995": [{
-                "sector": "Agriculture",
-                "size": 6.6
-            },
+                    "sector": "Agriculture",
+                    "size": 6.6
+                },
                 {
                     "sector": "Mining and Quarrying",
                     "size": 0.6
@@ -1672,9 +1672,9 @@ var amChartsChartsDemo = function () {
                 }
             ],
             "1996": [{
-                "sector": "Agriculture",
-                "size": 6.4
-            },
+                    "sector": "Agriculture",
+                    "size": 6.4
+                },
                 {
                     "sector": "Mining and Quarrying",
                     "size": 0.5
@@ -1705,9 +1705,9 @@ var amChartsChartsDemo = function () {
                 }
             ],
             "1997": [{
-                "sector": "Agriculture",
-                "size": 6.1
-            },
+                    "sector": "Agriculture",
+                    "size": 6.1
+                },
                 {
                     "sector": "Mining and Quarrying",
                     "size": 0.2
@@ -1738,9 +1738,9 @@ var amChartsChartsDemo = function () {
                 }
             ],
             "1998": [{
-                "sector": "Agriculture",
-                "size": 6.2
-            },
+                    "sector": "Agriculture",
+                    "size": 6.2
+                },
                 {
                     "sector": "Mining and Quarrying",
                     "size": 0.3
@@ -1771,9 +1771,9 @@ var amChartsChartsDemo = function () {
                 }
             ],
             "1999": [{
-                "sector": "Agriculture",
-                "size": 5.7
-            },
+                    "sector": "Agriculture",
+                    "size": 5.7
+                },
                 {
                     "sector": "Mining and Quarrying",
                     "size": 0.2
@@ -1804,9 +1804,9 @@ var amChartsChartsDemo = function () {
                 }
             ],
             "2000": [{
-                "sector": "Agriculture",
-                "size": 5.1
-            },
+                    "sector": "Agriculture",
+                    "size": 5.1
+                },
                 {
                     "sector": "Mining and Quarrying",
                     "size": 0.3
@@ -1837,9 +1837,9 @@ var amChartsChartsDemo = function () {
                 }
             ],
             "2001": [{
-                "sector": "Agriculture",
-                "size": 5.5
-            },
+                    "sector": "Agriculture",
+                    "size": 5.5
+                },
                 {
                     "sector": "Mining and Quarrying",
                     "size": 0.2
@@ -1870,9 +1870,9 @@ var amChartsChartsDemo = function () {
                 }
             ],
             "2002": [{
-                "sector": "Agriculture",
-                "size": 5.7
-            },
+                    "sector": "Agriculture",
+                    "size": 5.7
+                },
                 {
                     "sector": "Mining and Quarrying",
                     "size": 0.2
@@ -1903,9 +1903,9 @@ var amChartsChartsDemo = function () {
                 }
             ],
             "2003": [{
-                "sector": "Agriculture",
-                "size": 4.9
-            },
+                    "sector": "Agriculture",
+                    "size": 4.9
+                },
                 {
                     "sector": "Mining and Quarrying",
                     "size": 0.2
@@ -1936,9 +1936,9 @@ var amChartsChartsDemo = function () {
                 }
             ],
             "2004": [{
-                "sector": "Agriculture",
-                "size": 4.7
-            },
+                    "sector": "Agriculture",
+                    "size": 4.7
+                },
                 {
                     "sector": "Mining and Quarrying",
                     "size": 0.2
@@ -1969,9 +1969,9 @@ var amChartsChartsDemo = function () {
                 }
             ],
             "2005": [{
-                "sector": "Agriculture",
-                "size": 4.3
-            },
+                    "sector": "Agriculture",
+                    "size": 4.3
+                },
                 {
                     "sector": "Mining and Quarrying",
                     "size": 0.2
@@ -2002,9 +2002,9 @@ var amChartsChartsDemo = function () {
                 }
             ],
             "2006": [{
-                "sector": "Agriculture",
-                "size": 4
-            },
+                    "sector": "Agriculture",
+                    "size": 4
+                },
                 {
                     "sector": "Mining and Quarrying",
                     "size": 0.2
@@ -2035,9 +2035,9 @@ var amChartsChartsDemo = function () {
                 }
             ],
             "2007": [{
-                "sector": "Agriculture",
-                "size": 4.7
-            },
+                    "sector": "Agriculture",
+                    "size": 4.7
+                },
                 {
                     "sector": "Mining and Quarrying",
                     "size": 0.2
@@ -2068,9 +2068,9 @@ var amChartsChartsDemo = function () {
                 }
             ],
             "2008": [{
-                "sector": "Agriculture",
-                "size": 4.9
-            },
+                    "sector": "Agriculture",
+                    "size": 4.9
+                },
                 {
                     "sector": "Mining and Quarrying",
                     "size": 0.3
@@ -2101,9 +2101,9 @@ var amChartsChartsDemo = function () {
                 }
             ],
             "2009": [{
-                "sector": "Agriculture",
-                "size": 4.7
-            },
+                    "sector": "Agriculture",
+                    "size": 4.7
+                },
                 {
                     "sector": "Mining and Quarrying",
                     "size": 0.3
@@ -2134,9 +2134,9 @@ var amChartsChartsDemo = function () {
                 }
             ],
             "2010": [{
-                "sector": "Agriculture",
-                "size": 4.2
-            },
+                    "sector": "Agriculture",
+                    "size": 4.2
+                },
                 {
                     "sector": "Mining and Quarrying",
                     "size": 0.3
@@ -2167,9 +2167,9 @@ var amChartsChartsDemo = function () {
                 }
             ],
             "2011": [{
-                "sector": "Agriculture",
-                "size": 4.1
-            },
+                    "sector": "Agriculture",
+                    "size": 4.1
+                },
                 {
                     "sector": "Mining and Quarrying",
                     "size": 0.3
@@ -2200,9 +2200,9 @@ var amChartsChartsDemo = function () {
                 }
             ],
             "2012": [{
-                "sector": "Agriculture",
-                "size": 3.8
-            },
+                    "sector": "Agriculture",
+                    "size": 3.8
+                },
                 {
                     "sector": "Mining and Quarrying",
                     "size": 0.3
@@ -2233,9 +2233,9 @@ var amChartsChartsDemo = function () {
                 }
             ],
             "2013": [{
-                "sector": "Agriculture",
-                "size": 3.7
-            },
+                    "sector": "Agriculture",
+                    "size": 3.7
+                },
                 {
                     "sector": "Mining and Quarrying",
                     "size": 0.2
@@ -2266,9 +2266,9 @@ var amChartsChartsDemo = function () {
                 }
             ],
             "2014": [{
-                "sector": "Agriculture",
-                "size": 3.9
-            },
+                    "sector": "Agriculture",
+                    "size": 3.9
+                },
                 {
                     "sector": "Mining and Quarrying",
                     "size": 0.2
@@ -2333,7 +2333,7 @@ var amChartsChartsDemo = function () {
             }],
             "listeners": [{
                 "event": "init",
-                "method": function (e) {
+                "method": function(e) {
                     var chart = e.chart;
 
                     function getCurrentData() {
@@ -2349,7 +2349,7 @@ var amChartsChartsDemo = function () {
                         var data = getCurrentData();
                         chart.animateData(data, {
                             duration: 1000,
-                            complete: function () {
+                            complete: function() {
                                 setTimeout(loop, 3000);
                             }
                         });
@@ -2362,12 +2362,12 @@ var amChartsChartsDemo = function () {
                 "enabled": true
             }
         });
-    };
+    }
 
 
     return {
         // public functions
-        init: function () {
+        init: function() {
             demo1();
             demo2();
             demo3();
@@ -2385,7 +2385,7 @@ var amChartsChartsDemo = function () {
     };
 }();
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {
     amChartsChartsDemo.init();
 });
 //# sourceMappingURL=charts.js.map

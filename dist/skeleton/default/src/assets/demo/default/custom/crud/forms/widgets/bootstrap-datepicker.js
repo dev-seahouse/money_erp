@@ -14,7 +14,7 @@ var BootstrapDatepicker = function () {
             rightArrow: '<i class="la la-angle-right"></i>'
         }
     }
-
+    
     //== Private functions
     var demos = function () {
         // minimum setup
@@ -103,23 +103,23 @@ var BootstrapDatepicker = function () {
             templates: arrows
         });
 
-        // inline picker
+         // inline picker
         $('#m_datepicker_6').datepicker({
             rtl: mUtil.isRTL(),
             todayHighlight: true,
             templates: arrows
         });
-    };
+    }
 
     return {
         // public functions
-        init: function () {
-            demos();
+        init: function() {
+            demos(); 
         }
     };
 }();
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {    
     BootstrapDatepicker.init();
 });
 //# sourceMappingURL=bootstrap-datepicker.js.map

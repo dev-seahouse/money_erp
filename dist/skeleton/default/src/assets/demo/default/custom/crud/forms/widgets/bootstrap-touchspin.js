@@ -1,8 +1,8 @@
 //== Class definition
-var BootstrapTouchspin = function () {
+var BootstrapTouchspin = function() {
 
     //== Private functions
-    var demos = function () {
+    var demos = function() {
         // minimum setup
         $('#m_touchspin_1, #m_touchspin_2_1').TouchSpin({
             buttondown_class: 'btn btn-secondary',
@@ -57,9 +57,9 @@ var BootstrapTouchspin = function () {
             verticalupclass: 'la la-angle-up',
             verticaldownclass: 'la la-angle-down'
         });
-    };
+    }
 
-    var validationStateDemos = function () {
+    var validationStateDemos = function() {
         // validation state demos
         $('#m_touchspin_1_validate').TouchSpin({
             buttondown_class: 'btn btn-secondary',
@@ -92,18 +92,18 @@ var BootstrapTouchspin = function () {
             verticalupclass: 'la la-plus',
             verticaldownclass: 'la la-minus'
         });
-    };
+    }
 
     return {
         // public functions
-        init: function () {
+        init: function() {
             demos();
             validationStateDemos();
         }
     };
 }();
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {
     BootstrapTouchspin.init();
 });
 //# sourceMappingURL=bootstrap-touchspin.js.map

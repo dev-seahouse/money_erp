@@ -1,20 +1,20 @@
 //== Class definition
-var Typeahead = function () {
+var Typeahead = function() {
 
     var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
-        'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
-        'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
-        'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-        'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-        'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-        'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-        'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-        'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-    ];
+            'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
+            'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
+            'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
+            'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+            'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+            'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
+            'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+            'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+        ];
 
     //== Private functions
-    var demo1 = function () {
-        var substringMatcher = function (strs) {
+    var demo1 = function() {
+        var substringMatcher = function(strs) {
             return function findMatches(q, cb) {
                 var matches, substringRegex;
 
@@ -26,7 +26,7 @@ var Typeahead = function () {
 
                 // iterate through the pool of strings and for any string that
                 // contains the substring `q`, add it to the `matches` array
-                $.each(strs, function (i, str) {
+                $.each(strs, function(i, str) {
                     if (substrRegex.test(str)) {
                         matches.push(str);
                     }
@@ -44,9 +44,9 @@ var Typeahead = function () {
             name: 'states',
             source: substringMatcher(states)
         });
-    };
+    }
 
-    var demo2 = function () {
+    var demo2 = function() {
         // constructs the suggestion engine
         var bloodhound = new Bloodhound({
             datumTokenizer: Bloodhound.tokenizers.whitespace,
@@ -56,17 +56,17 @@ var Typeahead = function () {
         });
 
         $('#m_typeahead_2, #m_typeahead_2_modal').typeahead({
-                hint: true,
-                highlight: true,
-                minLength: 1
-            },
-            {
-                name: 'states',
-                source: bloodhound
-            });
-    };
+            hint: true,
+            highlight: true,
+            minLength: 1
+        },
+        {
+            name: 'states',
+            source: bloodhound
+        }); 
+    }
 
-    var demo3 = function () {
+    var demo3 = function() {
         var countries = new Bloodhound({
             datumTokenizer: Bloodhound.tokenizers.whitespace,
             queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -81,13 +81,13 @@ var Typeahead = function () {
             name: 'countries',
             source: countries
         });
-    };
+    }
 
-    var demo4 = function () {
+    var demo4 = function() {
         var bestPictures = new Bloodhound({
-            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
-            queryTokenizer: Bloodhound.tokenizers.whitespace,
-            prefetch: 'inc/api/typeahead/movies.json'
+          datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+          queryTokenizer: Bloodhound.tokenizers.whitespace,
+          prefetch: 'inc/api/typeahead/movies.json'
         });
 
         $('#m_typeahead_4').typeahead(null, {
@@ -97,15 +97,15 @@ var Typeahead = function () {
             templates: {
                 empty: [
                     '<div class="empty-message" style="padding: 10px 15px; text-align: center;">',
-                    'unable to find any Best Picture winners that match the current query',
+                        'unable to find any Best Picture winners that match the current query',
                     '</div>'
                 ].join('\n'),
                 suggestion: Handlebars.compile('<div><strong>{{value}}</strong> – {{year}}</div>')
             }
         });
-    };
+    }
 
-    var demo5 = function () {
+    var demo5 = function() {
         var nbaTeams = new Bloodhound({
             datumTokenizer: Bloodhound.tokenizers.obj.whitespace('team'),
             queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -120,14 +120,14 @@ var Typeahead = function () {
 
         $('#m_typeahead_5').typeahead({
                 highlight: true
-            }, {
+            },{
                 name: 'nba-teams',
                 display: 'team',
                 source: nbaTeams,
                 templates: {
                     header: '<h3 class="league-name" style="padding: 5px 15px; font-size: 1.2rem; margin:0;">NBA Teams</h3>'
                 }
-            }, {
+            },{
                 name: 'nhl-teams',
                 display: 'team',
                 source: nhlTeams,
@@ -136,11 +136,11 @@ var Typeahead = function () {
                 }
             }
         );
-    };
+    }
 
     return {
         // public functions
-        init: function () {
+        init: function() {
             demo1();
             demo2();
             demo3();
@@ -150,7 +150,7 @@ var Typeahead = function () {
     };
 }();
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {
     Typeahead.init();
 });
 //# sourceMappingURL=typeahead.js.map

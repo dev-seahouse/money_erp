@@ -1,7 +1,7 @@
 //== Class definition
-var Select2 = function () {
+var Select2 = function() {
     //== Private functions
-    var demos = function () {
+    var demos = function() {
         // basic
         $('#m_select2_1, #m_select2_1_validate').select2({
             placeholder: "Select a state"
@@ -76,13 +76,13 @@ var Select2 = function () {
                 url: "https://api.github.com/search/repositories",
                 dataType: 'json',
                 delay: 250,
-                data: function (params) {
+                data: function(params) {
                     return {
                         q: params.term, // search term
                         page: params.page
                     };
                 },
-                processResults: function (data, params) {
+                processResults: function(data, params) {
                     // parse the results into the format expected by Select2
                     // since we are using custom formatting functions we do not need to
                     // alter the remote JSON data, except to indicate that infinite
@@ -98,7 +98,7 @@ var Select2 = function () {
                 },
                 cache: true
             },
-            escapeMarkup: function (markup) {
+            escapeMarkup: function(markup) {
                 return markup;
             }, // let our custom formatter work
             minimumInputLength: 1,
@@ -145,9 +145,9 @@ var Select2 = function () {
         $('.m-select2-general').select2({
             placeholder: "Select an option"
         });
-    };
+    }
 
-    var modalDemos = function () {
+    var modalDemos = function() {
         $('#m_select2_modal').on('shown.bs.modal', function () {
             // basic
             $('#m_select2_1_modal').select2({
@@ -168,13 +168,13 @@ var Select2 = function () {
             $('#m_select2_4_modal').select2({
                 placeholder: "Select a state",
                 allowClear: true
-            });
+            }); 
         });
-    };
+    }
 
     //== Public functions
     return {
-        init: function () {
+        init: function() {
             demos();
             modalDemos();
         }
@@ -182,7 +182,7 @@ var Select2 = function () {
 }();
 
 //== Initialization
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {
     Select2.init();
 });
 //# sourceMappingURL=select2.js.map

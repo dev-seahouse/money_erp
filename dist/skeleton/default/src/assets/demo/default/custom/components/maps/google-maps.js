@@ -1,32 +1,32 @@
 //== Class definition
-var GoogleMapsDemo = function () {
+var GoogleMapsDemo = function() {
 
     //== Private functions
 
-    var demo1 = function () {
+    var demo1 = function() {
         var map = new GMaps({
             div: '#m_gmap_1',
             lat: -12.043333,
             lng: -77.028333
         });
-    };
+    }
 
-    var demo2 = function () {
+    var demo2 = function() {
         var map = new GMaps({
             div: '#m_gmap_2',
             zoom: 16,
             lat: -12.043333,
             lng: -77.028333,
-            click: function (e) {
+            click: function(e) {
                 alert('click');
             },
-            dragend: function (e) {
+            dragend: function(e) {
                 alert('dragend');
             }
         });
-    };
+    }
 
-    var demo3 = function () {
+    var demo3 = function() {
         var map = new GMaps({
             div: '#m_gmap_3',
             lat: -51.38739,
@@ -40,7 +40,7 @@ var GoogleMapsDemo = function () {
                 database_id: 42,
                 author: 'HPNeo'
             },
-            click: function (e) {
+            click: function(e) {
                 if (console.log) console.log(e);
                 alert('You clicked in this marker');
             }
@@ -54,9 +54,9 @@ var GoogleMapsDemo = function () {
             }
         });
         map.setZoom(5);
-    };
+    }
 
-    var demo4 = function () {
+    var demo4 = function() {
         var map = new GMaps({
             div: '#m_gmap_4',
             lat: -12.043333,
@@ -64,27 +64,27 @@ var GoogleMapsDemo = function () {
         });
 
         GMaps.geolocate({
-            success: function (position) {
+            success: function(position) {
                 map.setCenter(position.coords.latitude, position.coords.longitude);
             },
-            error: function (error) {
+            error: function(error) {
                 alert('Geolocation failed: ' + error.message);
             },
-            not_supported: function () {
+            not_supported: function() {
                 alert("Your browser does not support geolocation");
             },
-            always: function () {
+            always: function() {
                 //alert("Geolocation Done!");
             }
         });
-    };
+    }
 
-    var demo5 = function () {
+    var demo5 = function() {
         var map = new GMaps({
             div: '#m_gmap_5',
             lat: -12.043333,
             lng: -77.028333,
-            click: function (e) {
+            click: function(e) {
                 console.log(e);
             }
         });
@@ -106,9 +106,9 @@ var GoogleMapsDemo = function () {
             strokeOpacity: 0.6,
             strokeWeight: 6
         });
-    };
+    }
 
-    var demo6 = function () {
+    var demo6 = function() {
         var map = new GMaps({
             div: '#m_gmap_6',
             lat: -12.043333,
@@ -130,24 +130,24 @@ var GoogleMapsDemo = function () {
             fillColor: '#BBD8E9',
             fillOpacity: 0.6
         });
-    };
+    }
 
-    var demo7 = function () {
+    var demo7 = function() {
         var map = new GMaps({
             div: '#m_gmap_7',
             lat: -12.043333,
             lng: -77.028333
         });
-        $('#m_gmap_7_btn').click(function (e) {
+        $('#m_gmap_7_btn').click(function(e) {
             e.preventDefault();
             mUtil.scrollTo('m_gmap_7_btn', 400);
             map.travelRoute({
                 origin: [-12.044012922866312, -77.02470665341184],
                 destination: [-12.090814532191756, -77.02271108990476],
                 travelMode: 'driving',
-                step: function (e) {
+                step: function(e) {
                     $('#m_gmap_7_routes').append('<li>' + e.instructions + '</li>');
-                    $('#m_gmap_7_routes li:eq(' + e.step_number + ')').delay(800 * e.step_number).fadeIn(500, function () {
+                    $('#m_gmap_7_routes li:eq(' + e.step_number + ')').delay(800 * e.step_number).fadeIn(500, function() {
                         map.setCenter(e.end_location.lat(), e.end_location.lng());
                         map.drawPolyline({
                             path: e.path,
@@ -159,20 +159,20 @@ var GoogleMapsDemo = function () {
                 }
             });
         });
-    };
+    }
 
-    var demo8 = function () {
+    var demo8 = function() {
         var map = new GMaps({
             div: '#m_gmap_8',
             lat: -12.043333,
             lng: -77.028333
         });
 
-        var handleAction = function () {
+        var handleAction = function() {
             var text = $.trim($('#m_gmap_8_address').val());
             GMaps.geocode({
                 address: text,
-                callback: function (results, status) {
+                callback: function(results, status) {
                     if (status == 'OK') {
                         var latlng = results[0].geometry.location;
                         map.setCenter(latlng.lat(), latlng.lng());
@@ -184,25 +184,25 @@ var GoogleMapsDemo = function () {
                     }
                 }
             });
-        };
+        }
 
-        $('#m_gmap_8_btn').click(function (e) {
+        $('#m_gmap_8_btn').click(function(e) {
             e.preventDefault();
             handleAction();
         });
 
-        $("#m_gmap_8_address").keypress(function (e) {
+        $("#m_gmap_8_address").keypress(function(e) {
             var keycode = (e.keyCode ? e.keyCode : e.which);
             if (keycode == '13') {
                 e.preventDefault();
                 handleAction();
             }
         });
-    };
+    }
 
     return {
         // public functions
-        init: function () {
+        init: function() {
             // default charts
             demo1();
             demo2();
@@ -216,7 +216,7 @@ var GoogleMapsDemo = function () {
     };
 }();
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {
     GoogleMapsDemo.init();
 });
 //# sourceMappingURL=google-maps.js.map

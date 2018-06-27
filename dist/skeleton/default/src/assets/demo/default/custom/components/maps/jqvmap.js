@@ -1,5 +1,5 @@
 //== Class definition
-var jQVMapDemo = function () {
+var jQVMapDemo = function() {
 
     var sample_data = {
         "af": "16.63",
@@ -189,7 +189,7 @@ var jQVMapDemo = function () {
 
     //== Private functions
 
-    var setupMap = function (name) {
+    var setupMap = function(name) {
         var data = {
             map: 'world_en',
             backgroundColor: null,
@@ -201,13 +201,13 @@ var jQVMapDemo = function () {
             values: sample_data,
             scaleColors: ['#C8EEFF', '#006491'],
             normalizeFunction: 'polynomial',
-            onRegionOver: function (event, code) {
+            onRegionOver: function(event, code) {
                 //sample to interact with map
                 if (code == 'ca') {
                     event.preventDefault();
                 }
             },
-            onRegionClick: function (element, code, region) {
+            onRegionClick: function(element, code, region) {
                 //sample to interact with map
                 var message = 'You clicked "' + region + '" which has the code: ' + code.toUpperCase();
                 alert(message);
@@ -220,30 +220,30 @@ var jQVMapDemo = function () {
 
         map.width(map.parent().width());
         map.vectorMap(data);
-    };
+    }
 
-    var setupMaps = function () {
+    var setupMaps = function() {
         setupMap("world");
         setupMap("usa");
         setupMap("europe");
         setupMap("russia");
         setupMap("germany");
-    };
+    }
 
     return {
         // public functions
-        init: function () {
+        init: function() {
             // default charts
             setupMaps();
 
-            mUtil.addResizeHandler(function () {
+            mUtil.addResizeHandler(function() {
                 setupMaps();
             });
         }
     };
 }();
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {
     jQVMapDemo.init();
 });
 //# sourceMappingURL=jqvmap.js.map

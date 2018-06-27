@@ -5,9 +5,9 @@ var PortletDraggable = function () {
         init: function () {
             $("#m_sortable_portlets").sortable({
                 connectWith: ".m-portlet__head",
-                items: ".m-portlet",
+                items: ".m-portlet", 
                 opacity: 0.8,
-                handle: '.m-portlet__head',
+                handle : '.m-portlet__head',
                 coneHelperSize: true,
                 placeholder: 'm-portlet--sortable-placeholder',
                 forcePlaceholderSize: true,
@@ -18,17 +18,17 @@ var PortletDraggable = function () {
                 helper: "clone",
                 cancel: ".m-portlet--sortable-empty", // cancel dragging if portlet is in fullscreen mode
                 revert: 250, // animation in milliseconds
-                update: function (b, c) {
+                update: function(b, c) {
                     if (c.item.prev().hasClass("m-portlet--sortable-empty")) {
                         c.item.prev().before(c.item);
-                    }
+                    }                    
                 }
             });
         }
     };
 }();
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {
     PortletDraggable.init();
 });
 //# sourceMappingURL=draggable.js.map
