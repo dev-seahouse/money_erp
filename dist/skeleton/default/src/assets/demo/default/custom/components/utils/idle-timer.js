@@ -1,6 +1,6 @@
-var IdleTimerDemo = function() {
+var IdleTimerDemo = function () {
 
-    var demo1 = function() {
+    var demo1 = function () {
         //Define default
         var
             docTimeout = 5000;
@@ -8,18 +8,18 @@ var IdleTimerDemo = function() {
         /*
         Handle raised idle/active events
         */
-        $(document).on("idle.idleTimer", function(event, elem, obj) {
+        $(document).on("idle.idleTimer", function (event, elem, obj) {
             $("#docStatus")
-                .val(function(i, v) {
+                .val(function (i, v) {
                     return v + "Idle @ " + moment().format() + " \n";
                 })
                 .removeClass("alert-success")
                 .addClass("alert-warning")
                 .scrollTop($('#docStatus')[0].scrollHeight);
         });
-        $(document).on("active.idleTimer", function(event, elem, obj, e) {
+        $(document).on("active.idleTimer", function (event, elem, obj, e) {
             $('#docStatus')
-                .val(function(i, v) {
+                .val(function (i, v) {
                     return v + "Active [" + e.type + "] [" + e.target.nodeName + "] @ " + moment().format() + " \n";
                 })
                 .addClass("alert-success")
@@ -30,39 +30,39 @@ var IdleTimerDemo = function() {
         /*
         Handle button events
         */
-        $("#btPause").click(function() {
+        $("#btPause").click(function () {
             $(document).idleTimer("pause");
             $('#docStatus')
-                .val(function(i, v) {
+                .val(function (i, v) {
                     return v + "Paused @ " + moment().format() + " \n";
                 })
                 .scrollTop($('#docStatus')[0].scrollHeight);
             $(this).blur();
             return false;
         });
-        $("#btResume").click(function() {
+        $("#btResume").click(function () {
             $(document).idleTimer("resume");
             $('#docStatus')
-                .val(function(i, v) {
+                .val(function (i, v) {
                     return v + "Resumed @ " + moment().format() + " \n";
                 })
                 .scrollTop($('#docStatus')[0].scrollHeight);
             $(this).blur();
             return false;
         });
-        $("#btElapsed").click(function() {
+        $("#btElapsed").click(function () {
             $('#docStatus')
-                .val(function(i, v) {
+                .val(function (i, v) {
                     return v + "Elapsed (since becoming active): " + $(document).idleTimer("getElapsedTime") + " \n";
                 })
                 .scrollTop($('#docStatus')[0].scrollHeight);
             $(this).blur();
             return false;
         });
-        $("#btDestroy").click(function() {
+        $("#btDestroy").click(function () {
             $(document).idleTimer("destroy");
             $('#docStatus')
-                .val(function(i, v) {
+                .val(function (i, v) {
                     return v + "Destroyed: @ " + moment().format() + " \n";
                 })
                 .removeClass("alert-success")
@@ -71,13 +71,13 @@ var IdleTimerDemo = function() {
             $(this).blur();
             return false;
         });
-        $("#btInit").click(function() {
+        $("#btInit").click(function () {
             // for demo purposes show init with just object
             $(document).idleTimer({
                 timeout: docTimeout
             });
             $('#docStatus')
-                .val(function(i, v) {
+                .val(function (i, v) {
                     return v + "Init: @ " + moment().format() + " \n";
                 })
                 .scrollTop($('#docStatus')[0].scrollHeight);
@@ -106,7 +106,7 @@ var IdleTimerDemo = function() {
         //For demo purposes, style based on initial state
         if ($(document).idleTimer("isIdle")) {
             $("#docStatus")
-                .val(function(i, v) {
+                .val(function (i, v) {
                     return v + "Initial Idle State @ " + moment().format() + " \n";
                 })
                 .removeClass("alert-success")
@@ -114,7 +114,7 @@ var IdleTimerDemo = function() {
                 .scrollTop($('#docStatus')[0].scrollHeight);
         } else {
             $('#docStatus')
-                .val(function(i, v) {
+                .val(function (i, v) {
                     return v + "Initial Active State @ " + moment().format() + " \n";
                 })
                 .addClass("alert-success")
@@ -126,9 +126,9 @@ var IdleTimerDemo = function() {
         //For demo purposes, display the actual timeout on the page
         $('#docTimeout').text(docTimeout / 1000);
 
-    }
+    };
 
-    var demo2 = function() {
+    var demo2 = function () {
         //Define textarea settings
         var
             taTimeout = 3000;
@@ -136,12 +136,12 @@ var IdleTimerDemo = function() {
         /*
         Handle raised idle/active events
         */
-        $('#elStatus').on("idle.idleTimer", function(event, elem, obj) {
+        $('#elStatus').on("idle.idleTimer", function (event, elem, obj) {
             //If you dont stop propagation it will bubble up to document event handler
             event.stopPropagation();
 
             $('#elStatus')
-                .val(function(i, v) {
+                .val(function (i, v) {
                     return v + "Idle @ " + moment().format() + " \n";
                 })
                 .removeClass("alert-success")
@@ -149,12 +149,12 @@ var IdleTimerDemo = function() {
                 .scrollTop($('#elStatus')[0].scrollHeight);
 
         });
-        $('#elStatus').on("active.idleTimer", function(event) {
+        $('#elStatus').on("active.idleTimer", function (event) {
             //If you dont stop propagation it will bubble up to document event handler
             event.stopPropagation();
 
             $('#elStatus')
-                .val(function(i, v) {
+                .val(function (i, v) {
                     return v + "Active @ " + moment().format() + " \n";
                 })
                 .addClass("alert-success")
@@ -165,10 +165,10 @@ var IdleTimerDemo = function() {
         /*
         Handle button events
         */
-        $("#btReset").click(function() {
+        $("#btReset").click(function () {
             $('#elStatus')
                 .idleTimer("reset")
-                .val(function(i, v) {
+                .val(function (i, v) {
                     return v + "Reset @ " + moment().format() + " \n";
                 })
                 .scrollTop($('#elStatus')[0].scrollHeight);
@@ -186,27 +186,27 @@ var IdleTimerDemo = function() {
             $(this).blur();
             return false;
         });
-        $("#btRemaining").click(function() {
+        $("#btRemaining").click(function () {
             $('#elStatus')
-                .val(function(i, v) {
+                .val(function (i, v) {
                     return v + "Remaining: " + $("#elStatus").idleTimer("getRemainingTime") + " \n";
                 })
                 .scrollTop($('#elStatus')[0].scrollHeight);
             $(this).blur();
             return false;
         });
-        $("#btLastActive").click(function() {
+        $("#btLastActive").click(function () {
             $('#elStatus')
-                .val(function(i, v) {
+                .val(function (i, v) {
                     return v + "LastActive: " + $("#elStatus").idleTimer("getLastActiveTime") + " \n";
                 })
                 .scrollTop($('#elStatus')[0].scrollHeight);
             $(this).blur();
             return false;
         });
-        $("#btState").click(function() {
+        $("#btState").click(function () {
             $('#elStatus')
-                .val(function(i, v) {
+                .val(function (i, v) {
                     return v + "State: " + ($("#elStatus").idleTimer("isIdle") ? "idle" : "active") + " \n";
                 })
                 .scrollTop($('#elStatus')[0].scrollHeight);
@@ -220,7 +220,7 @@ var IdleTimerDemo = function() {
         //For demo purposes, show initial state
         if ($("#elStatus").idleTimer("isIdle")) {
             $("#elStatus")
-                .val(function(i, v) {
+                .val(function (i, v) {
                     return v + "Initial Idle @ " + moment().format() + " \n";
                 })
                 .removeClass("alert-success")
@@ -228,7 +228,7 @@ var IdleTimerDemo = function() {
                 .scrollTop($('#elStatus')[0].scrollHeight);
         } else {
             $('#elStatus')
-                .val(function(i, v) {
+                .val(function (i, v) {
                     return v + "Initial Active @ " + moment().format() + " \n";
                 })
                 .addClass("alert-success")
@@ -239,11 +239,11 @@ var IdleTimerDemo = function() {
         // Display the actual timeout on the page
         $('#elTimeout').text(taTimeout / 1000);
 
-    }
+    };
 
     return {
         //main function to initiate the module
-        init: function() {
+        init: function () {
             demo1();
             demo2();
         }
@@ -251,7 +251,7 @@ var IdleTimerDemo = function() {
 
 }();
 
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     IdleTimerDemo.init();
 });
 //# sourceMappingURL=idle-timer.js.map

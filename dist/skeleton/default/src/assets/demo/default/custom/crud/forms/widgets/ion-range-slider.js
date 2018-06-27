@@ -1,7 +1,7 @@
 //== Class definition
 
 var IONRangeSlider = function () {
-    
+
     //== Private functions
     var demos = function () {
         // basic demo
@@ -68,17 +68,17 @@ var IONRangeSlider = function () {
             decorate_both: true
         });
 
-    }
+    };
 
     return {
         // public functions
-        init: function() {
-            demos(); 
+        init: function () {
+            demos();
         }
     };
 }();
 
-jQuery(document).ready(function() {    
+jQuery(document).ready(function () {
     IONRangeSlider.init();
 });
 //# sourceMappingURL=ion-range-slider.js.map

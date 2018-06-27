@@ -1,7 +1,7 @@
 //== Class definition
 
 var Autosize = function () {
-    
+
     //== Private functions
     var demos = function () {
         // basic demo
@@ -12,17 +12,17 @@ var Autosize = function () {
 
         autosize(demo2);
         autosize.update(demo2);
-    }
+    };
 
     return {
         // public functions
-        init: function() {
-            demos(); 
+        init: function () {
+            demos();
         }
     };
 }();
 
-jQuery(document).ready(function() {    
+jQuery(document).ready(function () {
     Autosize.init();
 });
 //# sourceMappingURL=autosize.js.map

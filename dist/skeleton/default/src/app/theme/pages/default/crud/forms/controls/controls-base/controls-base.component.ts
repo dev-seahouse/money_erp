@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Helpers } from '../../../../../../../helpers';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Helpers} from '../../../../../../../helpers';
 
 
 @Component({
@@ -13,6 +13,7 @@ export class ControlsBaseComponent implements OnInit {
     constructor() {
 
     }
+
     ngOnInit() {
 
     }

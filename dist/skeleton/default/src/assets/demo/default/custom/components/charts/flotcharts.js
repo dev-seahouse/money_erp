@@ -1,9 +1,9 @@
 //== Class definition
-var FlotchartsDemo = function() {
+var FlotchartsDemo = function () {
 
     //== Private functions
 
-    var demo1 = function() {
+    var demo1 = function () {
         var data = [];
         var totalPoints = 250;
 
@@ -92,12 +92,13 @@ var FlotchartsDemo = function() {
                 borderWidth: 1
             }
         });
-    }
+    };
 
-    var demo2 = function() {
+    var demo2 = function () {
         function randValue() {
             return (Math.floor(Math.random() * (1 + 40 - 20))) + 20;
         }
+
         var pageviews = [
             [1, randValue()],
             [2, randValue()],
@@ -235,7 +236,7 @@ var FlotchartsDemo = function() {
         }
 
         var previousPoint = null;
-        $("#chart_2").bind("plothover", function(event, pos, item) {
+        $("#chart_2").bind("plothover", function (event, pos, item) {
             $("#x").text(pos.x.toFixed(2));
             $("#y").text(pos.y.toFixed(2));
 
@@ -254,9 +255,9 @@ var FlotchartsDemo = function() {
                 previousPoint = null;
             }
         });
-    }
+    };
 
-    var demo3 = function() {
+    var demo3 = function () {
         var sin = [],
             cos = [];
         for (var i = 0; i < 14; i += 0.1) {
@@ -301,7 +302,7 @@ var FlotchartsDemo = function() {
         });
 
         var legends = $("#m_flotcharts_3 .legendLabel");
-        legends.each(function() {
+        legends.each(function () {
             // fix the widths so they don't jump around
             $(this).css('width', $(this).width());
         });
@@ -337,13 +338,13 @@ var FlotchartsDemo = function() {
             }
         }
 
-        $("#m_flotcharts_3").bind("plothover", function(event, pos, item) {
+        $("#m_flotcharts_3").bind("plothover", function (event, pos, item) {
             latestPosition = pos;
             if (!updateLegendTimeout) updateLegendTimeout = setTimeout(updateLegend, 50);
         });
-    }
+    };
 
-    var demo4 = function() {
+    var demo4 = function () {
 
         var data = [];
         var totalPoints = 250;
@@ -390,7 +391,7 @@ var FlotchartsDemo = function() {
                 min: 0,
                 max: 100,
                 tickColor: "#eee",
-                tickFormatter: function(v) {
+                tickFormatter: function (v) {
                     return v + "%";
                 }
             },
@@ -414,9 +415,9 @@ var FlotchartsDemo = function() {
         }
 
         update();
-    }
+    };
 
-    var demo5 = function() {
+    var demo5 = function () {
         var d1 = [];
         for (var i = 0; i <= 10; i += 1)
             d1.push([i, parseInt(Math.random() * 30)]);
@@ -486,13 +487,13 @@ var FlotchartsDemo = function() {
             );
         }
 
-        $(".stackControls input").click(function(e) {
+        $(".stackControls input").click(function (e) {
             e.preventDefault();
             stack = $(this).val() == "With stacking" ? true : null;
             plotWithOptions();
         });
 
-        $(".graphControls input").click(function(e) {
+        $(".graphControls input").click(function (e) {
             e.preventDefault();
             bars = $(this).val().indexOf("Bars") != -1;
             lines = $(this).val().indexOf("Lines") != -1;
@@ -501,9 +502,9 @@ var FlotchartsDemo = function() {
         });
 
         plotWithOptions();
-    }
+    };
 
-    var demo6 = function() {
+    var demo6 = function () {
         // bar chart:
         var data = GenerateSeries(0);
 
@@ -549,9 +550,9 @@ var FlotchartsDemo = function() {
             },
             shadowSize: 0
         }], options);
-    }
+    };
 
-    var demo7 = function() {
+    var demo7 = function () {
         // horizontal bar chart:
 
         var data1 = [
@@ -583,128 +584,128 @@ var FlotchartsDemo = function() {
         };
 
         $.plot($("#m_flotcharts_7"), [data1], options);
-    }
+    };
 
 
-    var demo8 = function() {
+    var demo8 = function () {
         var data = [];
-            var series = Math.floor(Math.random() * 10) + 1;
-            series = series < 5 ? 5 : series;
+        var series = Math.floor(Math.random() * 10) + 1;
+        series = series < 5 ? 5 : series;
 
-            for (var i = 0; i < series; i++) {
-                data[i] = {
-                    label: "Series" + (i + 1),
-                    data: Math.floor(Math.random() * 100) + 1
-                };
+        for (var i = 0; i < series; i++) {
+            data[i] = {
+                label: "Series" + (i + 1),
+                data: Math.floor(Math.random() * 100) + 1
+            };
+        }
+
+        $.plot($("#m_flotcharts_8"), data, {
+            series: {
+                pie: {
+                    show: true
+                }
             }
+        });
+    };
 
-            $.plot($("#m_flotcharts_8"), data, {
-                    series: {
-                        pie: {
-                            show: true
+    var demo9 = function () {
+        var data = [];
+        var series = Math.floor(Math.random() * 10) + 1;
+        series = series < 5 ? 5 : series;
+
+        for (var i = 0; i < series; i++) {
+            data[i] = {
+                label: "Series" + (i + 1),
+                data: Math.floor(Math.random() * 100) + 1
+            };
+        }
+
+        $.plot($("#m_flotcharts_9"), data, {
+            series: {
+                pie: {
+                    show: true
+                }
+            },
+            legend: {
+                show: false
+            }
+        });
+    };
+
+    var demo10 = function () {
+        var data = [];
+        var series = Math.floor(Math.random() * 10) + 1;
+        series = series < 5 ? 5 : series;
+
+        for (var i = 0; i < series; i++) {
+            data[i] = {
+                label: "Series" + (i + 1),
+                data: Math.floor(Math.random() * 100) + 1
+            };
+        }
+
+        $.plot($("#m_flotcharts_10"), data, {
+            series: {
+                pie: {
+                    show: true,
+                    radius: 1,
+                    label: {
+                        show: true,
+                        radius: 1,
+                        formatter: function (label, series) {
+                            return '<div style="font-size:8pt;text-align:center;padding:2px;color:white;">' + label + '<br/>' + Math.round(series.percent) + '%</div>';
+                        },
+                        background: {
+                            opacity: 0.8
                         }
                     }
-                });
-    }
-
-    var demo9 = function() {
-         var data = [];
-            var series = Math.floor(Math.random() * 10) + 1;
-            series = series < 5 ? 5 : series;
-
-            for (var i = 0; i < series; i++) {
-                data[i] = {
-                    label: "Series" + (i + 1),
-                    data: Math.floor(Math.random() * 100) + 1
-                };
+                }
+            },
+            legend: {
+                show: false
             }
+        });
+    };
 
-            $.plot($("#m_flotcharts_9"), data, {
-                    series: {
-                        pie: {
-                            show: true
+    var demo11 = function () {
+        var data = [];
+        var series = Math.floor(Math.random() * 10) + 1;
+        series = series < 5 ? 5 : series;
+
+        for (var i = 0; i < series; i++) {
+            data[i] = {
+                label: "Series" + (i + 1),
+                data: Math.floor(Math.random() * 100) + 1
+            };
+        }
+
+        $.plot($("#m_flotcharts_11"), data, {
+            series: {
+                pie: {
+                    show: true,
+                    radius: 1,
+                    label: {
+                        show: true,
+                        radius: 1,
+                        formatter: function (label, series) {
+                            return '<div style="font-size:8pt;text-align:center;padding:2px;color:white;">' + label + '<br/>' + Math.round(series.percent) + '%</div>';
+                        },
+                        background: {
+                            opacity: 0.8
                         }
-                    },
-                    legend: {
-                        show: false
                     }
-                });
-    }
-
-    var demo10 = function() {
-         var data = [];
-            var series = Math.floor(Math.random() * 10) + 1;
-            series = series < 5 ? 5 : series;
-
-            for (var i = 0; i < series; i++) {
-                data[i] = {
-                    label: "Series" + (i + 1),
-                    data: Math.floor(Math.random() * 100) + 1
-                };
+                }
+            },
+            legend: {
+                show: false
             }
-
-             $.plot($("#m_flotcharts_10"), data, {
-                    series: {
-                        pie: {
-                            show: true,
-                            radius: 1,
-                            label: {
-                                show: true,
-                                radius: 1,
-                                formatter: function(label, series) {
-                                    return '<div style="font-size:8pt;text-align:center;padding:2px;color:white;">' + label + '<br/>' + Math.round(series.percent) + '%</div>';
-                                },
-                                background: {
-                                    opacity: 0.8
-                                }
-                            }
-                        }
-                    },
-                    legend: {
-                        show: false
-                    }
-                });
-    }
-
-    var demo11 = function() {
-         var data = [];
-            var series = Math.floor(Math.random() * 10) + 1;
-            series = series < 5 ? 5 : series;
-
-            for (var i = 0; i < series; i++) {
-                data[i] = {
-                    label: "Series" + (i + 1),
-                    data: Math.floor(Math.random() * 100) + 1
-                };
-            }
-
-             $.plot($("#m_flotcharts_11"), data, {
-                    series: {
-                        pie: {
-                            show: true,
-                            radius: 1,
-                            label: {
-                                show: true,
-                                radius: 1,
-                                formatter: function(label, series) {
-                                    return '<div style="font-size:8pt;text-align:center;padding:2px;color:white;">' + label + '<br/>' + Math.round(series.percent) + '%</div>';
-                                },
-                                background: {
-                                    opacity: 0.8
-                                }
-                            }
-                        }
-                    },
-                    legend: {
-                        show: false
-                    }
-                });
-    }
+        });
+    };
 
 
     return {
         // public functions
-        init: function() {
+        init: function () {
             // default charts
             demo1();
             demo2();
@@ -723,7 +724,7 @@ var FlotchartsDemo = function() {
     };
 }();
 
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     FlotchartsDemo.init();
 });
 //# sourceMappingURL=flotcharts.js.map

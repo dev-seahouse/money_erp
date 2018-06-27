@@ -1,21 +1,21 @@
 //== Class definition
-var jVectorMap = function() {
+var jVectorMap = function () {
 
     //== Private functions
 
-    var demo1 = function() {
-    }
+    var demo1 = function () {
+    };
 
     return {
         // public functions
-        init: function() {
+        init: function () {
             // default charts
             demo1();
         }
     };
 }();
 
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     jVectorMap.init();
 });
 //# sourceMappingURL=jvectormap.js.map

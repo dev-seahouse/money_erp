@@ -1,48 +1,48 @@
 //== Class definition
-var noUiSliderDemos = function() {
+var noUiSliderDemos = function () {
 
     //== Private functions
 
-     
-    var demo1 = function() {
+
+    var demo1 = function () {
         // init slider
         var slider = document.getElementById('m_nouislider_1');
 
         noUiSlider.create(slider, {
-            start: [ 0 ],
+            start: [0],
             step: 2,
             range: {
-                'min': [ 0 ],
-                'max': [ 10 ]
+                'min': [0],
+                'max': [10]
             },
             format: wNumb({
-                decimals: 0 
+                decimals: 0
             })
         });
 
         // init slider input
         var sliderInput = document.getElementById('m_nouislider_1_input');
 
-        slider.noUiSlider.on('update', function( values, handle ) {
+        slider.noUiSlider.on('update', function (values, handle) {
             sliderInput.value = values[handle];
         });
 
-        sliderInput.addEventListener('change', function(){
+        sliderInput.addEventListener('change', function () {
             slider.noUiSlider.set(this.value);
         });
-    }
+    };
 
-    var demo2 = function() {
+    var demo2 = function () {
         // init slider
         var slider = document.getElementById('m_nouislider_2');
 
         noUiSlider.create(slider, {
-            start: [ 20000 ],
+            start: [20000],
             connect: [true, false],
             step: 1000,
             range: {
-                'min': [ 20000 ],
-                'max': [ 80000 ]
+                'min': [20000],
+                'max': [80000]
             },
             format: wNumb({
                 decimals: 3,
@@ -54,24 +54,24 @@ var noUiSliderDemos = function() {
         // init slider input
         var sliderInput = document.getElementById('m_nouislider_2_input');
 
-        slider.noUiSlider.on('update', function( values, handle ) {
+        slider.noUiSlider.on('update', function (values, handle) {
             sliderInput.value = values[handle];
         });
 
-        sliderInput.addEventListener('change', function(){
+        sliderInput.addEventListener('change', function () {
             slider.noUiSlider.set(this.value);
         });
-    }
+    };
 
-    var demo3 = function() {
+    var demo3 = function () {
         // init slider
-        var slider = document.getElementById('m_nouislider_3');        
+        var slider = document.getElementById('m_nouislider_3');
 
         noUiSlider.create(slider, {
             start: [20, 80],
             connect: true,
             direction: 'rtl',
-            tooltips: [true, wNumb({ decimals: 1 })],
+            tooltips: [true, wNumb({decimals: 1})],
             range: {
                 'min': [0],
                 '10%': [10, 10],
@@ -80,37 +80,37 @@ var noUiSliderDemos = function() {
                 'max': 200
             }
         });
-       
+
 
         // init slider input
         var sliderInput0 = document.getElementById('m_nouislider_3_input');
         var sliderInput1 = document.getElementById('m_nouislider_3.1_input');
-        var sliderInputs = [sliderInput1, sliderInput0];        
+        var sliderInputs = [sliderInput1, sliderInput0];
 
-        slider.noUiSlider.on('update', function( values, handle ) {
+        slider.noUiSlider.on('update', function (values, handle) {
             sliderInputs[handle].value = values[handle];
         });
-    }
+    };
 
-    var demo4 = function() {
+    var demo4 = function () {
 
-       var slider = document.getElementById('m_nouislider_input_select');
+        var slider = document.getElementById('m_nouislider_input_select');
 
         // Append the option elements
-        for ( var i = -20; i <= 40; i++ ){
+        for (var i = -20; i <= 40; i++) {
 
             var option = document.createElement("option");
-                option.text = i;
-                option.value = i;
+            option.text = i;
+            option.value = i;
 
             slider.appendChild(option);
         }
 
         // init slider
-        var html5Slider = document.getElementById('m_nouislider_4');   
+        var html5Slider = document.getElementById('m_nouislider_4');
 
         noUiSlider.create(html5Slider, {
-            start: [ 10, 30 ],
+            start: [10, 30],
             connect: true,
             range: {
                 'min': -20,
@@ -121,29 +121,29 @@ var noUiSliderDemos = function() {
         // init slider input
         var inputNumber = document.getElementById('m_nouislider_input_number');
 
-        html5Slider.noUiSlider.on('update', function( values, handle ) {
+        html5Slider.noUiSlider.on('update', function (values, handle) {
 
             var value = values[handle];
 
-            if ( handle ) {
+            if (handle) {
                 inputNumber.value = value;
             } else {
                 slider.value = Math.round(value);
             }
         });
 
-        slider.addEventListener('change', function(){
+        slider.addEventListener('change', function () {
             html5Slider.noUiSlider.set([this.value, null]);
         });
 
-        inputNumber.addEventListener('change', function(){
+        inputNumber.addEventListener('change', function () {
             html5Slider.noUiSlider.set([null, this.value]);
         });
-    }
- 
-    var demo5 = function() {
+    };
+
+    var demo5 = function () {
         // init slider
-        var slider = document.getElementById('m_nouislider_5');        
+        var slider = document.getElementById('m_nouislider_5');
 
         noUiSlider.create(slider, {
             start: 20,
@@ -160,24 +160,24 @@ var noUiSliderDemos = function() {
 
         var sliderInput = document.getElementById('m_nouislider_5_input');
 
-        slider.noUiSlider.on('update', function( values, handle ) {
+        slider.noUiSlider.on('update', function (values, handle) {
             sliderInput.value = values[handle];
         });
 
-        sliderInput.addEventListener('change', function(){
+        sliderInput.addEventListener('change', function () {
             slider.noUiSlider.set(this.value);
         });
 
-        slider.noUiSlider.on('change', function ( values, handle ) {
-            if ( values[handle] < 20 ) {
+        slider.noUiSlider.on('change', function (values, handle) {
+            if (values[handle] < 20) {
                 slider.noUiSlider.set(20);
-            } else if ( values[handle] > 80 ) {
+            } else if (values[handle] > 80) {
                 slider.noUiSlider.set(80);
             }
         });
-    }
+    };
 
-    var demo6 = function() {
+    var demo6 = function () {
         // init slider             
 
         var verticalSlider = document.getElementById('m_nouislider_6');
@@ -189,59 +189,59 @@ var noUiSliderDemos = function() {
                 'min': 0,
                 'max': 100
             }
-        }); 
+        });
 
         // init slider input
         var sliderInput = document.getElementById('m_nouislider_6_input');
 
-        verticalSlider.noUiSlider.on('update', function( values, handle ) {
+        verticalSlider.noUiSlider.on('update', function (values, handle) {
             sliderInput.value = values[handle];
         });
 
-        sliderInput.addEventListener('change', function(){
+        sliderInput.addEventListener('change', function () {
             verticalSlider.noUiSlider.set(this.value);
-        });      
-    }    
+        });
+    };
 
     // Modal demo
 
-    var modaldemo1 = function() {
+    var modaldemo1 = function () {
         var slider = document.getElementById('m_nouislider_modal1');
 
         noUiSlider.create(slider, {
-            start: [ 0 ],
+            start: [0],
             step: 2,
             range: {
-                'min': [ 0 ],
-                'max': [ 10 ]
+                'min': [0],
+                'max': [10]
             },
             format: wNumb({
-                decimals: 0 
+                decimals: 0
             })
         });
 
         // init slider input
         var sliderInput = document.getElementById('m_nouislider_modal1_input');
 
-        slider.noUiSlider.on('update', function( values, handle ) {
+        slider.noUiSlider.on('update', function (values, handle) {
             sliderInput.value = values[handle];
         });
 
-        sliderInput.addEventListener('change', function(){
+        sliderInput.addEventListener('change', function () {
             slider.noUiSlider.set(this.value);
         });
-    }
+    };
 
-    var modaldemo2 = function() {
+    var modaldemo2 = function () {
         var slider = document.getElementById('m_nouislider_modal2');
 
         noUiSlider.create(slider, {
-            start: [ 20000 ],
+            start: [20000],
             connect: [true, false],
             step: 1000,
             range: {
-                'min': [ 20000 ],
-                'max': [ 80000 ]
+                'min': [20000],
+                'max': [80000]
             },
             format: wNumb({
                 decimals: 3,
@@ -253,23 +253,23 @@ var noUiSliderDemos = function() {
         // init slider input
         var sliderInput = document.getElementById('m_nouislider_modal2_input');
 
-        slider.noUiSlider.on('update', function( values, handle ) {
+        slider.noUiSlider.on('update', function (values, handle) {
             sliderInput.value = values[handle];
         });
 
-        sliderInput.addEventListener('change', function(){
+        sliderInput.addEventListener('change', function () {
             slider.noUiSlider.set(this.value);
         });
-    }
+    };
 
-    var modaldemo3 = function() {
-        var slider = document.getElementById('m_nouislider_modal3');        
+    var modaldemo3 = function () {
+        var slider = document.getElementById('m_nouislider_modal3');
 
         noUiSlider.create(slider, {
             start: [20, 80],
             connect: true,
             direction: 'rtl',
-            tooltips: [true, wNumb({ decimals: 1 })],
+            tooltips: [true, wNumb({decimals: 1})],
             range: {
                 'min': [0],
                 '10%': [10, 10],
@@ -278,37 +278,36 @@ var noUiSliderDemos = function() {
                 'max': 200
             }
         });
-       
+
 
         // init slider input
         var sliderInput0 = document.getElementById('m_nouislider_modal1.1_input');
         var sliderInput1 = document.getElementById('m_nouislider_modal1.2_input');
-        var sliderInputs = [sliderInput1, sliderInput0];        
+        var sliderInputs = [sliderInput1, sliderInput0];
 
-        slider.noUiSlider.on('update', function( values, handle ) {
+        slider.noUiSlider.on('update', function (values, handle) {
             sliderInputs[handle].value = values[handle];
         });
-    }
+    };
     return {
         // public functions
-        init: function() {
+        init: function () {
             demo1();
             demo2();
-            demo3();  
-            demo4(); 
-            demo5();  
-            demo6(); 
+            demo3();
+            demo4();
+            demo5();
+            demo6();
             modaldemo1();
             modaldemo2();
-            modaldemo3();                           
+            modaldemo3();
         }
     };
 }();
 
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     noUiSliderDemos.init();
 });
-
 
 
 //# sourceMappingURL=nouislider.js.map

@@ -2,18 +2,18 @@
 
 var FormControls = function () {
     //== Private functions
-    
+
     var demo1 = function () {
-        $( "#m_form_1" ).validate({
+        $("#m_form_1").validate({
             // define validation rules
             rules: {
                 email: {
                     required: true,
                     email: true,
-                    minlength: 10 
+                    minlength: 10
                 },
                 url: {
-                    required: true 
+                    required: true
                 },
                 digits: {
                     required: true,
@@ -21,11 +21,11 @@ var FormControls = function () {
                 },
                 creditcard: {
                     required: true,
-                    creditcard: true 
+                    creditcard: true
                 },
                 phone: {
                     required: true,
-                    phoneUS: true 
+                    phoneUS: true
                 },
                 option: {
                     required: true
@@ -53,9 +53,9 @@ var FormControls = function () {
                     required: true
                 }
             },
-            
+
             //display error alert on form submit  
-            invalidHandler: function(event, validator) {     
+            invalidHandler: function (event, validator) {
                 var alert = $('#m_form_1_msg');
                 alert.removeClass('m--hide').show();
                 mUtil.scrollTop();
@@ -64,19 +64,19 @@ var FormControls = function () {
             submitHandler: function (form) {
                 //form[0].submit(); // submit the form
             }
-        });       
-    }
+        });
+    };
 
     var demo2 = function () {
-        $( "#m_form_2" ).validate({
+        $("#m_form_2").validate({
             // define validation rules
             rules: {
                 email: {
                     required: true,
-                    email: true 
+                    email: true
                 },
                 url: {
-                    required: true 
+                    required: true
                 },
                 digits: {
                     required: true,
@@ -84,11 +84,11 @@ var FormControls = function () {
                 },
                 creditcard: {
                     required: true,
-                    creditcard: true 
+                    creditcard: true
                 },
                 phone: {
                     required: true,
-                    phoneUS: true 
+                    phoneUS: true
                 },
                 option: {
                     required: true
@@ -116,9 +116,9 @@ var FormControls = function () {
                     required: true
                 }
             },
-            
+
             //display error alert on form submit  
-            invalidHandler: function(event, validator) {     
+            invalidHandler: function (event, validator) {
                 mUtil.scrollTo("m_form_2", -200);
 
                 /*
@@ -134,11 +134,11 @@ var FormControls = function () {
             submitHandler: function (form) {
                 //form[0].submit(); // submit the form
             }
-        });       
-    }
+        });
+    };
 
     var demo3 = function () {
-        $( "#m_form_3" ).validate({
+        $("#m_form_3").validate({
             // define validation rules
             rules: {
                 //=== Client Information(step 3)
@@ -166,9 +166,7 @@ var FormControls = function () {
                 billing_address_1: {
                     required: true
                 },
-                billing_address_2: {
-                    
-                },
+                billing_address_2: {},
                 billing_city: {
                     required: true
                 },
@@ -184,17 +182,17 @@ var FormControls = function () {
                     required: true
                 }
             },
-            
+
             //display error alert on form submit  
-            invalidHandler: function(event, validator) {
-                mUtil.scrollTo("m_form_3", -200); 
+            invalidHandler: function (event, validator) {
+                mUtil.scrollTo("m_form_3", -200);
 
                 swal({
-                    "title": "", 
-                    "text": "There are some errors in your submission. Please correct them.", 
+                    "title": "",
+                    "text": "There are some errors in your submission. Please correct them.",
                     "type": "error",
                     "confirmButtonClass": "btn btn-secondary m-btn m-btn--wide",
-                    "onClose": function(e) {
+                    "onClose": function (e) {
                         console.log('on close event fired!');
                     }
                 });
@@ -205,28 +203,28 @@ var FormControls = function () {
             submitHandler: function (form) {
                 //form[0].submit(); // submit the form
                 swal({
-                    "title": "", 
-                    "text": "Form validation passed. All good!", 
+                    "title": "",
+                    "text": "Form validation passed. All good!",
                     "type": "success",
                     "confirmButtonClass": "btn btn-secondary m-btn m-btn--wide"
                 });
 
                 return false;
             }
-        });       
-    }
+        });
+    };
 
     return {
         // public functions
-        init: function() {
-            demo1(); 
+        init: function () {
+            demo1();
             demo2();
-            demo3(); 
+            demo3();
         }
     };
 }();
 
-jQuery(document).ready(function() {    
+jQuery(document).ready(function () {
     FormControls.init();
 });
 //# sourceMappingURL=form-controls.js.map

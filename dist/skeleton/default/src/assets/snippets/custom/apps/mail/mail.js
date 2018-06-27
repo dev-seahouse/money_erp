@@ -1,17 +1,17 @@
 //== Class Definition
-var Mail = function() {
+var Mail = function () {
 
     //== Public Functions
     return {
         // public functions
-        init: function() {
-            
+        init: function () {
+
         }
     };
 }();
 
 //== Class Initialization
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     Mail.init();
 });
 //# sourceMappingURL=mail.js.map

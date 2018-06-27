@@ -1,8 +1,8 @@
 //== Class definition
-var Dashboard = function() {
+var Dashboard = function () {
 
     //== Sparkline Chart helper function
-    var _initSparklineChart = function(src, data, color, border) {
+    var _initSparklineChart = function (src, data, color, border) {
         if (src.length == 0) {
             return;
         }
@@ -90,11 +90,11 @@ var Dashboard = function() {
         };
 
         return new Chart(src, config);
-    }
+    };
 
     //== Daily Sales chart.
     //** Based on Chartjs plugin - http://www.chartjs.org/
-    var dailySales = function() {
+    var dailySales = function () {
         var chartContainer = $('#m_chart_daily_sales');
 
         if (chartContainer.length == 0) {
@@ -160,23 +160,23 @@ var Dashboard = function() {
                 }
             }
         });
-    }
+    };
 
     //== Profit Share Chart.
     //** Based on Chartist plugin - https://gionkunz.github.io/chartist-js/index.html
-    var profitShare = function() {
+    var profitShare = function () {
         if ($('#m_chart_profit_share').length == 0) {
             return;
         }
 
         var chart = new Chartist.Pie('#m_chart_profit_share', {
             series: [{
-                    value: 32,
-                    className: 'custom',
-                    meta: {
-                        color: mApp.getColor('brand')
-                    }
-                },
+                value: 32,
+                className: 'custom',
+                meta: {
+                    color: mApp.getColor('brand')
+                }
+            },
                 {
                     value: 32,
                     className: 'custom',
@@ -199,7 +199,7 @@ var Dashboard = function() {
             showLabel: false
         });
 
-        chart.on('draw', function(data) {
+        chart.on('draw', function (data) {
             if (data.type === 'slice') {
                 // Get the total path length in order to use for dash array animation
                 var pathLength = data.element._node.getTotalLength();
@@ -242,8 +242,8 @@ var Dashboard = function() {
         });
 
         // For the sake of the example we update the chart every time it's created with a delay of 8 seconds
-        return;
-        
+
+
         /*
         chart.on('created', function() {
             if (window.__anim21278907124) {
@@ -253,11 +253,11 @@ var Dashboard = function() {
             window.__anim21278907124 = setTimeout(chart.update.bind(chart), 15000);
         });
         */
-    }
+    };
 
     //== Sales Stats.
     //** Based on Chartjs plugin - http://www.chartjs.org/
-    var salesStats = function() {
+    var salesStats = function () {
         if ($('#m_chart_sales_stats').length == 0) {
             return;
         }
@@ -342,11 +342,11 @@ var Dashboard = function() {
         };
 
         var chart = new Chart($('#m_chart_sales_stats'), config);
-    }
+    };
 
     //== Sales By mUtillication Stats.
     //** Based on Chartjs plugin - http://www.chartjs.org/
-    var salesByApps = function() {
+    var salesByApps = function () {
         // Init chart instances
         _initSparklineChart($('#m_chart_sales_by_apps_1_1'), [10, 20, -5, 8, -20, -2, -4, 15, 5, 8], mApp.getColor('accent'), 2);
         _initSparklineChart($('#m_chart_sales_by_apps_1_2'), [2, 16, 0, 12, 22, 5, -10, 5, 15, 2], mApp.getColor('danger'), 2);
@@ -357,11 +357,11 @@ var Dashboard = function() {
         _initSparklineChart($('#m_chart_sales_by_apps_2_2'), [2, 16, 0, 12, 22, 5, -10, 5, 15, 2], mApp.getColor('metal'), 2);
         _initSparklineChart($('#m_chart_sales_by_apps_2_3'), [15, 5, -10, 5, 16, 22, 6, -6, -12, 5], mApp.getColor('brand'), 2);
         _initSparklineChart($('#m_chart_sales_by_apps_2_4'), [8, 18, -12, 12, 22, -2, -14, 16, 18, 2], mApp.getColor('info'), 2);
-    }
+    };
 
     //== Latest Updates.
     //** Based on Chartjs plugin - http://www.chartjs.org/
-    var latestUpdates = function() {
+    var latestUpdates = function () {
         if ($('#m_chart_latest_updates').length == 0) {
             return;
         }
@@ -440,11 +440,11 @@ var Dashboard = function() {
         };
 
         var chart = new Chart(ctx, config);
-    }
+    };
 
     //== Trends Stats.
     //** Based on Chartjs plugin - http://www.chartjs.org/
-    var trendsStats = function() {
+    var trendsStats = function () {
         if ($('#m_chart_trends_stats').length == 0) {
             return;
         }
@@ -544,11 +544,11 @@ var Dashboard = function() {
         };
 
         var chart = new Chart(ctx, config);
-    }
+    };
 
     //== Trends Stats 2.
     //** Based on Chartjs plugin - http://www.chartjs.org/
-    var trendsStats2 = function() {
+    var trendsStats2 = function () {
         if ($('#m_chart_trends_stats_2').length == 0) {
             return;
         }
@@ -644,11 +644,11 @@ var Dashboard = function() {
         };
 
         var chart = new Chart(ctx, config);
-    }
+    };
 
     //== Trends Stats.
     //** Based on Chartjs plugin - http://www.chartjs.org/
-    var latestTrendsMap = function() {
+    var latestTrendsMap = function () {
         if ($('#m_chart_latest_trends_map').length == 0) {
             return;
         }
@@ -662,11 +662,11 @@ var Dashboard = function() {
         } catch (e) {
             console.log(e);
         }
-    }
+    };
 
     //== Revenue Change.
     //** Based on Morris plugin - http://morrisjs.github.io/morris.js/
-    var revenueChange = function() {
+    var revenueChange = function () {
         if ($('#m_chart_revenue_change').length == 0) {
             return;
         }
@@ -674,9 +674,9 @@ var Dashboard = function() {
         Morris.Donut({
             element: 'm_chart_revenue_change',
             data: [{
-                    label: "New York",
-                    value: 10
-                },
+                label: "New York",
+                value: 10
+            },
                 {
                     label: "London",
                     value: 7
@@ -692,11 +692,11 @@ var Dashboard = function() {
                 mApp.getColor('brand')
             ],
         });
-    }
+    };
 
     //== Support Tickets Chart.
     //** Based on Morris plugin - http://morrisjs.github.io/morris.js/
-    var supportTickets = function() {
+    var supportTickets = function () {
         if ($('#m_chart_support_tickets').length == 0) {
             return;
         }
@@ -704,9 +704,9 @@ var Dashboard = function() {
         Morris.Donut({
             element: 'm_chart_support_tickets',
             data: [{
-                    label: "Margins",
-                    value: 20
-                },
+                label: "Margins",
+                value: 20
+            },
                 {
                     label: "Profit",
                     value: 70
@@ -724,23 +724,23 @@ var Dashboard = function() {
             ]
             //formatter: function (x) { return x + "%"}
         });
-    }
+    };
 
     //== Support Tickets Chart.
     //** Based on Morris plugin - http://morrisjs.github.io/morris.js/
-    var supportTickets2 = function() {
+    var supportTickets2 = function () {
         if ($('#m_chart_support_tickets2').length == 0) {
             return;
         }
 
         var chart = new Chartist.Pie('#m_chart_support_tickets2', {
             series: [{
-                    value: 32,
-                    className: 'custom',
-                    meta: {
-                        color: mApp.getColor('brand')
-                    }
-                },
+                value: 32,
+                className: 'custom',
+                meta: {
+                    color: mApp.getColor('brand')
+                }
+            },
                 {
                     value: 32,
                     className: 'custom',
@@ -763,7 +763,7 @@ var Dashboard = function() {
             showLabel: false
         });
 
-        chart.on('draw', function(data) {
+        chart.on('draw', function (data) {
             if (data.type === 'slice') {
                 // Get the total path length in order to use for dash array animation
                 var pathLength = data.element._node.getTotalLength();
@@ -804,11 +804,11 @@ var Dashboard = function() {
                 data.element.animate(animationDefinition, false);
             }
         });
-    }
+    };
 
     //== Activities Charts.
     //** Based on Chartjs plugin - http://www.chartjs.org/
-    var activitiesChart = function() {
+    var activitiesChart = function () {
         if ($('#m_chart_activities').length == 0) {
             return;
         }
@@ -898,11 +898,11 @@ var Dashboard = function() {
         };
 
         var chart = new Chart(ctx, config);
-    }
+    };
 
     //== Bandwidth Charts 1.
     //** Based on Chartjs plugin - http://www.chartjs.org/
-    var bandwidthChart1 = function() {
+    var bandwidthChart1 = function () {
         if ($('#m_chart_bandwidth1').length == 0) {
             return;
         }
@@ -992,11 +992,11 @@ var Dashboard = function() {
         };
 
         var chart = new Chart(ctx, config);
-    }
+    };
 
     //== Bandwidth Charts 2.
     //** Based on Chartjs plugin - http://www.chartjs.org/
-    var bandwidthChart2 = function() {
+    var bandwidthChart2 = function () {
         if ($('#m_chart_bandwidth2').length == 0) {
             return;
         }
@@ -1086,11 +1086,11 @@ var Dashboard = function() {
         };
 
         var chart = new Chart(ctx, config);
-    }
+    };
 
     //== Bandwidth Charts 2.
     //** Based on Chartjs plugin - http://www.chartjs.org/
-    var adWordsStat = function() {
+    var adWordsStat = function () {
         if ($('#m_chart_adwords_stats').length == 0) {
             return;
         }
@@ -1192,11 +1192,11 @@ var Dashboard = function() {
         };
 
         var chart = new Chart(ctx, config);
-    }
+    };
 
     //== Bandwidth Charts 2.
     //** Based on Chartjs plugin - http://www.chartjs.org/
-    var financeSummary = function() {
+    var financeSummary = function () {
         if ($('#m_chart_finance_summary').length == 0) {
             return;
         }
@@ -1281,17 +1281,17 @@ var Dashboard = function() {
         };
 
         var chart = new Chart(ctx, config);
-    }
+    };
 
     //== Quick Stat Charts
-    var quickStats = function() {
+    var quickStats = function () {
         _initSparklineChart($('#m_chart_quick_stats_1'), [10, 14, 18, 11, 9, 12, 14, 17, 18, 14], mApp.getColor('brand'), 3);
         _initSparklineChart($('#m_chart_quick_stats_2'), [11, 12, 18, 13, 11, 12, 15, 13, 19, 15], mApp.getColor('danger'), 3);
         _initSparklineChart($('#m_chart_quick_stats_3'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mApp.getColor('success'), 3);
         _initSparklineChart($('#m_chart_quick_stats_4'), [11, 9, 13, 18, 13, 15, 14, 13, 18, 15], mApp.getColor('accent'), 3);
-    }
+    };
 
-    var daterangepickerInit = function() {
+    var daterangepickerInit = function () {
         if ($('#m_dashboard_daterangepicker').length == 0) {
             return;
         }
@@ -1334,9 +1334,9 @@ var Dashboard = function() {
         }, cb);
 
         cb(start, end, '');
-    }
+    };
 
-    var datatableLatestOrders = function() {
+    var datatableLatestOrders = function () {
         if ($('#m_datatable_latest_orders').length === 0) {
             return;
         }
@@ -1404,7 +1404,7 @@ var Dashboard = function() {
                 title: "Status",
                 width: 100,
                 // callback function support for column rendering
-                template: function(row) {
+                template: function (row) {
                     var status = {
                         1: {
                             'title': 'Pending',
@@ -1442,7 +1442,7 @@ var Dashboard = function() {
                 title: "Type",
                 width: 100,
                 // callback function support for column rendering
-                template: function(row) {
+                template: function (row) {
                     var status = {
                         1: {
                             'title': 'Online',
@@ -1465,7 +1465,7 @@ var Dashboard = function() {
                 title: "Actions",
                 sortable: false,
                 overflow: 'visible',
-                template: function(row, index, datatable) {
+                template: function (row, index, datatable) {
                     var dropup = (datatable.getPageSize() - index) <= 4 ? 'dropup' : '';
                     return '\
                         <div class="dropdown ' + dropup + '">\
@@ -1488,13 +1488,13 @@ var Dashboard = function() {
                 }
             }]
         });
-    }
+    };
 
-    var calendarInit = function() {
+    var calendarInit = function () {
         if ($('#m_calendar').length === 0) {
             return;
         }
-        
+
         var todayDate = moment().startOf('day');
         var YM = todayDate.format('YYYY-MM');
         var YESTERDAY = todayDate.clone().subtract(1, 'day').format('YYYY-MM-DD');
@@ -1520,7 +1520,7 @@ var Dashboard = function() {
                     className: "m-fc-event--light m-fc-event--solid-warning"
                 },
                 {
-                    title: 'Conference',                    
+                    title: 'Conference',
                     description: 'Lorem ipsum dolor incid idunt ut labore',
                     start: moment('2017-08-29T13:30:00'),
                     end: moment('2017-08-29T17:30:00'),
@@ -1539,7 +1539,7 @@ var Dashboard = function() {
                     className: "m-fc-event--danger m-fc-event--solid-focus"
                 },
                 {
-                    title: 'Reporting',                    
+                    title: 'Reporting',
                     description: 'Lorem ipsum dolor incid idunt ut labore',
                     start: moment('2017-09-03T13:30:00'),
                     end: moment('2017-09-04T17:30:00'),
@@ -1633,7 +1633,7 @@ var Dashboard = function() {
                 }
             ],
 
-            eventRender: function(event, element) {
+            eventRender: function (event, element) {
                 if (element.hasClass('fc-day-grid-event')) {
                     element.data('content', event.description);
                     element.data('placement', 'top');
@@ -1645,51 +1645,51 @@ var Dashboard = function() {
                 }
             }
         });
-    }
+    };
 
-    var earningsSlide = function() {
+    var earningsSlide = function () {
 
         var $owl1 = $('.owl-carousel');
-        var $owl2 = $('#m_widget_body_owlcarousel_items'); 
+        var $owl2 = $('#m_widget_body_owlcarousel_items');
 
-        $owl1.children().each( function( index ) {
-            $(this).attr( 'data-position', index ); 
+        $owl1.children().each(function (index) {
+            $(this).attr('data-position', index);
         });
 
-        $owl2.owlCarousel({   
+        $owl2.owlCarousel({
             rtl: mUtil.isRTL(),
-            items: 1,            
-            animateIn: 'fadeIn(100)',            
-            loop: true,                                              
+            items: 1,
+            animateIn: 'fadeIn(100)',
+            loop: true,
         });
- 
+
         $owl1.owlCarousel({
             rtl: mUtil.isRTL(),
             center: true,
             loop: true,
-            items: 2,             
+            items: 2,
         });
-         
-        $(document).on('click', '.carousel', function() {
-            $owl1.trigger('to.owl.carousel', $(this).data( 'position' ) );
-        });  
-    }
 
-    var personalIncome = function() {
+        $(document).on('click', '.carousel', function () {
+            $owl1.trigger('to.owl.carousel', $(this).data('position'));
+        });
+    };
+
+    var personalIncome = function () {
         //** Based on Chartist plugin - https://gionkunz.github.io/chartist-js/index.html
-        var quater1Chart = function() {
+        var quater1Chart = function () {
             if ($('#m_chart_personal_income_quater_1').length == 0) {
                 return;
             }
 
             var chart = new Chartist.Pie('#m_chart_personal_income_quater_1', {
                 series: [{
-                        value: 32,
-                        className: 'custom',
-                        meta: {
-                            color: mApp.getColor('accent')
-                        }
-                    },
+                    value: 32,
+                    className: 'custom',
+                    meta: {
+                        color: mApp.getColor('accent')
+                    }
+                },
                     {
                         value: 32,
                         className: 'custom',
@@ -1712,7 +1712,7 @@ var Dashboard = function() {
                 showLabel: false
             });
 
-            chart.on('draw', function(data) {
+            chart.on('draw', function (data) {
                 if (data.type === 'slice') {
                     // Get the total path length in order to use for dash array animation
                     var pathLength = data.element._node.getTotalLength();
@@ -1755,7 +1755,7 @@ var Dashboard = function() {
             });
 
             // For the sake of the example we update the chart every time it's created with a delay of 8 seconds
-            chart.on('created', function() {
+            chart.on('created', function () {
                 if (window.__anim21278907124) {
                     clearTimeout(window.__anim21278907124);
                     window.__anim21278907124 = null;
@@ -1764,19 +1764,19 @@ var Dashboard = function() {
             });
         };
 
-        var quater2Chart = function() {
+        var quater2Chart = function () {
             if ($('#m_chart_personal_income_quater_2').length == 0) {
                 return;
             }
 
             var chart = new Chartist.Pie('#m_chart_personal_income_quater_2', {
                 series: [{
-                        value: 22,
-                        className: 'custom',
-                        meta: {
-                            color: mApp.getColor('focus')
-                        }
-                    },
+                    value: 22,
+                    className: 'custom',
+                    meta: {
+                        color: mApp.getColor('focus')
+                    }
+                },
                     {
                         value: 44,
                         className: 'custom',
@@ -1799,7 +1799,7 @@ var Dashboard = function() {
                 showLabel: false
             });
 
-            chart.on('draw', function(data) {
+            chart.on('draw', function (data) {
                 if (data.type === 'slice') {
                     // Get the total path length in order to use for dash array animation
                     var pathLength = data.element._node.getTotalLength();
@@ -1842,7 +1842,7 @@ var Dashboard = function() {
             });
 
             // For the sake of the example we update the chart every time it's created with a delay of 8 seconds
-            chart.on('created', function() {
+            chart.on('created', function () {
                 if (window.__anim212789071241111) {
                     clearTimeout(window.__anim212789071241111);
                     window.__anim212789071241111 = null;
@@ -1851,19 +1851,19 @@ var Dashboard = function() {
             });
         };
 
-        var quater3Chart = function() {
+        var quater3Chart = function () {
             if ($('#m_chart_personal_income_quater_3').length == 0) {
                 return;
             }
 
             var chart = new Chartist.Pie('#m_chart_personal_income_quater_3', {
                 series: [{
-                        value: 47,
-                        className: 'custom',
-                        meta: {
-                            color: mApp.getColor('info')
-                        }
-                    },
+                    value: 47,
+                    className: 'custom',
+                    meta: {
+                        color: mApp.getColor('info')
+                    }
+                },
                     {
                         value: 55,
                         className: 'custom',
@@ -1886,7 +1886,7 @@ var Dashboard = function() {
                 showLabel: false
             });
 
-            chart.on('draw', function(data) {
+            chart.on('draw', function (data) {
                 if (data.type === 'slice') {
                     // Get the total path length in order to use for dash array animation
                     var pathLength = data.element._node.getTotalLength();
@@ -1929,7 +1929,7 @@ var Dashboard = function() {
             });
 
             // For the sake of the example we update the chart every time it's created with a delay of 8 seconds
-            chart.on('created', function() {
+            chart.on('created', function () {
                 if (window.__anim212789071241111) {
                     clearTimeout(window.__anim212789071241111);
                     window.__anim212789071241111 = null;
@@ -1938,19 +1938,19 @@ var Dashboard = function() {
             });
         };
 
-       var quater4Chart = function() {
+        var quater4Chart = function () {
             if ($('#m_chart_personal_income_quater_4').length == 0) {
                 return;
             }
 
             var chart = new Chartist.Pie('#m_chart_personal_income_quater_4', {
                 series: [{
-                        value: 37,
-                        className: 'custom',
-                        meta: {
-                            color: mApp.getColor('warning')
-                        }
-                    },
+                    value: 37,
+                    className: 'custom',
+                    meta: {
+                        color: mApp.getColor('warning')
+                    }
+                },
                     {
                         value: 65,
                         className: 'custom',
@@ -1973,7 +1973,7 @@ var Dashboard = function() {
                 showLabel: false
             });
 
-            chart.on('draw', function(data) {
+            chart.on('draw', function (data) {
                 if (data.type === 'slice') {
                     // Get the total path length in order to use for dash array animation
                     var pathLength = data.element._node.getTotalLength();
@@ -2016,7 +2016,7 @@ var Dashboard = function() {
             });
 
             // For the sake of the example we update the chart every time it's created with a delay of 8 seconds
-            chart.on('created', function() {
+            chart.on('created', function () {
                 if (window.__anim212789071241111) {
                     clearTimeout(window.__anim212789071241111);
                     window.__anim212789071241111 = null;
@@ -2027,28 +2027,28 @@ var Dashboard = function() {
 
         quater1Chart();
 
-	    $( document ).find( 'a[data-toggle="pill"]' ).on( 'shown.bs.tab', function( e ) {
-		    var target = $( e.target ).attr( 'href' );
-		    switch ( target ) {
-			    case '#m_personal_income_quater_1':
-				    quater1Chart();
-				    break;
-			    case '#m_personal_income_quater_2':
-				    quater2Chart();
-				    break;
+        $(document).find('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
+            var target = $(e.target).attr('href');
+            switch (target) {
+                case '#m_personal_income_quater_1':
+                    quater1Chart();
+                    break;
+                case '#m_personal_income_quater_2':
+                    quater2Chart();
+                    break;
                 case '#m_personal_income_quater_3':
                     quater3Chart();
-                    break;  
+                    break;
                 case '#m_personal_income_quater_4':
                     quater4Chart();
-                    break;       
-		    }
-	    } );
-    }
+                    break;
+            }
+        });
+    };
 
     return {
         //== Init demos
-        init: function() {
+        init: function () {
             // init charts
             dailySales();
             profitShare();
@@ -2085,7 +2085,7 @@ var Dashboard = function() {
 }();
 
 //== Class initialization on page load
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     Dashboard.init();
 });
 //# sourceMappingURL=dashboard.js.map

@@ -1,8 +1,8 @@
 //== Class definition
-var amChartsStockChartsDemo = function() {
+var amChartsStockChartsDemo = function () {
 
     //== Private functions
-    var demo1 = function() {
+    var demo1 = function () {
         var chartData1 = [];
         var chartData2 = [];
         var chartData3 = [];
@@ -175,9 +175,9 @@ var amChartsStockChartsDemo = function() {
                 "enabled": true
             }
         });
-    }
+    };
 
-    var demo2 = function() {
+    var demo2 = function () {
         var chartData = [];
         generateChartData();
 
@@ -347,9 +347,9 @@ var amChartsStockChartsDemo = function() {
                 "enabled": true
             }
         });
-    }
+    };
 
-    var demo3 = function() {
+    var demo3 = function () {
         var chartData = generateChartData();
 
         function generateChartData() {
@@ -441,9 +441,9 @@ var amChartsStockChartsDemo = function() {
                 }]
             }
         });
-    }
+    };
 
-    var demo4 = function() {
+    var demo4 = function () {
         var chartData = generateChartData();
 
         function generateChartData() {
@@ -569,9 +569,9 @@ var amChartsStockChartsDemo = function() {
                 "position": "bottom-right"
             }
         });
-    }
+    };
 
-    var demo5 = function() {
+    var demo5 = function () {
         var chartData = [];
         generateChartData();
 
@@ -659,43 +659,43 @@ var amChartsStockChartsDemo = function() {
 
 
             "panels": [{
-                    "title": "Value",
-                    "showCategoryAxis": false,
-                    "percentHeight": 70,
-                    "valueAxes": [{
-                        "id": "v1",
-                        "dashLength": 5
-                    }],
+                "title": "Value",
+                "showCategoryAxis": false,
+                "percentHeight": 70,
+                "valueAxes": [{
+                    "id": "v1",
+                    "dashLength": 5
+                }],
 
-                    "categoryAxis": {
-                        "dashLength": 5
-                    },
-
-                    "stockGraphs": [{
-                        "type": "candlestick",
-                        "id": "g1",
-                        "openField": "open",
-                        "closeField": "close",
-                        "highField": "high",
-                        "lowField": "low",
-                        "valueField": "close",
-                        "lineColor": "#7f8da9",
-                        "fillColors": "#7f8da9",
-                        "negativeLineColor": "#db4c3c",
-                        "negativeFillColors": "#db4c3c",
-                        "fillAlphas": 1,
-                        "useDataSetColors": false,
-                        "comparable": true,
-                        "compareField": "value",
-                        "showBalloon": false,
-                        "proCandlesticks": true
-                    }],
-
-                    "stockLegend": {
-                        "valueTextRegular": undefined,
-                        "periodValueTextComparing": "[[percents.value.close]]%"
-                    }
+                "categoryAxis": {
+                    "dashLength": 5
                 },
+
+                "stockGraphs": [{
+                    "type": "candlestick",
+                    "id": "g1",
+                    "openField": "open",
+                    "closeField": "close",
+                    "highField": "high",
+                    "lowField": "low",
+                    "valueField": "close",
+                    "lineColor": "#7f8da9",
+                    "fillColors": "#7f8da9",
+                    "negativeLineColor": "#db4c3c",
+                    "negativeFillColors": "#db4c3c",
+                    "fillAlphas": 1,
+                    "useDataSetColors": false,
+                    "comparable": true,
+                    "compareField": "value",
+                    "showBalloon": false,
+                    "proCandlesticks": true
+                }],
+
+                "stockLegend": {
+                    "valueTextRegular": undefined,
+                    "periodValueTextComparing": "[[percents.value.close]]%"
+                }
+            },
 
                 {
                     "title": "Volume",
@@ -764,10 +764,10 @@ var amChartsStockChartsDemo = function() {
                 "enabled": true
             }
         });
-    }
+    };
     return {
         // public functions
-        init: function() {
+        init: function () {
             demo1();
             demo2();
             demo3();
@@ -777,7 +777,7 @@ var amChartsStockChartsDemo = function() {
     };
 }();
 
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     amChartsStockChartsDemo.init();
 });
 //# sourceMappingURL=stock-charts.js.map

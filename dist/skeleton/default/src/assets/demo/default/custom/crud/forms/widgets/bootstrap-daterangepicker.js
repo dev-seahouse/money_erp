@@ -1,7 +1,7 @@
 //== Class definition
 
 var BootstrapDaterangepicker = function () {
-    
+
     //== Private functions
     var demos = function () {
         // minimum setup
@@ -16,16 +16,16 @@ var BootstrapDaterangepicker = function () {
             buttonClasses: 'm-btn btn',
             applyClass: 'btn-primary',
             cancelClass: 'btn-secondary'
-        }, function(start, end, label) {
-            $('#m_daterangepicker_2 .form-control').val( start.format('YYYY-MM-DD') + ' / ' + end.format('YYYY-MM-DD'));
+        }, function (start, end, label) {
+            $('#m_daterangepicker_2 .form-control').val(start.format('YYYY-MM-DD') + ' / ' + end.format('YYYY-MM-DD'));
         });
 
-         $('#m_daterangepicker_2_modal').daterangepicker({
+        $('#m_daterangepicker_2_modal').daterangepicker({
             buttonClasses: 'm-btn btn',
             applyClass: 'btn-primary',
             cancelClass: 'btn-secondary'
-        }, function(start, end, label) {
-            $('#m_daterangepicker_2 .form-control').val( start.format('YYYY-MM-DD') + ' / ' + end.format('YYYY-MM-DD'));
+        }, function (start, end, label) {
+            $('#m_daterangepicker_2 .form-control').val(start.format('YYYY-MM-DD') + ' / ' + end.format('YYYY-MM-DD'));
         });
 
         // left alignment setup
@@ -33,16 +33,16 @@ var BootstrapDaterangepicker = function () {
             buttonClasses: 'm-btn btn',
             applyClass: 'btn-primary',
             cancelClass: 'btn-secondary'
-        }, function(start, end, label) {
-            $('#m_daterangepicker_3 .form-control').val( start.format('YYYY-MM-DD') + ' / ' + end.format('YYYY-MM-DD'));
+        }, function (start, end, label) {
+            $('#m_daterangepicker_3 .form-control').val(start.format('YYYY-MM-DD') + ' / ' + end.format('YYYY-MM-DD'));
         });
 
         $('#m_daterangepicker_3_modal').daterangepicker({
             buttonClasses: 'm-btn btn',
             applyClass: 'btn-primary',
             cancelClass: 'btn-secondary'
-        }, function(start, end, label) {
-            $('#m_daterangepicker_3 .form-control').val( start.format('YYYY-MM-DD') + ' / ' + end.format('YYYY-MM-DD'));
+        }, function (start, end, label) {
+            $('#m_daterangepicker_3 .form-control').val(start.format('YYYY-MM-DD') + ' / ' + end.format('YYYY-MM-DD'));
         });
 
 
@@ -57,8 +57,8 @@ var BootstrapDaterangepicker = function () {
             locale: {
                 format: 'MM/DD/YYYY h:mm A'
             }
-        }, function(start, end, label) {
-            $('#m_daterangepicker_4 .form-control').val( start.format('MM/DD/YYYY h:mm A') + ' / ' + end.format('MM/DD/YYYY h:mm A'));
+        }, function (start, end, label) {
+            $('#m_daterangepicker_4 .form-control').val(start.format('MM/DD/YYYY h:mm A') + ' / ' + end.format('MM/DD/YYYY h:mm A'));
         });
 
         // date picker
@@ -72,8 +72,8 @@ var BootstrapDaterangepicker = function () {
             locale: {
                 format: 'MM/DD/YYYY'
             }
-        }, function(start, end, label) {
-            $('#m_daterangepicker_5 .form-control').val( start.format('MM/DD/YYYY') + ' / ' + end.format('MM/DD/YYYY'));
+        }, function (start, end, label) {
+            $('#m_daterangepicker_5 .form-control').val(start.format('MM/DD/YYYY') + ' / ' + end.format('MM/DD/YYYY'));
         });
 
         // predefined ranges
@@ -88,26 +88,26 @@ var BootstrapDaterangepicker = function () {
             startDate: start,
             endDate: end,
             ranges: {
-               'Today': [moment(), moment()],
-               'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-               'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-               'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-               'This Month': [moment().startOf('month'), moment().endOf('month')],
-               'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                'Today': [moment(), moment()],
+                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
             }
-        }, function(start, end, label) {
-            $('#m_daterangepicker_6 .form-control').val( start.format('MM/DD/YYYY') + ' / ' + end.format('MM/DD/YYYY'));
+        }, function (start, end, label) {
+            $('#m_daterangepicker_6 .form-control').val(start.format('MM/DD/YYYY') + ' / ' + end.format('MM/DD/YYYY'));
         });
-    }
+    };
 
-    var validationDemos = function() {
+    var validationDemos = function () {
         // input group and left alignment setup
         $('#m_daterangepicker_1_validate').daterangepicker({
             buttonClasses: 'm-btn btn',
             applyClass: 'btn-primary',
             cancelClass: 'btn-secondary'
-        }, function(start, end, label) {
-            $('#m_daterangepicker_1_validate .form-control').val( start.format('YYYY-MM-DD') + ' / ' + end.format('YYYY-MM-DD'));
+        }, function (start, end, label) {
+            $('#m_daterangepicker_1_validate .form-control').val(start.format('YYYY-MM-DD') + ' / ' + end.format('YYYY-MM-DD'));
         });
 
         // input group and left alignment setup
@@ -115,8 +115,8 @@ var BootstrapDaterangepicker = function () {
             buttonClasses: 'm-btn btn',
             applyClass: 'btn-primary',
             cancelClass: 'btn-secondary'
-        }, function(start, end, label) {
-            $('#m_daterangepicker_3_validate .form-control').val( start.format('YYYY-MM-DD') + ' / ' + end.format('YYYY-MM-DD'));
+        }, function (start, end, label) {
+            $('#m_daterangepicker_3_validate .form-control').val(start.format('YYYY-MM-DD') + ' / ' + end.format('YYYY-MM-DD'));
         });
 
         // input group and left alignment setup
@@ -124,21 +124,21 @@ var BootstrapDaterangepicker = function () {
             buttonClasses: 'm-btn btn',
             applyClass: 'btn-primary',
             cancelClass: 'btn-secondary'
-        }, function(start, end, label) {
-            $('#m_daterangepicker_3_validate .form-control').val( start.format('YYYY-MM-DD') + ' / ' + end.format('YYYY-MM-DD'));
-        });        
-    }
+        }, function (start, end, label) {
+            $('#m_daterangepicker_3_validate .form-control').val(start.format('YYYY-MM-DD') + ' / ' + end.format('YYYY-MM-DD'));
+        });
+    };
 
     return {
         // public functions
-        init: function() {
-            demos(); 
+        init: function () {
+            demos();
             validationDemos();
         }
     };
 }();
 
-jQuery(document).ready(function() {    
+jQuery(document).ready(function () {
     BootstrapDaterangepicker.init();
 });
 //# sourceMappingURL=bootstrap-daterangepicker.js.map

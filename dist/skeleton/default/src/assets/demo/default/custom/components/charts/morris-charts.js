@@ -1,9 +1,9 @@
 //== Class definition
-var MorrisChartsDemo = function() {
+var MorrisChartsDemo = function () {
 
     //== Private functions
-    
-    var demo1 = function() {
+
+    var demo1 = function () {
         // LINE CHART
         new Morris.Line({
             // ID of the element in which to draw the chart.
@@ -11,10 +11,10 @@ var MorrisChartsDemo = function() {
             // Chart data records -- each entry in this array corresponds to a point on
             // the chart.
             data: [{
-                    y: '2006',
-                    a: 100,
-                    b: 90
-                },
+                y: '2006',
+                a: 100,
+                b: 90
+            },
                 {
                     y: '2007',
                     a: 75,
@@ -54,17 +54,17 @@ var MorrisChartsDemo = function() {
             // chart.
             labels: ['Values A', 'Values B']
         });
-    }
+    };
 
-    var demo2 = function() {
+    var demo2 = function () {
         // AREA CHART
         new Morris.Area({
             element: 'm_morris_2',
             data: [{
-                    y: '2006',
-                    a: 100,
-                    b: 90
-                },
+                y: '2006',
+                a: 100,
+                b: 90
+            },
                 {
                     y: '2007',
                     a: 75,
@@ -100,17 +100,17 @@ var MorrisChartsDemo = function() {
             ykeys: ['a', 'b'],
             labels: ['Series A', 'Series B']
         });
-    }
+    };
 
-    var demo3 = function() {
+    var demo3 = function () {
         // BAR CHART
         new Morris.Bar({
             element: 'm_morris_3',
             data: [{
-                    y: '2006',
-                    a: 100,
-                    b: 90
-                },
+                y: '2006',
+                a: 100,
+                b: 90
+            },
                 {
                     y: '2007',
                     a: 75,
@@ -146,16 +146,16 @@ var MorrisChartsDemo = function() {
             ykeys: ['a', 'b'],
             labels: ['Series A', 'Series B']
         });
-    }
+    };
 
-    var demo4 = function() {
+    var demo4 = function () {
         // PIE CHART
         new Morris.Donut({
             element: 'm_morris_4',
             data: [{
-                    label: "Download Sales",
-                    value: 12
-                },
+                label: "Download Sales",
+                value: 12
+            },
                 {
                     label: "In-Store Sales",
                     value: 30
@@ -166,11 +166,11 @@ var MorrisChartsDemo = function() {
                 }
             ]
         });
-    }
+    };
 
     return {
         // public functions
-        init: function() {
+        init: function () {
             demo1();
             demo2();
             demo3();
@@ -179,7 +179,7 @@ var MorrisChartsDemo = function() {
     };
 }();
 
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     MorrisChartsDemo.init();
 });
 //# sourceMappingURL=morris-charts.js.map

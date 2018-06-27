@@ -1,6 +1,6 @@
 //== Class definition
 
-var DropzoneDemo = function () {    
+var DropzoneDemo = function () {
     //== Private functions
     var demos = function () {
         // single file upload
@@ -9,13 +9,13 @@ var DropzoneDemo = function () {
             maxFiles: 1,
             maxFilesize: 5, // MB
             addRemoveLinks: true,
-            accept: function(file, done) {
+            accept: function (file, done) {
                 if (file.name == "justinbieber.jpg") {
                     done("Naha, you don't.");
-                } else { 
-                    done(); 
+                } else {
+                    done();
                 }
-            }   
+            }
         };
 
         // multiple file upload
@@ -24,13 +24,13 @@ var DropzoneDemo = function () {
             maxFiles: 10,
             maxFilesize: 10, // MB
             addRemoveLinks: true,
-            accept: function(file, done) {
+            accept: function (file, done) {
                 if (file.name == "justinbieber.jpg") {
                     done("Naha, you don't.");
-                } else { 
-                    done(); 
+                } else {
+                    done();
                 }
-            }   
+            }
         };
 
         // file type validation
@@ -40,20 +40,20 @@ var DropzoneDemo = function () {
             maxFilesize: 10, // MB
             addRemoveLinks: true,
             acceptedFiles: "image/*,application/pdf,.psd",
-            accept: function(file, done) {
+            accept: function (file, done) {
                 if (file.name == "justinbieber.jpg") {
                     done("Naha, you don't.");
-                } else { 
-                    done(); 
+                } else {
+                    done();
                 }
-            }   
+            }
         };
-    }
+    };
 
     return {
         // public functions
-        init: function() {
-            demos(); 
+        init: function () {
+            demos();
         }
     };
 }();

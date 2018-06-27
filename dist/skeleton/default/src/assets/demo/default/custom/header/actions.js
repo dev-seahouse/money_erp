@@ -1,20 +1,20 @@
 //== Class definition
 
-var ActionsDemo = function () {    
+var ActionsDemo = function () {
     //== Private functions
 
     return {
         // public functions
-        init: function() {
+        init: function () {
             $('.summernote').summernote({
-                height: 250, 
+                height: 250,
             });
         }
     };
 }();
 
 //== Initialization
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     ActionsDemo.init();
 });
 //# sourceMappingURL=actions.js.map

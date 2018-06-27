@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewEncapsulation, AfterViewInit } from '@angular/core';
-import { Helpers } from '../../../../../../../helpers';
-import { ScriptLoaderService } from '../../../../../../../_services/script-loader.service';
+import {Component, OnInit, ViewEncapsulation, AfterViewInit} from '@angular/core';
+import {Helpers} from '../../../../../../../helpers';
+import {ScriptLoaderService} from '../../../../../../../_services/script-loader.service';
 
 
 @Component({
@@ -14,9 +14,11 @@ export class AdvancedColumnVisibilityComponent implements OnInit, AfterViewInit 
     constructor(private _script: ScriptLoaderService) {
 
     }
+
     ngOnInit() {
 
     }
+
     ngAfterViewInit() {
         this._script.loadScripts('app-advanced-column-visibility',
             ['assets/vendors/custom/datatables/datatables.bundle.js',
