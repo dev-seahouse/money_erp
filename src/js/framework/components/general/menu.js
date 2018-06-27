@@ -15,7 +15,7 @@ var mMenu = function(elementId, options) {
     var defaultOptions = {       
         // accordion submenu mode
         accordion: {
-            slideSpeed: 200, // accordion toggle slide speed in milliseconds
+            slideSpeed: 100, // accordion toggle slide speed in milliseconds
             autoScroll: false, // enable auto scrolling(focus) to the clicked menu item
             autoScrollSpeed: 1200,
             expandAll: true // allow having multiple expanded accordions in the menu
