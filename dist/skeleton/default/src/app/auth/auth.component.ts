@@ -6,13 +6,13 @@ import {
     ViewContainerRef,
     ViewEncapsulation,
 } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {ScriptLoaderService} from '../_services/script-loader.service';
-import {AuthenticationService} from './_services/authentication.service';
-import {AlertService} from './_services/alert.service';
-import {UserService} from './_services/user.service';
-import {AlertComponent} from './_directives/alert.component';
-import {Helpers} from '../helpers';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ScriptLoaderService } from '../_services/script-loader.service';
+import { AuthenticationService } from './_services/authentication.service';
+import { AlertService } from './_services/alert.service';
+import { UserService } from './_services/user.service';
+import { AlertComponent } from './_directives/alert.component';
+import { Helpers } from '../helpers';
 
 declare let $: any;
 declare let mUtil: any;
@@ -29,11 +29,11 @@ export class AuthComponent implements OnInit {
     returnUrl: string;
 
     @ViewChild('alertSignin',
-        {read: ViewContainerRef}) alertSignin: ViewContainerRef;
+        { read: ViewContainerRef }) alertSignin: ViewContainerRef;
     @ViewChild('alertSignup',
-        {read: ViewContainerRef}) alertSignup: ViewContainerRef;
+        { read: ViewContainerRef }) alertSignup: ViewContainerRef;
     @ViewChild('alertForgotPass',
-        {read: ViewContainerRef}) alertForgotPass: ViewContainerRef;
+        { read: ViewContainerRef }) alertForgotPass: ViewContainerRef;
 
     constructor(
         private _router: Router,
@@ -54,12 +54,12 @@ export class AuthComponent implements OnInit {
         this._script.loadScripts('body', [
             'assets/vendors/base/vendors.bundle.js',
             'assets/demo/default/base/scripts.bundle.js'], true).then(() => {
-            Helpers.setLoading(false);
-            this.handleFormSwitch();
-            this.handleSignInFormSubmit();
-            this.handleSignUpFormSubmit();
-            this.handleForgetPasswordFormSubmit();
-        });
+                Helpers.setLoading(false);
+                this.handleFormSwitch();
+                this.handleSignInFormSubmit();
+                this.handleSignUpFormSubmit();
+                this.handleForgetPasswordFormSubmit();
+            });
     }
 
     signin() {

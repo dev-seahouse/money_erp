@@ -1,7 +1,7 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {Router, NavigationStart, NavigationEnd} from '@angular/router';
-import {Helpers} from '../helpers';
-import {ScriptLoaderService} from '../_services/script-loader.service';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router, NavigationStart, NavigationEnd } from '@angular/router';
+import { Helpers } from '../helpers';
+import { ScriptLoaderService } from '../_services/script-loader.service';
 
 declare let mApp: any;
 declare let mUtil: any;
@@ -41,7 +41,7 @@ export class ThemeComponent implements OnInit {
                 Helpers.setLoading(false);
                 // content m-wrapper animation
                 let animation = 'm-animate-fade-in-up';
-                $('.m-wrapper').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function (e) {
+                $('.m-wrapper').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(e) {
                     $('.m-wrapper').removeClass(animation);
                 }).removeClass(animation).addClass(animation);
             }
