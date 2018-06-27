@@ -6,25 +6,27 @@ import { LayoutModule } from '../../../../../../layouts/layout.module';
 import { DefaultComponent } from '../../../../default.component';
 
 const routes: Routes = [
-    {
+  {
+    "path": "",
+    "component": DefaultComponent,
+    "children": [
+      {
         "path": "",
-        "component": DefaultComponent,
-        "children": [
-            {
-                "path": "",
-                "component": SearchOptionsColumnSearchComponent
-            }
-        ]
-    }
+        "component": SearchOptionsColumnSearchComponent
+      }
+    ]
+  }
 ];
-@NgModule({imports: [
-CommonModule,RouterModule.forChild(routes),LayoutModule
-],exports: [
-RouterModule
-],declarations: [
-SearchOptionsColumnSearchComponent
-]})
-export class SearchOptionsColumnSearchModule  {
+@NgModule({
+  imports: [
+    CommonModule, RouterModule.forChild(routes), LayoutModule
+  ], exports: [
+    RouterModule
+  ], declarations: [
+    SearchOptionsColumnSearchComponent
+  ]
+})
+export class SearchOptionsColumnSearchModule {
 
 
 

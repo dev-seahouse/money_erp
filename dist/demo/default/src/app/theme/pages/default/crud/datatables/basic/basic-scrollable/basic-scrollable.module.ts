@@ -6,25 +6,27 @@ import { LayoutModule } from '../../../../../../layouts/layout.module';
 import { DefaultComponent } from '../../../../default.component';
 
 const routes: Routes = [
-    {
+  {
+    "path": "",
+    "component": DefaultComponent,
+    "children": [
+      {
         "path": "",
-        "component": DefaultComponent,
-        "children": [
-            {
-                "path": "",
-                "component": BasicScrollableComponent
-            }
-        ]
-    }
+        "component": BasicScrollableComponent
+      }
+    ]
+  }
 ];
-@NgModule({imports: [
-CommonModule,RouterModule.forChild(routes),LayoutModule
-],exports: [
-RouterModule
-],declarations: [
-BasicScrollableComponent
-]})
-export class BasicScrollableModule  {
+@NgModule({
+  imports: [
+    CommonModule, RouterModule.forChild(routes), LayoutModule
+  ], exports: [
+    RouterModule
+  ], declarations: [
+    BasicScrollableComponent
+  ]
+})
+export class BasicScrollableModule {
 
 
 

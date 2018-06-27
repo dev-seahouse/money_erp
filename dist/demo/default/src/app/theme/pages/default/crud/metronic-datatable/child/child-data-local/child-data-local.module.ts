@@ -6,25 +6,27 @@ import { LayoutModule } from '../../../../../../layouts/layout.module';
 import { DefaultComponent } from '../../../../default.component';
 
 const routes: Routes = [
-    {
+  {
+    "path": "",
+    "component": DefaultComponent,
+    "children": [
+      {
         "path": "",
-        "component": DefaultComponent,
-        "children": [
-            {
-                "path": "",
-                "component": ChildDataLocalComponent
-            }
-        ]
-    }
+        "component": ChildDataLocalComponent
+      }
+    ]
+  }
 ];
-@NgModule({imports: [
-CommonModule,RouterModule.forChild(routes),LayoutModule
-],exports: [
-RouterModule
-],declarations: [
-ChildDataLocalComponent
-]})
-export class ChildDataLocalModule  {
+@NgModule({
+  imports: [
+    CommonModule, RouterModule.forChild(routes), LayoutModule
+  ], exports: [
+    RouterModule
+  ], declarations: [
+    ChildDataLocalComponent
+  ]
+})
+export class ChildDataLocalModule {
 
 
 

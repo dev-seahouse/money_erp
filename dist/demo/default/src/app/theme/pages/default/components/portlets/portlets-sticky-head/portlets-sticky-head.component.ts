@@ -3,18 +3,18 @@ import { Helpers } from '../../../../../../helpers';
 
 
 @Component({
-selector: "app-portlets-sticky-head",
-templateUrl: "./portlets-sticky-head.component.html",
-encapsulation: ViewEncapsulation.None,
+  selector: "app-portlets-sticky-head",
+  templateUrl: "./portlets-sticky-head.component.html",
+  encapsulation: ViewEncapsulation.None,
 })
 export class PortletsStickyHeadComponent implements OnInit {
 
 
-constructor()  {
+  constructor() {
 
-}
-ngOnInit()  {
+  }
+  ngOnInit() {
 
-}
+  }
 
 }

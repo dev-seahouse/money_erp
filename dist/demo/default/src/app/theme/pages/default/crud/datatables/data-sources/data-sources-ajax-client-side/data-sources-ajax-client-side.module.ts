@@ -6,25 +6,27 @@ import { LayoutModule } from '../../../../../../layouts/layout.module';
 import { DefaultComponent } from '../../../../default.component';
 
 const routes: Routes = [
-    {
+  {
+    "path": "",
+    "component": DefaultComponent,
+    "children": [
+      {
         "path": "",
-        "component": DefaultComponent,
-        "children": [
-            {
-                "path": "",
-                "component": DataSourcesAjaxClientSideComponent
-            }
-        ]
-    }
+        "component": DataSourcesAjaxClientSideComponent
+      }
+    ]
+  }
 ];
-@NgModule({imports: [
-CommonModule,RouterModule.forChild(routes),LayoutModule
-],exports: [
-RouterModule
-],declarations: [
-DataSourcesAjaxClientSideComponent
-]})
-export class DataSourcesAjaxClientSideModule  {
+@NgModule({
+  imports: [
+    CommonModule, RouterModule.forChild(routes), LayoutModule
+  ], exports: [
+    RouterModule
+  ], declarations: [
+    DataSourcesAjaxClientSideComponent
+  ]
+})
+export class DataSourcesAjaxClientSideModule {
 
 
 
