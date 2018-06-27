@@ -10,19 +10,19 @@ const routes: Routes = [
         'canActivate': [AuthGuard],
         'children': [
             {
-                'path': 'index',
+                'path': 'dashboard',
                 'loadChildren': '.\/pages\/default\/blank\/blank.module#BlankModule',
             },
             {
                 'path': '',
-                'redirectTo': 'index',
+                'redirectTo': 'dashboard',
                 'pathMatch': 'full',
             },
         ],
     },
     {
         'path': '**',
-        'redirectTo': 'index',
+        'redirectTo': 'dashboard',
         'pathMatch': 'full',
     },
 ];
