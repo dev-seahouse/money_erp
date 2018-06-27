@@ -488,7 +488,7 @@ var mMenu = function(elementId, options) {
             var arrow = mUtil.child( submenu, '.m-menu__arrow.m-menu__arrow--adjust');
             var subnav = mUtil.child( submenu, '.m-menu__subnav');
 
-            if ( arrow ) {
+            if ( arrow ) { 
                 var pos = 0; 
                 var link = mUtil.child(item, '.m-menu__link');
 
@@ -496,23 +496,40 @@ var mMenu = function(elementId, options) {
                     if ( mUtil.hasClass(submenu, 'm-menu__submenu--right')) {
                         pos = mUtil.outerWidth(item) / 2;
                         if (mUtil.hasClass(submenu, 'm-menu__submenu--pull')) {
-                            pos = pos + Math.abs( parseFloat(mUtil.css(submenu, 'margin-right')) );
+                            if (mUtil.isRTL()) {
+                                pos = pos + Math.abs( parseFloat(mUtil.css(submenu, 'margin-left')) );
+                            } else {
+                                pos = pos + Math.abs( parseFloat(mUtil.css(submenu, 'margin-right')) );
+                            }
                         }
                         pos = parseInt(mUtil.css(submenu, 'width')) - pos;
                     } else if ( mUtil.hasClass(submenu, 'm-menu__submenu--left') ) {
                         pos = mUtil.outerWidth(item) / 2;
                         if ( mUtil.hasClass(submenu, 'm-menu__submenu--pull')) {
-                            pos = pos + Math.abs( parseFloat(mUtil.css(submenu, 'margin-left')) );
+                            if (mUtil.isRTL()) {
+                                pos = pos + Math.abs( parseFloat(mUtil.css(submenu, 'margin-right')) );
+                            } else {
+                                pos = pos + Math.abs( parseFloat(mUtil.css(submenu, 'margin-left')) );
+                            }
                         }
+                    }
+
+                    if (mUtil.isRTL()) {
+                        mUtil.css(arrow, 'right', pos + 'px');  
+                    } else {
+                        mUtil.css(arrow, 'left', pos + 'px');  
                     }
                 } else {
                     if ( mUtil.hasClass(submenu, 'm-menu__submenu--center') || mUtil.hasClass(submenu, 'm-menu__submenu--full') ) {
                         pos = mUtil.offset(item).left - ((mUtil.getViewPort().width - parseInt(mUtil.css(submenu, 'width'))) / 2);
                         pos = pos + (mUtil.outerWidth(item) / 2);
+
+                        mUtil.css(arrow, 'left', pos + 'px');
+                        if (mUtil.isRTL()) {
+                            mUtil.css(arrow, 'right', 'auto');
+                        }                        
                     }
                 }
-
-                mUtil.css(arrow, 'left', pos + 'px');  
             }
         },
 

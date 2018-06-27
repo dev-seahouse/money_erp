@@ -17,16 +17,14 @@ const routes: Routes = [
         ]
     }
 ];
-@NgModule({
-    imports: [
-        CommonModule, RouterModule.forChild(routes), LayoutModule
-    ], exports: [
-        RouterModule
-    ], declarations: [
-        CalendarGoogleComponent
-    ]
-})
-export class CalendarGoogleModule {
+@NgModule({imports: [
+CommonModule,RouterModule.forChild(routes),LayoutModule
+],exports: [
+RouterModule
+],declarations: [
+CalendarGoogleComponent
+]})
+export class CalendarGoogleModule  {
 
 
 

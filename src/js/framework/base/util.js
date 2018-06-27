@@ -168,10 +168,35 @@ var mUtil = function() {
         },
 
         /**
+         * Removes window resize event handler.
+         * @param {function} callback function.
+         */
+        removeResizeHandler: function(callback) {
+            for (var i = 0; i < resizeHandlers.length; i++) {
+                if (callback === resizeHandlers[i]) {
+                    delete resizeHandlers[i];
+                }
+            }
+        },
+
+        /**
          * Trigger window resize handlers.
          */
         runResizeHandlers: function() {
             _runResizeHandlers();
+        },
+
+        resize: function() {
+            if (typeof(Event) === 'function') {
+                // modern browsers
+                window.dispatchEvent(new Event('resize'));
+            } else {
+                // for IE and other old browsers
+                // causes deprecation warning on modern browsers
+                var evt = window.document.createEvent('UIEvents'); 
+                evt.initUIEvent('resize', true, false, window, 0); 
+                window.dispatchEvent(evt);
+            }
         },
 
         /**
@@ -686,13 +711,31 @@ var mUtil = function() {
             }
         },
 
-        offset: function(el) {
-            var rect = el.getBoundingClientRect();
+        offset: function(elem) {
+            var rect, win;
+            elem = mUtil.get(elem);
+
+            if ( !elem ) {
+                return;
+            }
+
+            // Return zeros for disconnected and hidden (display: none) elements (gh-2310)
+            // Support: IE <=11 only
+            // Running getBoundingClientRect on a
+            // disconnected node in IE throws an error
+
+            if ( !elem.getClientRects().length ) {
+                return { top: 0, left: 0 };
+            }
+
+            // Get document-relative position by adding viewport scroll to viewport-relative gBCR
+            rect = elem.getBoundingClientRect();
+            win = elem.ownerDocument.defaultView;
 
             return {
-                top: rect.top + document.body.scrollTop,
-                left: rect.left + document.body.scrollLeft
-            }
+                top: rect.top + win.pageYOffset,
+                left: rect.left + win.pageXOffset
+            };
         },
 
         height: function(el) {
@@ -1082,50 +1125,34 @@ var mUtil = function() {
             }
         },
 
-        scrollTo: function(destination, duration, easing, callback) {
-            duration = duration ? duration : 400;
+        scrollTo: function(target, offset, duration) {
+            var duration = duration ? duration : 500;
+            var target = mUtil.get(target);
+            var targetPos = target ? mUtil.offset(target).top : 0;
+            var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+            var from, to;
 
-            var linear = function(t) {
-                return t;
-            };
-
-            const start = window.pageYOffset;
-            const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
-
-            const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
-            const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
-            const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop;
-            const destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
-
-            if ('requestAnimationFrame' in window === false) {
-                window.scroll(0, destinationOffsetToScroll);
-                if (callback) {
-                    callback();
-                }
-                return;
+            if (targetPos > scrollPos) {
+                from = targetPos;
+                to = scrollPos;
+            } else {
+                from = scrollPos;
+                to = targetPos;
             }
 
-            function scroll() {
-                const now = 'now' in window.performance ? performance.now() : new Date().getTime();
-                const time = Math.min(1, ((now - startTime) / duration));
-                const timeFunction = linear(time);
-                window.scroll(0, Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start));
-
-                if (window.pageYOffset === destinationOffsetToScroll) {
-                    if (callback) {
-                        callback();
-                    }
-                    return;
-                }
-
-                requestAnimationFrame(scroll);
+            if (offset) {
+                to += offset;
             }
 
-            scroll();
+            mUtil.animate(from, to, duration, function(value) {
+                document.documentElement.scrollTop = value;
+                document.body.parentNode.scrollTop = value;
+                document.body.scrollTop = value;
+            }); //, easing, done
         },
 
-        scrollTop: function(speed) {
-            mUtil.scrollTo( mUtil.get('body') );
+        scrollTop: function(offset, duration) {
+            mUtil.scrollTo(null, offset, duration);
         },
 
         isArray: function(obj) {
@@ -1202,6 +1229,10 @@ var mUtil = function() {
             return false;
         },
 
+        isRTL: function() {
+            return (mUtil.attr(mUtil.get('html'), 'direction') == 'rtl');
+        },
+
         //== Scroller
         scrollerInit: function(element, options) {
             //== Define init function
@@ -1229,6 +1260,9 @@ var mUtil = function() {
 
                         ps.destroy();
                         ps = mUtil.data(element).remove('ps');
+                    } else if (height > 0){
+                        mUtil.css(element, 'overflow', 'auto');
+                        mUtil.css(element, 'height', height + 'px');
                     }
 
                     return;

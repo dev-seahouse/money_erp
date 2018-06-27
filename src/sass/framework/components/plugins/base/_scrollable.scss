@@ -51,7 +51,7 @@
         }        
 
         @include m-set-component--scrollable-skin( get-color(light, panel, '+++') );
-    }    
+    }
 
     .ps {
         overflow: hidden;
@@ -64,8 +64,18 @@
         }
 
         > .ps__rail-y {
+            right: 0;
+
             > .ps__thumb-y {
                 background: get-color(light, panel, '++++');                
+            }
+        }
+    }
+
+    [direction="rtl"] {
+        .ps {
+            > .ps__rail-y {
+                right: 4px;
             }
         }
     }

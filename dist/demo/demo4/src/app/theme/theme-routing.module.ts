@@ -11,19 +11,19 @@ const routes: Routes = [
         "children": [
             {
                 "path": "index",
-                "loadChildren": ".\/pages\/aside-left-display-disabled\/index\/index.module#IndexModule"
+                "loadChildren": "./pages/aside-left-display-disabled/index/index.module#IndexModule"
             },
             {
                 "path": "inner",
-                "loadChildren": ".\/pages\/default\/inner\/inner.module#InnerModule"
+                "loadChildren": "./pages/default/inner/inner.module#InnerModule"
             },
             {
                 "path": "profile",
-                "loadChildren": ".\/pages\/default\/profile\/profile.module#ProfileModule"
+                "loadChildren": "./pages/default/profile/profile.module#ProfileModule"
             },
             {
                 "path": "404",
-                "loadChildren": ".\/pages\/default\/not-found\/not-found.module#NotFoundModule"
+                "loadChildren": "./pages/default/not-found/not-found.module#NotFoundModule"
             },
             {
                 "path": "",

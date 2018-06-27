@@ -354,18 +354,25 @@
 
                 .m-portlet__head-tools  {
                     padding: 0;
+                    align-items: stretch;
 
                     // portlet tabs
                     .m-tabs-line {
                         position: relative;
-                        height: 100%;
                         margin: 0; 
                         border-bottom-color: transparent;
                         bottom: -1px;
+                        display:flex;
+                        align-items: stretch;
+
+                        .m-tabs__item {
+                            display:flex;
+                            align-items: stretch;
+                        }
 
                         .m-tabs__link {
-                            height: 100%;
-                            padding: ($space - 0.5rem) 0 ($space - 0.7rem) 0;
+                            display:flex;
+                            align-items: center;
                         }
 
                         &.m-tabs-line--2x {
@@ -621,26 +628,7 @@
                 z-index: 101;
                 background: #fff;
             }
-        }
-
-        //== Angular source code viewer
-        &.m-portlet--ngviewer {
-            .m-portlet__body { 
-                padding: 0;
-
-                .m-portlet__code {
-                    display: none;
-
-                    &.m-portlet__code--show {
-                        display: block;
-                    }
-                }
-                
-                .m-portlet__preview {
-                    padding: $body-padding;   
-                }
-            }      
-        }          
+        }        
     }
 
     @include desktop() {

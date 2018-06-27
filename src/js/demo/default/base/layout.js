@@ -180,9 +180,11 @@ var mLayout = function() {
             target: 'body',
             targetState: 'm-brand--minimize m-aside-left--minimize',
             togglerState: 'm-brand__toggler--active'
-        });
+        }); 
 
-        asideLeftToggle.on('toggle', function(toggle) {
+        asideLeftToggle.on('toggle', function(toggle) {     
+            mainPortlet.updateSticky();       
+            
             horMenu.pauseDropdownHover(800);
             asideMenu.pauseDropdownHover(800);
 
@@ -281,15 +283,11 @@ var mLayout = function() {
     }
 
     //== Main portlet(sticky portlet)
-    var initMainPortlet = function() {
-        if (!mUtil.get('main_portlet')) {
-            return;
-        }
-
-        mainPortlet = new mPortlet('main_portlet', {
+    var createMainPortlet = function() {
+        return new mPortlet('main_portlet', {
             sticky: {
                 offset: parseInt(mUtil.css( mUtil.get('m_header'), 'height')),
-                zIndex: 100,
+                zIndex: 90,
                 position: {
                     top: function() {
                         return parseInt(mUtil.css( mUtil.get('m_header'), 'height') );
@@ -298,7 +296,12 @@ var mLayout = function() {
                         var left = parseInt(mUtil.css( mUtil.getByClass('m-content'), 'paddingLeft'));
                         
                         if (mUtil.isInResponsiveRange('desktop')) {
-                            left += parseInt(mUtil.css(mUtil.get('m_aside_left'), 'width') );
+                            //left += parseInt(mUtil.css(mUtil.get('m_aside_left'), 'width') );
+                            if (mUtil.hasClass(mUtil.get('body'), 'm-aside-left--minimize')) {
+                                left += 78; // need to use hardcoded width of the minimize aside
+                            } else {
+                                left += 255; // need to use hardcoded width of the aside
+                            }
                         } 
 
                         return left; 
@@ -309,21 +312,32 @@ var mLayout = function() {
                 }
             }
         });
-
-        mainPortlet.initSticky();
-
-        mUtil.addResizeHandler(function() {
-            if (mainPortlet) {
-                mainPortlet.updateSticky();
-            }
-        });
     }
 
     return {
         init: function() {
             this.initHeader();
             this.initAside();
-            initMainPortlet();
+            this.initMainPortlet();
+        },
+
+        initMainPortlet: function() {
+            if (!mUtil.get('main_portlet')) {
+                return;
+            }
+            
+            mainPortlet = createMainPortlet();
+            mainPortlet.initSticky();
+            
+            mUtil.addResizeHandler(function(){
+                mainPortlet.updateSticky();
+            });
+        },
+
+        resetMainPortlet: function() {
+            mainPortlet.destroySticky();
+            mainPortlet = createMainPortlet();
+            mainPortlet.initSticky();
         },
 
         initHeader: function() {

@@ -17,16 +17,14 @@ const routes: Routes = [
         ]
     }
 ];
-@NgModule({
-    imports: [
-        CommonModule, RouterModule.forChild(routes), LayoutModule
-    ], exports: [
-        RouterModule
-    ], declarations: [
-        WidgetsBootstrapSelectComponent
-    ]
-})
-export class WidgetsBootstrapSelectModule {
+@NgModule({imports: [
+CommonModule,RouterModule.forChild(routes),LayoutModule
+],exports: [
+RouterModule
+],declarations: [
+WidgetsBootstrapSelectComponent
+]})
+export class WidgetsBootstrapSelectModule  {
 
 
 

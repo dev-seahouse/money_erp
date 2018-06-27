@@ -536,14 +536,14 @@ xl: 1200px
 // sass list:  (lineawesome: 1.1rem, fontawesome: 1.2rem, metronic: 1.1rem)
 @mixin icons-size($config) {
     // lineawesome
-    [class^="la-"]:not(.la-2x):not(.la-3x):not(.la-4x), 
-    [class*=" la-"]:not(.la-2x):not(.la-3x):not(.la-4x) {
+    [class^="la-"], 
+    [class*=" la-"] {
         font-size: array-get($config, lineawesome);
     } 
 
     // fontaweseom icons 
-    [class^="fa-"]:not(.fa-2x):not(.fa-3x):not(.fa-4x), 
-    [class*=" fa-"]:not(.fa-2x):not(.fa-3x):not(.fa-4x) {
+    [class^="fa-"], 
+    [class*=" fa-"] {
         font-size: array-get($config, fontawesome);
     } 
 

@@ -292,6 +292,7 @@ var mDropdown = function(elementId, options) {
                     
                     mUtil.css(the.layout.arrow, 'right', 'auto');
                     mUtil.css(the.layout.arrow, 'left', pos + 'px');
+                    
                     mUtil.css(the.layout.arrow, 'margin-left', 'auto');
                     mUtil.css(the.layout.arrow, 'margin-right', 'auto');
                 } else if (mUtil.hasClass(the.layout.arrow, 'm-dropdown__arrow--adjust')) {
@@ -301,11 +302,21 @@ var mDropdown = function(elementId, options) {
                     }
 
                     if (alignment == 'right') {
-                        mUtil.css(the.layout.arrow, 'left', 'auto');
-                        mUtil.css(the.layout.arrow, 'right', pos + 'px');
+                        if (mUtil.isRTL()) {
+                            mUtil.css(the.layout.arrow, 'right', 'auto');
+                            mUtil.css(the.layout.arrow, 'left', pos + 'px');
+                        } else {
+                            mUtil.css(the.layout.arrow, 'left', 'auto');
+                            mUtil.css(the.layout.arrow, 'right', pos + 'px');
+                        }
                     } else {
-                        mUtil.css(the.layout.arrow, 'right', 'auto');
-                        mUtil.css(the.layout.arrow, 'left', pos + 'px');
+                        if (mUtil.isRTL()) {
+                            mUtil.css(the.layout.arrow, 'left', 'auto');
+                            mUtil.css(the.layout.arrow, 'right', pos + 'px');
+                        } else {
+                            mUtil.css(the.layout.arrow, 'right', 'auto');
+                            mUtil.css(the.layout.arrow, 'left', pos + 'px');
+                        }                       
                     }
                 }
             }

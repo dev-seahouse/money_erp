@@ -85,6 +85,8 @@
 
 						//== Row checkbox
 						&.m-datatable__cell--check {
+							text-align: center;
+							
 							> span {
 								overflow: visible;
 
@@ -121,6 +123,8 @@
 
 							.dropdown-menu.dropdown-menu-right {
 								margin-right: -0.8rem;
+								/*rtl:ignore*/
+								margin-left: 65px;
 							}
 
 							.dropdown-menu.dropdown-menu-left {

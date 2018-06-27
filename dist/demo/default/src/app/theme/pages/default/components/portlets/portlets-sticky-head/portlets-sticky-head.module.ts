@@ -17,16 +17,14 @@ const routes: Routes = [
         ]
     }
 ];
-@NgModule({
-    imports: [
-        CommonModule, RouterModule.forChild(routes), LayoutModule
-    ], exports: [
-        RouterModule
-    ], declarations: [
-        PortletsStickyHeadComponent
-    ]
-})
-export class PortletsStickyHeadModule {
+@NgModule({imports: [
+CommonModule,RouterModule.forChild(routes),LayoutModule
+],exports: [
+RouterModule
+],declarations: [
+PortletsStickyHeadComponent
+]})
+export class PortletsStickyHeadModule  {
 
 
 

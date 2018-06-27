@@ -14,9 +14,9 @@ var WizardDemo = function () {
         });
 
         //== Validation before going to next page
-        wizard.on('beforeNext', function(wizard) {
+        wizard.on('beforeNext', function(wizardObj) {
             if (validator.form() !== true) {
-                wizard.stop();  // don't go to the next step
+                wizardObj.stop();  // don't go to the next step
             }
         })
 

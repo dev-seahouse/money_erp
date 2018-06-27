@@ -48,13 +48,17 @@
 						}
 					}
 
-					> .m-menu__link-arrow {
+					> .m-menu__ver-arrow {
 						display: inline-block;
 						position: absolute;
+						right: 40px;
+						top: 50%;
 					}
 
-					> .m-menu__ver-arrow {
-						display: none;
+					> .m-menu__item-here {
+						/*rtl:raw:
+				        display: none !important;
+				        */
 					}
 				}
 
@@ -88,9 +92,23 @@
 						}
 					}
 				}
+			}
+		}
+	}
 
-				> .m-menu__submenu {
-					margin-left: $m-aside-left-compact-width !important;
+	body:not(.m-aside-left--fixed) {
+		.m-aside-menu {
+			.m-menu__nav {
+				> .m-menu__item {
+					> .m-menu__link  {
+						> .m-menu__ver-arrow {
+							display: none;
+						}
+					}
+
+					> .m-menu__submenu {
+						margin-left: $m-aside-left-compact-width !important;
+					}
 				}
 			}
 		}

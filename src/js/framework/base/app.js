@@ -25,7 +25,8 @@ var mApp = function() {
         var skin = el.data('skin') ? 'm-tooltip--skin-' + el.data('skin') : '';
         var width = el.data('width') == 'auto' ? 'm-tooltop--auto-width' : '';
         var triggerValue = el.data('trigger') ? el.data('trigger') : 'hover';
-            
+        var placement = el.data('placement') ? el.data('placement') : 'left';
+                    
         el.tooltip({
             trigger: triggerValue,
             template: '<div class="m-tooltip ' + skin + ' ' + width + ' tooltip" role="tooltip">\
@@ -357,9 +358,9 @@ var mApp = function() {
                     zIndex: '10'
                 },
                 onUnblock: function() {
-                    if (el) {
-                        mUtil.css(el, 'position', '');
-                        mUtil.css(el, 'zoom', '');
+                    if (el && el[0]) {
+                        mUtil.css(el[0], 'position', '');
+                        mUtil.css(el[0], 'zoom', '');
                     }                    
                 }
             };

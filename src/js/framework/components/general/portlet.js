@@ -122,42 +122,48 @@ var mPortlet = function(elementId, options) {
         },
 
         /**
-         * Enable stickt mode
+         * Window scroll handle event for sticky portlet
          */
-        initSticky: function() {
-            var lastScrollTop = 0;
+        onScrollSticky: function() {
+            var st = window.pageYOffset;
             var offset = the.options.sticky.offset;
 
+
+            if (st > offset) {
+                if (mUtil.hasClass(body, 'm-portlet--sticky') === false) {
+                    Plugin.eventTrigger('stickyOn');
+
+                    mUtil.addClass(body, 'm-portlet--sticky');
+                    mUtil.addClass(element, 'm-portlet--sticky');
+
+                    Plugin.updateSticky();
+                }
+            } else { // back scroll mode
+                if (mUtil.hasClass(body, 'm-portlet--sticky')) {
+                    Plugin.eventTrigger('stickyOff');
+
+                    mUtil.removeClass(body, 'm-portlet--sticky');
+                    mUtil.removeClass(element, 'm-portlet--sticky');
+
+                    Plugin.resetSticky();
+                }
+            }
+        },
+
+        /**
+         * Init sticky portlet
+         */
+        initSticky: function() {
             if (!the.head) {
                 return;
             }
 
-            window.addEventListener('scroll', function() {
-                var on, off, st;
-                st = window.pageYOffset;
-
-                if (st > offset) {
-                    if (mUtil.hasClass(body, 'm-portlet--sticky') === false) {
-                        Plugin.eventTrigger('stickyOn');
-
-                        mUtil.addClass(body, 'm-portlet--sticky');
-                        mUtil.addClass(element, 'm-portlet--sticky');
-
-                        Plugin.updateSticky();
-                    }
-                } else { // back scroll mode
-                    if (mUtil.hasClass(body, 'm-portlet--sticky')) {
-                        Plugin.eventTrigger('stickyOff');
-
-                        mUtil.removeClass(body, 'm-portlet--sticky');
-                        mUtil.removeClass(element, 'm-portlet--sticky');
-
-                        Plugin.resetSticky();
-                    }
-                }
-            });
+            window.addEventListener('scroll', Plugin.onScrollSticky);
         },
 
+        /**
+         * Update sticky portlet positions
+         */
         updateSticky: function() {
             if (!the.head) {
                 return;
@@ -188,11 +194,21 @@ var mPortlet = function(elementId, options) {
 
                 mUtil.css(the.head, 'z-index', the.options.sticky.zIndex);
                 mUtil.css(the.head, 'top', top + 'px');
-                mUtil.css(the.head, 'left', left + 'px');
-                mUtil.css(the.head, 'right', right + 'px');
+
+                if (mUtil.isRTL()) {
+                    mUtil.css(the.head, 'left', right + 'px');
+                    mUtil.css(the.head, 'right',left  + 'px');
+                } else {
+                    mUtil.css(the.head, 'left', left + 'px');
+                    mUtil.css(the.head, 'right', right + 'px');
+                }
+                
             }
         },
 
+        /**
+         * Reset sticky portlet positions
+         */
         resetSticky: function() {
             if (!the.head) {
                 return;
@@ -204,6 +220,19 @@ var mPortlet = function(elementId, options) {
                 mUtil.css(the.head, 'left', '');
                 mUtil.css(the.head, 'right', '');
             }
+        },
+
+        /**
+         * Destroy sticky portlet
+         */
+        destroySticky: function() {
+            if (!the.head) {
+                return;
+            }
+
+            Plugin.resetSticky();
+
+            window.removeEventListener('scroll', Plugin.onScrollSticky);
         },
 
         /**
@@ -516,7 +545,7 @@ var mPortlet = function(elementId, options) {
     };
 
     /**
-     * Remove portlet
+     * Init sticky portlet
      * @returns {mPortlet}
      */
     the.initSticky = function() {
@@ -524,7 +553,7 @@ var mPortlet = function(elementId, options) {
     };
 
     /**
-     * Remove portlet
+     * Update sticky portlet scroll event
      * @returns {mPortlet}
      */
     the.updateSticky = function() {
@@ -532,11 +561,19 @@ var mPortlet = function(elementId, options) {
     };
 
     /**
-     * Remove portlet
+     * Reset sticky portlet positions
      * @returns {mPortlet}
      */
     the.resetSticky = function() {
         return Plugin.resetSticky();
+    };
+
+    /**
+     * Destroy sticky portlet scroll event
+     * @returns {mPortlet}
+     */
+    the.destroySticky = function() {
+        return Plugin.destroySticky();
     };
 
     /**

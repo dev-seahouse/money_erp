@@ -1,8 +1,26 @@
 {
     "config": {
-        "demo": "",
+        "demo": "default",
         "debug": false,
         "compile": {
+            "rtl": {
+                "enabled": false,
+                "skip" : [
+                    "select2",
+                    "socicon",
+                    "line-awesome",
+                    "flaticon",
+                    "metronic",
+                    "fontawesome5",
+                    "jstree",
+                    "owl.carousel",
+                    "fullcalendar",
+                    "bootstrap-datepicker",
+                    "bootstrap-datetime-picker",
+                    "bootstrap-switch",
+                    "nouislider"
+                ]
+            },
             "jsUglify": false,
             "cssMinify": false,
             "jsSourcemaps": false,
@@ -28,9 +46,13 @@
                                 "{$config.path.node_modules}/jquery/dist/jquery.js"
                             ]
                         },
+                        "popper.js": {
+                            "scripts": [
+                                "{$config.path.node_modules}/popper.js/dist/umd/popper.js"
+                            ]
+                        },
                         "bootstrap": {
                             "scripts": [
-                                "{$config.path.node_modules}/popper.js/dist/umd/popper.js",
                                 "{$config.path.node_modules}/bootstrap/dist/js/bootstrap.min.js"
                             ]
                         },
@@ -55,6 +77,11 @@
                             ],
                             "scripts": [
                                 "{$config.path.node_modules}/perfect-scrollbar/dist/perfect-scrollbar.js"
+                            ]
+                        },
+                        "wnumb": {
+                            "scripts": [
+                                "{$config.path.node_modules}/wnumb/wNumb.js"
                             ]
                         }
                     },
@@ -191,6 +218,10 @@
                             ],
                             "scripts": [
                                 "{$config.path.node_modules}/owl.carousel/dist/owl.carousel.js"
+                            ],
+                            "images": [
+                                "{$config.path.node_modules}/owl.carousel/dist/assets/owl.video.play.png",
+                                "{$config.path.node_modules}/owl.carousel/dist/assets/ajax-loader.gif"
                             ]
                         },
                         "autosize": {
@@ -363,21 +394,13 @@
                             "fonts": [
                                 "{$config.path.src}/vendors/metronic/fonts/**"
                             ]
-                        },                        
+                        },
                         "fontawesome5": {
                             "styles": [
                                 "{$config.path.src}/vendors/fontawesome5/web-fonts-with-css/css/fontawesome-all.min.css"
                             ],
                             "fonts": [
                                 "{$config.path.src}/vendors/fontawesome5/web-fonts-with-css/webfonts/**"
-                            ]
-                        },
-                        "perfect-scrollbar": {
-                            "styles": [
-                                "{$config.path.node_modules}/perfect-scrollbar/css/perfect-scrollbar.css"
-                            ],
-                            "scripts": [
-                                "{$config.path.node_modules}/perfect-scrollbar/dist/perfect-scrollbar.js"
                             ]
                         }
                     }
@@ -471,7 +494,7 @@
                 "datatables.net": {
                     "src": {
                         "styles": [
-                            "{$config.path.node_modules}/datatables.net-bs4/css/dataTables.bootstrap4.css",                            
+                            "{$config.path.node_modules}/datatables.net-bs4/css/dataTables.bootstrap4.css",
                             "{$config.path.node_modules}/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css",
                             "{$config.path.node_modules}/datatables.net-autofill-bs4/css/autoFill.bootstrap4.min.css",
                             "{$config.path.node_modules}/datatables.net-colreorder-bs4/css/colReorder.bootstrap4.min.css",
@@ -540,6 +563,7 @@
                             "{$config.path.src}/js/framework/base/util.js",
                             "{$config.path.src}/js/framework/base/app.js",
                             "{$config.path.src}/js/framework/components/general/datatable/datatable.js",
+                            "{$config.path.src}/js/framework/components/plugins/misc/mdatatable.init.js",
                             "{$config.path.src}/js/framework/components/general/**/*.js",
                             "{$config.path.src}/js/demo/default/base/**/*.js",
                             "{$config.path.src}/js/app/base/**/*.js",

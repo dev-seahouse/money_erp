@@ -10,16 +10,14 @@ const routes: Routes = [
         "component": ErrorsError4Component
     }
 ];
-@NgModule({
-    imports: [
-        CommonModule, RouterModule.forChild(routes), LayoutModule
-    ], exports: [
-        RouterModule
-    ], declarations: [
-        ErrorsError4Component
-    ]
-})
-export class ErrorsError4Module {
+@NgModule({imports: [
+CommonModule,RouterModule.forChild(routes),LayoutModule
+],exports: [
+RouterModule
+],declarations: [
+ErrorsError4Component
+]})
+export class ErrorsError4Module  {
 
 
 

@@ -566,7 +566,7 @@
 						// menu item link's arrow part
 						> .m-menu__ver-arrow {
 							&:before {  
-								transform: rotateZ(90deg);
+								transform: rotateZ(90deg)#{'/*rtl:ignore*/'};
 							}
 						}
 					}

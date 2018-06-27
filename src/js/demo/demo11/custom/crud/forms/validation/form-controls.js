@@ -58,7 +58,7 @@ var FormControls = function () {
             invalidHandler: function(event, validator) {     
                 var alert = $('#m_form_1_msg');
                 alert.removeClass('m--hide').show();
-                mApp.scrollTo(alert, -200);
+                mUtil.scrollTo(alert, -200);
             },
 
             submitHandler: function (form) {
@@ -119,7 +119,7 @@ var FormControls = function () {
             
             //display error alert on form submit  
             invalidHandler: function(event, validator) {     
-                mApp.scrollTo("#m_form_2");
+                mUtil.scrollTo("#m_form_2");
 
                 swal({
                     "title": "", 
@@ -185,7 +185,7 @@ var FormControls = function () {
             
             //display error alert on form submit  
             invalidHandler: function(event, validator) {
-                mApp.scrollTo("#m_form_3"); 
+                mUtil.scrollTo("#m_form_3"); 
 
                 swal({
                     "title": "", 

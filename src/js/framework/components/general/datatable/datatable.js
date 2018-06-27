@@ -827,6 +827,17 @@
 						theme: 'minimal-dark',
 					},
 					init: function () {
+						if (mUtil.isRTL()) {
+							$.fn.extend({
+								scrollRight: function (val) {
+									if (val === undefined) {
+										return this[0].scrollWidth - (this[0].scrollLeft + this[0].clientWidth) + 1;
+									}
+									return this.scrollLeft(this[0].scrollWidth - this[0].clientWidth - val);
+								}
+							});
+						}
+
 						var screen = mUtil.getViewPort().width;
 						// setup scrollable datatable
 						if (options.layout.scroll) {
@@ -863,10 +874,16 @@
 						$(scrollable).css('overflow', 'auto').off().on('scroll', scroll.onScrolling);
 					},
 					onScrolling: function (e) {
-						var left = $(this).scrollLeft();
 						var top = $(this).scrollTop();
-						$(scroll.scrollHead).css('left', -left);
-						$(scroll.scrollFoot).css('left', -left);
+						if (mUtil.isRTL()) {
+							var right = $(this).scrollRight();
+							$(scroll.scrollHead).css('right', -right);
+							$(scroll.scrollFoot).css('right', -right);
+						} else {
+							var left = $(this).scrollLeft();
+							$(scroll.scrollHead).css('left', -left);
+							$(scroll.scrollFoot).css('left', -left);
+						}
 						$(scroll.tableLocked).each(function (i, table) {
 							$(table).css('top', -top);
 						});
@@ -2327,7 +2344,11 @@
 			 */
 			resetScroll: function () {
 				if (typeof options.detail === 'undefined' && Plugin.getDepth() === 1) {
-					$(datatable.table).find('.m-datatable__row').css('left', 0);
+					if (mUtil.isRTL()) {
+						$(datatable.table).find('.m-datatable__row').css('right', 0);
+					} else {
+						$(datatable.table).find('.m-datatable__row').css('left', 0);
+					}
 					$(datatable.table).find('.m-datatable__lock').css('top', 0);
 					$(datatable.tableBody).scrollTop(0);
 				}
@@ -2921,7 +2942,11 @@
 			 * @returns {jQuery}
 			 */
 			rows: function (selector) {
-				Plugin.nodeTr = Plugin.recentNode = $(datatable.tableBody).find(selector).filter('.m-datatable__row');
+				if (Plugin.isLocked()) {
+					Plugin.nodeTr = Plugin.recentNode = $(datatable.tableBody).children().first().find(selector).filter('.m-datatable__row');
+				} else {
+					Plugin.nodeTr = Plugin.recentNode = $(datatable.tableBody).find(selector).filter('.m-datatable__row');
+				}
 				return datatable;
 			},
 
@@ -2931,7 +2956,11 @@
 			 * @returns {jQuery}
 			 */
 			column: function (index) {
-				Plugin.nodeCols = Plugin.recentNode = $(datatable.tableBody).find('.m-datatable__cell:nth-child(' + (index + 1) + ')');
+				if (Plugin.isLocked()) {
+					Plugin.nodeCols = Plugin.recentNode = $(datatable.tableBody).children().first().find('.m-datatable__cell:nth-child(' + (index + 1) + ')');
+				} else {
+					Plugin.nodeCols = Plugin.recentNode = $(datatable.tableBody).find('.m-datatable__cell:nth-child(' + (index + 1) + ')');
+				}
 				return datatable;
 			},
 

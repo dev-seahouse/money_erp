@@ -66,7 +66,7 @@ var mWizard = function(elementId, options) {
             //== Variables
             the.events = [];
             the.currentStep = 1;
-            the.stop = false;
+            the.stopped = false;
             the.totalSteps = the.steps.length;
 
             //== Init current step
@@ -157,8 +157,8 @@ var mWizard = function(elementId, options) {
             }
             
             //== Skip if stopped
-            if (the.stop === true) {
-                the.stop = false;
+            if (the.stopped === true) {
+                the.stopped = false;
                 return;
             }
 
@@ -236,14 +236,14 @@ var mWizard = function(elementId, options) {
          * Cancel
          */
         stop: function() {
-            the.stop = true;
+            the.stopped = true;
         },
 
         /**
          * Resume
          */
         start: function() {
-            the.stop = false;
+            the.stopped = false;
         },
 
         /**

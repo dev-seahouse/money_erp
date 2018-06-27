@@ -17,16 +17,14 @@ const routes: Routes = [
         ]
     }
 ];
-@NgModule({
-    imports: [
-        CommonModule, RouterModule.forChild(routes), LayoutModule
-    ], exports: [
-        RouterModule
-    ], declarations: [
-        LayoutsActionBarsComponent
-    ]
-})
-export class LayoutsActionBarsModule {
+@NgModule({imports: [
+CommonModule,RouterModule.forChild(routes),LayoutModule
+],exports: [
+RouterModule
+],declarations: [
+LayoutsActionBarsComponent
+]})
+export class LayoutsActionBarsModule  {
 
 
 

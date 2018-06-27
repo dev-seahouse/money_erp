@@ -26,8 +26,9 @@
 
 		> .m-grid__item {
 			flex: none;
-			
-			&.m-grid__item--fluid {
+
+			&.m-grid__item--fluid,
+			&.m-grid__item--fluid-#{$mode} {
 				flex: 1 0 auto;
 				//-ms-flex: 1 0 0px;  // IE10-11 fix
 			}
@@ -54,7 +55,8 @@
 		> .m-grid__item {
 			flex: 0 0 auto;
 
-			&.m-grid__item--fluid {
+			&.m-grid__item--fluid,
+			&.m-grid__item--fluid-#{$mode} {
 				flex: 1 auto; 
 				-ms-flex: 1 0 0px;  // IE10-11 fix
 				min-width: 0;
@@ -62,6 +64,12 @@
 				@include hack-ie8-11 {
 					min-width: none;  // IE10-11 fix
 				}				
+			}
+
+			&.m-grid-item--center {
+				display: flex;
+  				justify-content: center;
+  				align-items: center;
 			}
 		}
 
@@ -77,11 +85,13 @@
 	.m-grid {
 		// horizontal items aligment
 		&.m-grid--center {
-			justify-content: center;
+			align-content: center;
 		}		
 
 		// vertical item alignment
 		> .m-grid__item {		
+			max-width:100%;
+			
 			&.m-grid__item--top {
 				align-self: flex-start;
 			}

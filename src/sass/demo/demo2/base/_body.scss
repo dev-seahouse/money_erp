@@ -29,10 +29,13 @@
 
 		// body wrapper
 		.m-wrapper {
-			padding-right: array-get($m-config-base, body, wrapper, space);
-			margin-right: -(array-get($m-config-base, body, wrapper, space));
-			padding-left: array-get($m-config-base, body, wrapper, space);
-			margin-left: -(array-get($m-config-base, body, wrapper, space));
+
+			.m-aside-left--enabled & {
+				padding-right: array-get($m-config-base, body, wrapper, space);
+				margin-right: -(array-get($m-config-base, body, wrapper, space));
+				padding-left: array-get($m-config-base, body, wrapper, space);
+				margin-left: -(array-get($m-config-base, body, wrapper, space));
+			}
 
 			.m-aside-left--enabled & {
 				@include shadow(array-get($m-config-base, body, wrapper, shadow));

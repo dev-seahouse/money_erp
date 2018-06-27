@@ -11,27 +11,27 @@ const routes: Routes = [
         "children": [
             {
                 "path": "index",
-                "loadChildren": ".\/pages\/default\/index\/index.module#IndexModule"
+                "loadChildren": "./pages/default/index/index.module#IndexModule"
             },
             {
                 "path": "inner",
-                "loadChildren": ".\/pages\/default\/inner\/inner.module#InnerModule"
+                "loadChildren": "./pages/default/inner/inner.module#InnerModule"
             },
             {
                 "path": "inner2",
-                "loadChildren": ".\/pages\/default\/inner2\/inner2.module#Inner2Module"
+                "loadChildren": "./pages/default/inner2/inner2.module#Inner2Module"
             },
             {
                 "path": "profile",
-                "loadChildren": ".\/pages\/default\/profile\/profile.module#ProfileModule"
+                "loadChildren": "./pages/default/profile/profile.module#ProfileModule"
             },
             {
                 "path": "actions",
-                "loadChildren": ".\/pages\/default\/actions\/actions.module#ActionsModule"
+                "loadChildren": "./pages/default/actions/actions.module#ActionsModule"
             },
             {
                 "path": "404",
-                "loadChildren": ".\/pages\/default\/not-found\/not-found.module#NotFoundModule"
+                "loadChildren": "./pages/default/not-found/not-found.module#NotFoundModule"
             },
             {
                 "path": "",
