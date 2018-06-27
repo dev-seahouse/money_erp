@@ -17,16 +17,14 @@ const routes: Routes = [
         ]
     }
 ];
-@NgModule({
-    imports: [
-        CommonModule, RouterModule.forChild(routes), LayoutModule
-    ], exports: [
-        RouterModule
-    ], declarations: [
-        LayoutsMultiColumnFormsComponent
-    ]
-})
-export class LayoutsMultiColumnFormsModule {
+@NgModule({imports: [
+CommonModule,RouterModule.forChild(routes),LayoutModule
+],exports: [
+RouterModule
+],declarations: [
+LayoutsMultiColumnFormsComponent
+]})
+export class LayoutsMultiColumnFormsModule  {
 
 
 

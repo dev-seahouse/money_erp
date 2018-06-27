@@ -17,16 +17,14 @@ const routes: Routes = [
         ]
     }
 ];
-@NgModule({
-    imports: [
-        CommonModule, RouterModule.forChild(routes), LayoutModule
-    ], exports: [
-        RouterModule
-    ], declarations: [
-        SearchOptionsAdvancedSearchComponent
-    ]
-})
-export class SearchOptionsAdvancedSearchModule {
+@NgModule({imports: [
+CommonModule,RouterModule.forChild(routes),LayoutModule
+],exports: [
+RouterModule
+],declarations: [
+SearchOptionsAdvancedSearchComponent
+]})
+export class SearchOptionsAdvancedSearchModule  {
 
 
 
