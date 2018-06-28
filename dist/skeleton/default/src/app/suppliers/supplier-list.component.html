@@ -31,19 +31,19 @@
         <div class="m-portlet__body">
             <!--begin::Section-->
             <ngb-tabset>
-                <ngb-tab title="Confirmed Booking">
+                <ngb-tab title="Confirmed Bookings">
                     <ng-template ngbTabContent>
                         <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher
                             synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
                     </ng-template>
                 </ngb-tab>
-                <ngb-tab title="Pending Booking">
+                <ngb-tab title="Pending Bookings">
                     <ng-template ngbTabContent>
                         <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher
                             synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
                     </ng-template>
                 </ngb-tab>
-                <ngb-tab title="Pending Deposit">
+                <ngb-tab title="Pending Deposits">
                     <ng-template ngbTabContent>
                         <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher
                             synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
@@ -70,19 +70,57 @@
             <div class="m-portlet__body">
                 <!--begin::Section-->
                 <ngb-tabset>
-                    <ngb-tab title="Individual">
+                    <ngb-tab title="Individuals">
+                        <ng-template ngbTabContent>
+                            <!-- Individuals data table start -->
+                            <div class="m-portlet m-portlet--mobile">
+                                <div class="m-portlet__body">
+                                    <!--begin: Search Form -->
+                                    <div class="m-form m-form--label-align-right m--margin-top-20 m--margin-bottom-30">
+                                        <div class="row align-items-center">
+                                            <div class="col-xl-8 order-2 order-xl-1">
+                                                <div class="form-group m-form__group row align-items-center">
+                                                    <div class="col-md-4">
+                                                        <div class="m-input-icon m-input-icon--left">
+                                                            <input type="text" class="form-control m-input" placeholder="Search..." id="generalSearch">
+                                                            <span class="m-input-icon__icon m-input-icon__icon--left">
+                                                                <span>
+                                                                    <i class="la la-search"></i>
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 order-1 order-xl-2 m--align-right">
+                                                <a href="#" class="btn btn-primary m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
+                                                    <span>
+                                                        <i class="la la-cart-plus"></i>
+                                                        <span>
+                                                            Add
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                                <div class="m-separator m-separator--dashed d-xl-none"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end: Search Form -->
+                                    <!--begin: Datatable -->
+                                    <div class="m_datatable" id="child_data_local"></div>
+                                    <!--end: Datatable -->
+                                </div>
+                            </div>
+                            <!-- Individuals datatable ends -->
+                        </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title="Coporates">
                         <ng-template ngbTabContent>
                             <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
                                 dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
                         </ng-template>
                     </ngb-tab>
-                    <ngb-tab title="Coporate">
-                        <ng-template ngbTabContent>
-                            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
-                                dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-                        </ng-template>
-                    </ngb-tab>
-                    <ngb-tab title="Bank">
+                    <ngb-tab title="Banks">
                         <ng-template ngbTabContent>
                             <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
                                 dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
