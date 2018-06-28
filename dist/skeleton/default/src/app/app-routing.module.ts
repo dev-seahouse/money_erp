@@ -17,6 +17,10 @@ const routes: Routes = [
               loadChildren: './home/home.module#HomeModule'
           },
           {
+            path: 'suppliers',
+            loadChildren: './suppliers/suppliers.module#SuppliersModule'
+          },
+          {
               path: '',
               redirectTo: 'dashboard',
               pathMatch: 'full'
