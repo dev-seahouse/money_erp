@@ -188,9 +188,9 @@ export function mockBackEndFactory(backend: MockBackend, options: BaseRequestOpt
         .subscribe((response: Response) => {
           connection.mockRespond(response);
         },
-        (error: any) => {
-          connection.mockError(error);
-        });
+          (error: any) => {
+            connection.mockError(error);
+          });
 
     }, 500);
 

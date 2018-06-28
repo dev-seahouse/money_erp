@@ -6,27 +6,27 @@ import { DefaultComponent } from '../theme/pages/default/default.component';
 import { DashboardComponent } from './dashboard.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: DefaultComponent,
-    children: [
-      {
+    {
         path: '',
-        component: DashboardComponent,
-      }
-    ]
-  }
+        component: DefaultComponent,
+        children: [
+            {
+                path: '',
+                component: DashboardComponent,
+            }
+        ]
+    }
 ];
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    LayoutModule
-  ], exports: [
-    RouterModule
-  ],
-  declarations: [
-    DashboardComponent
-  ]
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        LayoutModule
+    ], exports: [
+        RouterModule
+    ],
+    declarations: [
+        DashboardComponent
+    ]
 })
 export class HomeModule { }
