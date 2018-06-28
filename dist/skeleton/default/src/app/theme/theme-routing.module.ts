@@ -10,19 +10,19 @@ const routes: Routes = [
         'canActivate': [AuthGuard],
         'children': [
             {
-                'path': 'dashboard',
-                'loadChildren': '../home/home.module#HomeModule',
+                'path': 'index',
+                'loadChildren': '.\/pages\/default\/blank\/blank.module#BlankModule',
             },
             {
                 'path': '',
-                'redirectTo': 'dashboard',
+                'redirectTo': 'index',
                 'pathMatch': 'full',
             },
         ],
     },
     {
         'path': '**',
-        'redirectTo': 'dashboard',
+        'redirectTo': 'index',
         'pathMatch': 'full',
     },
 ];
@@ -31,5 +31,4 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule],
 })
-export class ThemeRoutingModule {
-}
+export class ThemeRoutingModule { }
