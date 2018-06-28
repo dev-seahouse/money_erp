@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { SharedComponent } from './shared/shared.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SupplierListComponent } from './supplier-list.component';
 import { DefaultComponent } from '../theme/pages/default/default.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -21,8 +21,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routes), LayoutModule],
-  exports:[RouterModule],
+  imports: [CommonModule, RouterModule.forChild(routes), LayoutModule, NgbModule.forRoot() ],
+  exports: [RouterModule],
   declarations: [SupplierListComponent, SharedComponent]
 })
 export class SuppliersModule {}
