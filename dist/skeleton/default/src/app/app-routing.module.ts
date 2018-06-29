@@ -21,6 +21,10 @@ const routes: Routes = [
             loadChildren: './suppliers/suppliers.module#SuppliersModule'
           },
           {
+              path: 'data-local',
+              loadChildren: './theme/pages/default/crud/metronic-datatable/child/child-data-local/child-data-local.module#ChildDataLocalModule'
+          },
+          {
               path: '',
               redirectTo: 'dashboard',
               pathMatch: 'full'

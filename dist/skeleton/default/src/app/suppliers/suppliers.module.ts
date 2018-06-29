@@ -21,8 +21,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routes), LayoutModule, NgbModule.forRoot() ],
+  imports: [
+    CommonModule,
+    NgbModule.forRoot(),
+    RouterModule.forChild(routes),
+    LayoutModule,
+  ],
   exports: [RouterModule],
-  declarations: [SupplierListComponent, SharedComponent]
+  declarations: [SupplierListComponent, SharedComponent],
 })
 export class SuppliersModule {}
