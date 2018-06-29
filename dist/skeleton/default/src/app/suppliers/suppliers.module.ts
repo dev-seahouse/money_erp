@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedComponent } from './shared/shared.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { SupplierListComponent } from './supplier-list.component';
+import { SuppliersComponent } from './suppliers.component';
 import { DefaultComponent } from '../theme/pages/default/default.component';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutModule } from '../theme/layouts/layout.module';
+import { IndividualSuppliersTableComponent } from './individual-suppliers-table.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: SupplierListComponent
+        component: SuppliersComponent
       }
     ]
   }
@@ -28,6 +29,6 @@ const routes: Routes = [
     LayoutModule,
   ],
   exports: [RouterModule],
-  declarations: [SupplierListComponent, SharedComponent],
+  declarations: [SuppliersComponent, SharedComponent, IndividualSuppliersTableComponent],
 })
 export class SuppliersModule {}
