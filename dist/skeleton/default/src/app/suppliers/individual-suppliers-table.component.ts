@@ -15,7 +15,7 @@ export class IndividualSuppliersTableComponent implements OnInit, AfterViewInit 
   ngAfterViewInit(): void {
     // == Class definition
     var DatatableChildDataLocalDemo = function () {
-      // == Private functions
+      //== Private functions
 
       var subTableInit = function (e) {
         $('<div/>').attr('id', 'child_data_local_' + e.data.RecordID).appendTo(e.detailCell).mDatatable({
@@ -88,7 +88,6 @@ export class IndividualSuppliersTableComponent implements OnInit, AfterViewInit 
                 2: { 'title': 'Retail', 'state': 'primary' },
                 3: { 'title': 'Direct', 'state': 'accent' },
               };
-              // tslint:disable-next-line:max-line-length
               return '<span class="m-badge m-badge--' + status[row.Type].state + ' m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-' + status[row.Type].state + '">' +
                 status[row.Type].title + '</span>';
             },
@@ -100,7 +99,6 @@ export class IndividualSuppliersTableComponent implements OnInit, AfterViewInit 
       var mainTableInit = function () {
 
         let dataJSONArray = [];
-
         let datatable = $('.m_datatable').mDatatable({
           // datasource definition
           data: {
