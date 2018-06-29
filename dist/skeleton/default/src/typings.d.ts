@@ -23,4 +23,8 @@ interface JQuery {
     resetForm(): JQuery;
 
     markdown(): JQuery;
+
+    mDatatable(Options: any):any;
+
+
 }
