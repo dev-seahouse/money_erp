@@ -22,6 +22,7 @@ const routes: Routes = [
           },
           {
               path: 'data-local',
+              // tslint:disable-next-line:max-line-length
               loadChildren: './theme/pages/default/crud/metronic-datatable/child/child-data-local/child-data-local.module#ChildDataLocalModule'
           },
           {

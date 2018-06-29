@@ -25,7 +25,7 @@ export class ScriptLoaderService {
             }
         });
 
-        let promises: any[] = [];
+        const promises: any[] = [];
         scripts.forEach((src) => promises.push(this.loadScript(tag, src)));
 
         return Promise.all(promises);
@@ -47,7 +47,7 @@ export class ScriptLoaderService {
             }
         });
 
-        let promises: any[] = [];
+        const promises: any[] = [];
         scripts.forEach(
             (script) => promises.push(this.loadScript(tag, script, loadOnce)));
 
@@ -72,10 +72,9 @@ export class ScriptLoaderService {
             // resolve if already loaded
             if (this._scripts[src].loaded && loadOnce) {
                 resolve({ src: src, loaded: true });
-            }
-            else {
+            } else {
                 // load script tag
-                let scriptTag = $('<script/>').attr('type', 'text/javascript').attr('src', this._scripts[src].src);
+                const scriptTag = $('<script/>').attr('type', 'text/javascript').attr('src', this._scripts[src].src);
 
                 $(tag).append(scriptTag);
 
