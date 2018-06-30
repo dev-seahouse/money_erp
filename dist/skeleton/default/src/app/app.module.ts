@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClientModule } from '@angular/common/http';
 import { ThemeComponent } from './theme/theme.component';
 import { LayoutModule } from './theme/layouts/layout.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,8 +15,9 @@ import { AuthModule } from './auth/auth.module';
         AppComponent,
     ],
     imports: [
-        LayoutModule,
         BrowserModule,
+        HttpClientModule,
+        LayoutModule,
         BrowserAnimationsModule,
         AppRoutingModule,
         AuthModule,

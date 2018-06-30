@@ -76,8 +76,6 @@ export class ScriptLoaderService {
                 // load script tag
                 const scriptTag = $('<script/>').attr('type', 'text/javascript').attr('src', this._scripts[src].src);
 
-                console.log(scriptTag);
-
                 $(tag).append(scriptTag);
 
                 this._scripts[src] = { src: src, loaded: true };

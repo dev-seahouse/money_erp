@@ -1,10 +1,10 @@
 import {
   Component,
   OnInit,
-  AfterViewChecked,
   AfterViewInit
 } from '@angular/core';
 import { ScriptLoaderService } from '../_services/script-loader.service';
+import { SupplierService } from './supplier.service';
 
 @Component({
   selector: 'app-individual-suppliers-table',
@@ -13,151 +13,129 @@ import { ScriptLoaderService } from '../_services/script-loader.service';
 })
 export class IndividualSuppliersTableComponent
   implements OnInit, AfterViewInit {
-  constructor(private _script: ScriptLoaderService) {}
 
-  ngOnInit() {}
+  suppliers: any[];
+  errorMessage: string;
+
+  constructor(
+    private _script: ScriptLoaderService,
+    private _supplierService: SupplierService
+  ) {}
+
+  ngOnInit(): void {}
+
   ngAfterViewInit(): void {
-    // == Class definition
-    var DatatableChildDataLocalDemo = (function() {
+    this._supplierService.getSuppliers().subscribe(suppliers => {
+      this.createDatatable();
+    }, error => this.errorMessage = <any>error);
+  }
+
+  private createDatatable( parentData: any[] = [], childData: any[] = [] ) {
+    var dataJSONArray = parentData;
+    //== Class definition
+    var Datatable = function () {
       //== Private functions
-
-      var subTableInit = function(e) {
-        $('<div/>')
-          .attr('id', 'child_data_local_' + e.data.RecordID)
-          .appendTo(e.detailCell)
-          .mDatatable({
-            data: {
-              type: 'local',
-              source: e.data.Orders,
-              pageSize: 10
-            },
-
-            // layout definition
-            layout: {
+      var subTableInit = function (e) {
+        $('<div/>').attr('id', 'child_data_local_' + e.data.RecordID).appendTo(e.detailCell).mDatatable({
+          data: {
+            type: 'local',
+            source: e.data.Orders,
+            pageSize: 10,
+          },
+          // layout definition
+          layout: {
+            theme: 'default',
+            scroll: true,
+            height: 300,
+            footer: false,
+            // enable/disable datatable spinner.
+            spinner: {
+              type: 1,
               theme: 'default',
-              scroll: true,
-              height: 300,
-              footer: false,
-
-              // enable/disable datatable spinner.
-              spinner: {
-                type: 1,
-                theme: 'default'
-              }
             },
-
-            sortable: true,
-
-            // columns definition
-            columns: [
-              {
-                field: 'OrderID',
-                title: 'Order ID',
-                sortable: false
+          },
+          sortable: true,
+          // columns definition
+          columns: [
+            {
+              field: 'OrderID',
+              title: 'Order ID',
+              sortable: false,
+            }, {
+              field: 'ShipCountry',
+              title: 'Country',
+              width: 100,
+            }, {
+              field: 'ShipAddress',
+              title: 'Ship Address',
+            }, {
+              field: 'ShipName',
+              title: 'Ship Name',
+            }, {
+              field: 'OrderDate',
+              title: 'Order Date',
+            }, {
+              field: 'TotalPayment',
+              title: 'Total Payment',
+            }, {
+              field: 'Status',
+              title: 'Status',
+              // callback function support for column rendering
+              template: function (row) {
+                var status = {
+                  1: { 'title': 'Pending', 'class': 'm-badge--brand' },
+                  2: { 'title': 'Delivered', 'class': ' m-badge--metal' },
+                  3: { 'title': 'Canceled', 'class': ' m-badge--primary' },
+                  4: { 'title': 'Success', 'class': ' m-badge--success' },
+                  5: { 'title': 'Info', 'class': ' m-badge--info' },
+                  6: { 'title': 'Danger', 'class': ' m-badge--danger' },
+                  7: { 'title': 'Warning', 'class': ' m-badge--warning' },
+                };
+                return '<span class="m-badge ' + status[row.Status].class + ' m-badge--wide">' + status[row.Status].title + '</span>';
               },
-              {
-                field: 'ShipCountry',
-                title: 'Country',
-                width: 100
+            }, {
+              field: 'Type',
+              title: 'Type',
+              // callback function support for column rendering
+              template: function (row) {
+                var status = {
+                  1: { 'title': 'Online', 'state': 'danger' },
+                  2: { 'title': 'Retail', 'state': 'primary' },
+                  3: { 'title': 'Direct', 'state': 'accent' },
+                };
+                return '<span class="m-badge m-badge--' + status[row.Type].state + ' m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-' + status[row.Type].state + '">' +
+                  status[row.Type].title + '</span>';
               },
-              {
-                field: 'ShipAddress',
-                title: 'Ship Address'
-              },
-              {
-                field: 'ShipName',
-                title: 'Ship Name'
-              },
-              {
-                field: 'OrderDate',
-                title: 'Order Date'
-              },
-              {
-                field: 'TotalPayment',
-                title: 'Total Payment'
-              },
-              {
-                field: 'Status',
-                title: 'Status',
-                // callback function support for column rendering
-                template: function(row) {
-                  var status = {
-                    1: { title: 'Pending', class: 'm-badge--brand' },
-                    2: { title: 'Delivered', class: ' m-badge--metal' },
-                    3: { title: 'Canceled', class: ' m-badge--primary' },
-                    4: { title: 'Success', class: ' m-badge--success' },
-                    5: { title: 'Info', class: ' m-badge--info' },
-                    6: { title: 'Danger', class: ' m-badge--danger' },
-                    7: { title: 'Warning', class: ' m-badge--warning' }
-                  };
-                  return (
-                    '<span class="m-badge ' +
-                    status[row.Status].class +
-                    ' m-badge--wide">' +
-                    status[row.Status].title +
-                    '</span>'
-                  );
-                }
-              },
-              {
-                field: 'Type',
-                title: 'Type',
-                // callback function support for column rendering
-                template: function(row) {
-                  var status = {
-                    1: { title: 'Online', state: 'danger' },
-                    2: { title: 'Retail', state: 'primary' },
-                    3: { title: 'Direct', state: 'accent' }
-                  };
-                  return (
-                    '<span class="m-badge m-badge--' +
-                    status[row.Type].state +
-                    ' m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-' +
-                    status[row.Type].state +
-                    '">' +
-                    status[row.Type].title +
-                    '</span>'
-                  );
-                }
-              }
-            ]
-          });
+            },
+          ],
+        });
       };
-
       // demo initializer
-      var mainTableInit = function() {
-        let dataJSONArray = [];
-        let datatable = $('.m_datatable').mDatatable({
+      var mainTableInit = function () {
+        var datatable = $('.m_datatable').mDatatable({
           // datasource definition
           data: {
             type: 'local',
             source: dataJSONArray,
-            pageSize: 10 // display 20 records per page
+            pageSize: 10,
           },
-
           // layout definition
           layout: {
             theme: 'default',
             scroll: false,
             height: null,
-            footer: false
+            footer: false,
           },
-
           sortable: true,
-
           filterable: false,
-
           pagination: true,
-
           detail: {
             title: 'Load sub table',
-            content: subTableInit
+            content: subTableInit,
           },
-
           search: {
-            input: $('#generalSearch')
+            input: $('#generalSearch'),
           },
-
           // columns definition
           columns: [
             {
@@ -166,85 +144,60 @@ export class IndividualSuppliersTableComponent
               sortable: false,
               width: 20,
               textAlign: 'center' // left|right|center,
-            },
-            {
+            }, {
               field: 'FirstName',
-              title: 'First Name'
-            },
-            {
+              title: 'First Name',
+            }, {
               field: 'LastName',
-              title: 'Last Name'
-            },
-            {
+              title: 'Last Name',
+            }, {
               field: 'Company',
-              title: 'Company'
-            },
-            {
+              title: 'Company',
+            }, {
               field: 'Email',
-              title: 'Email'
-            },
-            {
+              title: 'Email',
+            }, {
               field: 'Phone',
-              title: 'Phone'
-            },
-            {
+              title: 'Phone',
+            }, {
               field: 'Status',
               title: 'Status',
               // callback function support for column rendering
-              template: function(row) {
-                let status = {
-                  1: { title: 'Pending', class: 'm-badge--brand' },
-                  2: { title: 'Delivered', class: ' m-badge--metal' },
-                  3: { title: 'Canceled', class: ' m-badge--primary' },
-                  4: { title: 'Success', class: ' m-badge--success' },
-                  5: { title: 'Info', class: ' m-badge--info' },
-                  6: { title: 'Danger', class: ' m-badge--danger' },
-                  7: { title: 'Warning', class: ' m-badge--warning' }
+              template: function (row) {
+                var status = {
+                  1: { 'title': 'Pending', 'class': 'm-badge--brand' },
+                  2: { 'title': 'Delivered', 'class': ' m-badge--metal' },
+                  3: { 'title': 'Canceled', 'class': ' m-badge--primary' },
+                  4: { 'title': 'Success', 'class': ' m-badge--success' },
+                  5: { 'title': 'Info', 'class': ' m-badge--info' },
+                  6: { 'title': 'Danger', 'class': ' m-badge--danger' },
+                  7: { 'title': 'Warning', 'class': ' m-badge--warning' },
                 };
-                return (
-                  '<span class="m-badge ' +
-                  status[row.Status].class +
-                  ' m-badge--wide">' +
-                  status[row.Status].title +
-                  '</span>'
-                );
-              }
-            },
-            {
+                return '<span class="m-badge ' + status[row.Status].class + ' m-badge--wide">' + status[row.Status].title + '</span>';
+              },
+            }, {
               field: 'Type',
               title: 'Type',
               // callback function support for column rendering
-              template: function(row) {
-                let status = {
-                  1: { title: 'Online', state: 'danger' },
-                  2: { title: 'Retail', state: 'primary' },
-                  3: { title: 'Direct', state: 'accent' }
+              template: function (row) {
+                var status = {
+                  1: { 'title': 'Online', 'state': 'danger' },
+                  2: { 'title': 'Retail', 'state': 'primary' },
+                  3: { 'title': 'Direct', 'state': 'accent' },
                 };
-                return (
-                  '<span class="m-badge m-badge--' +
-                  status[row.Type].state +
-                  ' m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-' +
-                  status[row.Type].state +
-                  '">' +
-                  status[row.Type].title +
-                  '</span>'
-                );
-              }
-            },
-            {
+                return '<span class="m-badge m-badge--' + status[row.Type].state + ' m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-' + status[row.Type].state + '">' +
+                  status[row.Type].title + '</span>';
+              },
+            }, {
               field: 'Actions',
               width: 110,
               title: 'Actions',
               sortable: false,
               overflow: 'visible',
-              template: function(row, index, datatable) {
-                let dropup =
-                  datatable.getPageSize() - index <= 4 ? 'dropup' : '';
-                return (
-                  '\
-						<div class="dropdown ' +
-                  dropup +
-                  '">\
+              template: function (row, index, datatable) {
+                var dropup = (datatable.getPageSize() - index) <= 4 ? 'dropup' : '';
+                return '\
+						<div class="dropdown ' + dropup + '">\
 							<a href="#" class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown">\
                                 <i class="la la-ellipsis-h"></i>\
                             </a>\
@@ -260,26 +213,20 @@ export class IndividualSuppliersTableComponent
 						<a href="#" class="m-portlet__nav-link btn m-btn m-btn--hover-danger m-btn--icon m-btn--icon-only m-btn--pill" title="Delete">\
 							<i class="la la-trash"></i>\
 						</a>\
-					'
-                );
-              }
+					';
+              },
             }
-          ]
+          ],
         });
       };
-
       return {
-        // == Public functions
-        init: function() {
+        //== Public functions
+        init: function () {
           // init dmeo
           mainTableInit();
-        }
+        },
       };
-    })();
-
-    jQuery(document).ready(function() {
-      DatatableChildDataLocalDemo.init();
-    });
-    // # sourceMappingURL=data-local.js.map
+    } ();
+    Datatable.init();
   }
 }
