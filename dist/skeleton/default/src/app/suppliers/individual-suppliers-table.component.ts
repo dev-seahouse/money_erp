@@ -26,21 +26,26 @@ export class IndividualSuppliersTableComponent
 
   ngAfterViewInit(): void {
     this._supplierService.getSuppliers().subscribe(suppliers => {
-      this.createDatatable();
+      this.createDatatable(suppliers);
     }, error => this.errorMessage = <any>error);
   }
 
   private createDatatable( parentData: any[] = [], childData: any[] = [] ) {
-    var dataJSONArray = parentData;
-    //== Class definition
-    var Datatable = function () {
-      //== Private functions
+    const dataJSONArray = parentData;
+    // == Class definition
+    const Datatable = function () {
+
+      // == Private functions
       var subTableInit = function (e) {
-        $('<div/>').attr('id', 'child_data_local_' + e.data.RecordID).appendTo(e.detailCell).mDatatable({
+        $('<div/>').attr('id', 'child_data_' + e.data.RecordID).appendTo(e.detailCell).mDatatable({
           data: {
             type: 'local',
             source: e.data.Orders,
             pageSize: 10,
+            saveState: {
+              cookie: true,
+              webstroage: true
+            },
           },
           // layout definition
           layout: {
@@ -122,12 +127,12 @@ export class IndividualSuppliersTableComponent
           // layout definition
           layout: {
             theme: 'default',
-            scroll: false,
+            scroll: true,
             height: null,
             footer: false,
           },
           sortable: true,
-          filterable: false,
+          filterable: true,
           pagination: true,
           detail: {
             title: 'Load sub table',
