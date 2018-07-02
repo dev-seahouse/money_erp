@@ -60,7 +60,7 @@ export class IndividualSuppliersTableComponent
                     },
                     columns: [
                         {
-                            field: 'CurrencyID',
+                            field: 'currencyId',
                             title: '',
                             sortable: false,
                             filterable: false,
@@ -68,17 +68,17 @@ export class IndividualSuppliersTableComponent
                             textAlign: 'center',
                         },
                         {
-                            field: 'Currency',
+                            field: 'currencyName',
                             title: 'Currency Name',
                             width: 190
                         },
                         {
-                            field: 'Individual Agent',
+                            field: 'numAgents',
                             title: 'Individual Agent',
                             width: 100
                         },
                         {
-                            field: 'Average Rate',
+                            field: 'avgRate',
                             title: 'Average Rate',
                             width: 500
                         }
