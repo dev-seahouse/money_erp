@@ -24,10 +24,10 @@ jobs:
           - v1-dependencies-{{ checksum "package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-      
-      - run: yarn install
-      - run: node --max-old-space-size=4096 ~/money_erp/dist/skeleton/default/node_modules/@angular/cli/bin/ng build --prod --aot
-      - run: surge -p dist/ —domain dex_moneyexchange.surge.sh/
+      -working_directory: ~/money_erp/dist/skeleton/default 
+        - run: yarn install
+        - run: node --max-old-space-size=4096 node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng build --prod --aot
+        - run: surge -p dist/ —domain dex_moneyexchange.surge.sh/
 
       - save_cache:
           paths:
