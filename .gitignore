@@ -4,10 +4,12 @@
 /bower_components
 node_modules/
 bower_components/
+/dist/skeleton/default/dist
 /.sass-cache
 .sass-cache/
 # IDEs and editors
 /.idea
+dist/skeleton/default/.idea/
 
 # misc
 /.sass-cache

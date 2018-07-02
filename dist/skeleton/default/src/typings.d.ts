@@ -24,7 +24,9 @@ interface JQuery {
 
     markdown(): JQuery;
 
-    mDatatable(Options: any):any;
+    mDatatable(Options: any): any;
+
+    selectpicker(): any;
 
 
 }

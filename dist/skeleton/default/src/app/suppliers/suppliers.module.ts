@@ -9,26 +9,26 @@ import { LayoutModule } from '../theme/layouts/layout.module';
 import { IndividualSuppliersTableComponent } from './individual-suppliers-table.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: DefaultComponent,
-    children: [
-      {
+    {
         path: '',
-        component: SuppliersComponent
-      }
-    ]
-  }
+        component: DefaultComponent,
+        children: [
+            {
+                path: '',
+                component: SuppliersComponent
+            }
+        ]
+    }
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    NgbModule.forRoot(),
-    RouterModule.forChild(routes),
-    LayoutModule,
-  ],
-  exports: [RouterModule],
-  declarations: [SuppliersComponent, SharedComponent, IndividualSuppliersTableComponent],
+    imports: [
+        CommonModule,
+        NgbModule.forRoot(),
+        RouterModule.forChild(routes),
+        LayoutModule,
+    ],
+    exports: [RouterModule],
+    declarations: [SuppliersComponent, SharedComponent, IndividualSuppliersTableComponent],
 })
-export class SuppliersModule {}
+export class SuppliersModule { }

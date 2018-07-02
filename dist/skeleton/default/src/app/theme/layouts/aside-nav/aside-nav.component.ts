@@ -12,7 +12,7 @@ export class AsideNavComponent implements OnInit, AfterViewInit {
 
 
     constructor() {
-        
+
     }
 
     ngOnInit() {

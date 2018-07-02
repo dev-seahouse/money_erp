@@ -31,11 +31,11 @@ export class IndividualSuppliersTableComponent
     private initDatatable() {
         //== Class definition
 
-        var DatatableHtmlTableDemo = (function () {
+        var DatatableHtmlTableDemo = (function() {
             //== Private functions
 
             // demo initializer
-            var demo = function () {
+            var demo = function() {
                 var datatable = $('.m-datatable').mDatatable({
                     data: {
                         saveState: { webstroage: true },
@@ -84,19 +84,19 @@ export class IndividualSuppliersTableComponent
                     ]
                 });
 
-                $('#m_form_status').on('change', function () {
+                $('#m_form_status').on('change', function() {
                     datatable.search(
-                        $(this)
-                            .val()
+                        ($(this)
+                            .val() as string)
                             .toLowerCase(),
                         'Status'
                     );
                 });
 
-                $('#m_form_type').on('change', function () {
+                $('#m_form_type').on('change', function() {
                     datatable.search(
-                        $(this)
-                            .val()
+                        ($(this)
+                            .val() as string)
                             .toLowerCase(),
                         'Type'
                     );
@@ -107,14 +107,14 @@ export class IndividualSuppliersTableComponent
 
             return {
                 //== Public functions
-                init: function () {
+                init: function() {
                     // init dmeo
                     demo();
                 }
             };
         })();
 
-        jQuery(document).ready(function () {
+        jQuery(document).ready(function() {
             DatatableHtmlTableDemo.init();
         });
         //# sourceMappingURL=html-table.js.map
@@ -123,9 +123,9 @@ export class IndividualSuppliersTableComponent
     private createDatatable(parentData: any[] = [], childData: any[] = []) {
         const dataJSONArray = parentData;
         // == Class definition
-        const Datatable = (function () {
+        const Datatable = (function() {
             // == Private functions
-            var subTableInit = function (e) {
+            var subTableInit = function(e) {
                 $('<div/>')
                     .attr('id', 'child_data_for_record_' + e.data.RecordID)
                     .appendTo(e.detailCell)
@@ -185,7 +185,7 @@ export class IndividualSuppliersTableComponent
                                 field: 'Status',
                                 title: 'Status',
                                 // callback function support for column rendering
-                                template: function (row) {
+                                template: function(row) {
                                     var status = {
                                         1: { title: 'Pending', class: 'm-badge--brand' },
                                         2: { title: 'Delivered', class: ' m-badge--metal' },
@@ -211,7 +211,7 @@ export class IndividualSuppliersTableComponent
                                 field: 'Type',
                                 title: 'Type',
                                 // callback function support for column rendering
-                                template: function (row) {
+                                template: function(row) {
                                     var status = {
                                         1: { title: 'Online', state: 'danger' },
                                         2: { title: 'Retail', state: 'primary' },
@@ -232,7 +232,7 @@ export class IndividualSuppliersTableComponent
                     });
             };
             // demo initializer
-            var mainTableInit = function () {
+            var mainTableInit = function() {
                 var datatable = $('.m_datatable').mDatatable({
                     // datasource definition
                     data: {
@@ -286,7 +286,7 @@ export class IndividualSuppliersTableComponent
             };
             return {
                 //== Public functions
-                init: function () {
+                init: function() {
                     // init dmeo
                     mainTableInit();
                 }
