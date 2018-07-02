@@ -68,18 +68,19 @@ export class IndividualSuppliersTableComponent
                             textAlign: 'center',
                         },
                         {
-                            field: 'Currency Name',
+                            field: 'Currency',
                             title: 'Currency Name',
+                            width: 150
+                        },
+                        {
+                            field: 'Individual Agent',
+                            title: 'Individual Agent',
                             width: 100
                         },
                         {
-                            field: 'IndividualAgent',
-                            title: 'Individual Agent',
-                            width: 40
-                        },
-                        {
-                            field: 'AverageRate',
-                            title: 'Average Rate'
+                            field: 'Average Rate',
+                            title: 'Average Rate',
+                            width: 150
                         }
                     ]
                 });
