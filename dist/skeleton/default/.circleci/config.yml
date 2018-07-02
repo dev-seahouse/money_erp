@@ -14,12 +14,12 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
 
-    working_directory: ~/money_erp/dist/skeleton/default
+    working_directory: dist/skeleton/default
 
     steps:
       - checkout
 
-      # Download and cache dependencies
+      # Download and cache dependencie
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
