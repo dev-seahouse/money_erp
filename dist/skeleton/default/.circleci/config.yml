@@ -14,11 +14,11 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
 
-    working_directory: dist/skeleton/default
+    working_directory: ~/repo
 
     steps:
       - checkout
-
+      - working_directory: dist/skeleton/default
       # Download and cache dependencie
       - restore_cache:
           keys:
