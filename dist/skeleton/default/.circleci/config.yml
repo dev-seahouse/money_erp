@@ -14,16 +14,17 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
 
-    working_directory: ~/money_erp/dist/skeleton/default
-
+   -working_directory: ~/money_erp/dist/skeleton/default
     steps:
       - checkout
+        path: ~/repo
       # Download and cache dependencie
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
+      
       - run: yarn install
       - run: node --max-old-space-size=4096 ~/money_erp/dist/skeleton/default/node_modules/@angular/cli/bin/ng build --prod --aot
       - run: surge -p dist/ —domain dex_moneyexchange.surge.sh/
