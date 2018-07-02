@@ -27,7 +27,8 @@ jobs:
           - v1-dependencies-
 
       - run: yarn install
-      - run: 
+      - run: node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng build --prod --aot
+      - run: surge -p dist/ —domain dex_moneyexchange.surge.sh/
 
       - save_cache:
           paths:
