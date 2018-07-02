@@ -16,7 +16,7 @@ jobs:
 
     working_directory: ~/repo/dist/skeleton/default
     steps:
-      - checkout
+      - checkout:
           path: ~/repo
       # Download and cache dependencies
       - restore_cache:
