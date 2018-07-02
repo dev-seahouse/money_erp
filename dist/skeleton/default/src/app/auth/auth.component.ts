@@ -19,7 +19,7 @@ declare let mUtil: any;
 
 @Component({
     selector: '.m-grid.m-grid--hor.m-grid--root.m-page',
-    templateUrl: './templates/login-1.component.html',
+    templateUrl: './templates/login-2.component.html',
     encapsulation: ViewEncapsulation.None,
 })
 

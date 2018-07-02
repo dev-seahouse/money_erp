@@ -70,7 +70,7 @@ export class IndividualSuppliersTableComponent
                         {
                             field: 'Currency',
                             title: 'Currency Name',
-                            width: 150
+                            width: 190
                         },
                         {
                             field: 'Individual Agent',
@@ -80,7 +80,7 @@ export class IndividualSuppliersTableComponent
                         {
                             field: 'Average Rate',
                             title: 'Average Rate',
-                            width: 150
+                            width: 500
                         }
                     ]
                 });
@@ -158,7 +158,7 @@ export class IndividualSuppliersTableComponent
                             {
                                 field: 'OrderID',
                                 title: 'Order ID',
-                                sortable: false
+                                sortable: false,
                             },
                             {
                                 field: 'ShipCountry',
