@@ -52,6 +52,7 @@ export class IndividualSuppliersTableComponent
                     detail: {
                         title: 'Load sub tablte',
                         content: e => {
+                            console.log(e.data);
                             console.log('init subtatble script');
                         }
                     },
