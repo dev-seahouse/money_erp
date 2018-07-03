@@ -1,5 +1,4 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { ScriptLoaderService } from '../_services/script-loader.service';
 import { SupplierService } from './supplier.service';
 
 @Component({
@@ -13,7 +12,6 @@ export class IndividualSuppliersTableComponent
   errorMessage: string;
 
   constructor(
-    private _script: ScriptLoaderService,
     private _supplierService: SupplierService
   ) {}
 
@@ -29,14 +27,14 @@ export class IndividualSuppliersTableComponent
   }
 
   private initDatatable() {
-    var SuppliersDatatable = (function() {
-      var initializeDatatable = function() {
-        var childTable = function(e) {
+    let SuppliersDatatable = (function() {
+      let initializeDatatable = function() {
+        let childTable = function(e) {
           $('<div/>')
             .attr('id', 'suppliers_for_currency_' + e.data.currencyId)
             .appendTo(e.detailCell);
         };
-        var parentTable = $('.m-datatable').mDatatable({
+        let parentTable = $('.m-datatable').mDatatable({
           data: {
             saveState: { webstroage: true, cookie: true },
             pageSize: 15
@@ -98,17 +96,13 @@ export class IndividualSuppliersTableComponent
       };
 
       return {
-        //== Public functions
         init: function() {
-          // init dmeo
           initializeDatatable();
-        }
+        },
       };
     })();
 
-    jQuery(document).ready(function() {
-      SuppliersDatatable.init();
-    });
+    SuppliersDatatable.init();
     //# sourceMappingURL=html-table.js.map
   }
 
@@ -117,7 +111,7 @@ export class IndividualSuppliersTableComponent
     // == Class definition
     const Datatable = (function() {
       // == Private functions
-      var subTableInit = function(e) {
+      let subTableInit = function(e) {
         $('<div/>')
           .attr('id', 'child_data_for_record_' + e.data.RecordID)
           .appendTo(e.detailCell)
@@ -178,7 +172,7 @@ export class IndividualSuppliersTableComponent
                 title: 'Status',
                 // callback function support for column rendering
                 template: function(row) {
-                  var status = {
+                  let status = {
                     1: { title: 'Pending', class: 'm-badge--brand' },
                     2: { title: 'Delivered', class: ' m-badge--metal' },
                     3: {
@@ -204,7 +198,7 @@ export class IndividualSuppliersTableComponent
                 title: 'Type',
                 // callback function support for column rendering
                 template: function(row) {
-                  var status = {
+                  let status = {
                     1: { title: 'Online', state: 'danger' },
                     2: { title: 'Retail', state: 'primary' },
                     3: { title: 'Direct', state: 'accent' }
@@ -224,8 +218,8 @@ export class IndividualSuppliersTableComponent
           });
       };
       // demo initializer
-      var mainTableInit = function() {
-        var datatable = $('.m_datatable').mDatatable({
+      let mainTableInit = function() {
+        let datatable = $('.m_datatable').mDatatable({
           // datasource definition
           data: {
             type: 'local',
