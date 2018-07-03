@@ -123,6 +123,7 @@
 			 * Extract static HTML table content into datasource
 			 */
 			extractTable: function () {
+				console.log("start extract table");
 				var columns = [];
 				var headers = $(datatable).find('tr:first-child th').get().map(function (cell, i) {
 					var field = $(cell).data('field');
@@ -150,6 +151,8 @@
 					}
 					var td = {};
 					$(this).find('td').each(function (i, cell) {
+						console.log(cell.innerHTML);
+
 						td[headers[i]] = cell.innerHTML.trim();
 					});
 					if (!mUtil.isEmpty(td)) {
@@ -1660,10 +1663,17 @@
 
 					// prevent duplicate datatable init
 					if ($(subTable).find('.m-datatable').length === 0) {
+
 						// get data by primary id
 						$.map(datatable.dataSet, function (n, i) {
 							// primary id must be at the first column, otherwise e.data will be undefined
+							// bug: if n[options.columns[0].field] is a number e.g 1==="1", then data 
+							// will be set as undefined, eg. OrderID is a number intead of string
 							if (primaryKey === n[options.columns[0].field]) {
+								e.data = n;
+								return true;
+							}
+							if ( (!isNaN(primaryKey) && !isNaN(n[options.columns[0].field])) && +primaryKey === +n[options.columns[0].field] ) {
 								e.data = n;
 								return true;
 							}

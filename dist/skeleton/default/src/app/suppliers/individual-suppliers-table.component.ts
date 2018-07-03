@@ -62,11 +62,10 @@ export class IndividualSuppliersTableComponent
                     columns: [
                         {
                             field: 'currencyId',
-                            title: '',
-                            sortable: false,
-                            filterable: false,
+                            title: 'currency Id',
                             width: 20,
                             textAlign: 'center',
+                            type: 'number',
                         },
                         {
                             field: 'currencyName',
