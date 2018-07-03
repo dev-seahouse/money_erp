@@ -14,7 +14,7 @@ export class SupplierService {
 
     getSuppliers(): Observable<any[]> {
         return this.http.get<any[]>(this.suppliersUrl).pipe(
-            tap(data => console.log('All suppliers data: ' + JSON.stringify(data))),
+            //tap(data => console.log('All suppliers data: ' + JSON.stringify(data))),
             catchError(this.handleError), );
     }
 
