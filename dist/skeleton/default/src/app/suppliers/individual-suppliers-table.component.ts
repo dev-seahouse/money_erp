@@ -11,9 +11,7 @@ export class IndividualSuppliersTableComponent
   suppliers: any[];
   errorMessage: string;
 
-  constructor(
-    private _supplierService: SupplierService
-  ) {}
+  constructor( private _supplierService: SupplierService ) {}
 
   ngOnInit(): void {
     this._supplierService.getSuppliers().subscribe(suppliers => {
@@ -27,14 +25,17 @@ export class IndividualSuppliersTableComponent
   }
 
   private initDatatable() {
-    let SuppliersDatatable = (function() {
-      let initializeDatatable = function() {
-        let childTable = function(e) {
+
+    const SuppliersDatatable = (function() {
+      let childTable;
+      let parentTable;
+      const initializeDatatable = function() {
+        childTable = function(e) {
           $('<div/>')
             .attr('id', 'suppliers_for_currency_' + e.data.currencyId)
             .appendTo(e.detailCell);
         };
-        let parentTable = $('.m-datatable').mDatatable({
+        parentTable = $('.m-datatable').mDatatable({
           data: {
             saveState: { webstroage: true, cookie: true },
             pageSize: 15
@@ -99,6 +100,12 @@ export class IndividualSuppliersTableComponent
         init: function() {
           initializeDatatable();
         },
+        getChildTable: function() {
+            return childTable;
+        },
+        getParentTable: function() {
+            return parentTable;
+        }
       };
     })();
 
