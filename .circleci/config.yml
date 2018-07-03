@@ -25,7 +25,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
       - run: yarn install
-      - run: yarn global add surge
+      - run: npm install -g surge
       - run: node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng build --prod --aot
       - run: surge -p dist/ —domain dex_moneyexchange.surge.sh/
 
