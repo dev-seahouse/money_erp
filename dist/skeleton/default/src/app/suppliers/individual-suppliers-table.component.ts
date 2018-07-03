@@ -70,17 +70,20 @@ export class IndividualSuppliersTableComponent
                         {
                             field: 'currencyName',
                             title: 'Currency Name',
-                            width: 190
+                            width: 190,
+                            type: 'number'
                         },
                         {
                             field: 'numAgents',
                             title: 'Individual Agent',
-                            width: 100
+                            width: 100,
+                            type: 'number'
                         },
                         {
                             field: 'avgRate',
                             title: 'Average Rate',
-                            width: 500
+                            width: 500,
+                            type: 'number'
                         }
                     ]
                 });
