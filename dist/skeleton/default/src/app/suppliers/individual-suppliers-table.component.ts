@@ -31,12 +31,15 @@ export class IndividualSuppliersTableComponent
     private initDatatable() {
         //== Class definition
 
-        var DatatableHtmlTableDemo = (function() {
-            //== Private functions
+        var SuppliersDatatable = (function() {
 
-            // demo initializer
-            var demo = function() {
-                var datatable = $('.m-datatable').mDatatable({
+            var initializeDatatable = function() {
+                var childTable = function(e) {
+                    $('<div/>')
+                        .attr('id', 'suppliers_for_currency_' + e.data.currencyId)
+                        .appendTo(e.detailCell);
+                }
+                var parentTable = $('.m-datatable').mDatatable({
                     data: {
                         saveState: { webstroage: true },
                         pageSize: 15
@@ -51,10 +54,7 @@ export class IndividualSuppliersTableComponent
                     pagination: true,
                     detail: {
                         title: 'Load sub tablte',
-                        content: e => {
-                            console.log(e.data);
-                            console.log('init subtatble script');
-                        }
+                        content: childTable
                     },
                     search: {
                         input: $('#generalSearch')
@@ -86,7 +86,7 @@ export class IndividualSuppliersTableComponent
                 });
 
                 $('#m_form_status').on('change', function() {
-                    datatable.search(
+                    parentTable.search(
                         ($(this)
                             .val() as string)
                             .toLowerCase(),
@@ -95,7 +95,7 @@ export class IndividualSuppliersTableComponent
                 });
 
                 $('#m_form_type').on('change', function() {
-                    datatable.search(
+                    parentTable.search(
                         ($(this)
                             .val() as string)
                             .toLowerCase(),
@@ -110,13 +110,13 @@ export class IndividualSuppliersTableComponent
                 //== Public functions
                 init: function() {
                     // init dmeo
-                    demo();
+                    initializeDatatable();
                 }
             };
         })();
 
         jQuery(document).ready(function() {
-            DatatableHtmlTableDemo.init();
+            SuppliersDatatable.init();
         });
         //# sourceMappingURL=html-table.js.map
     }

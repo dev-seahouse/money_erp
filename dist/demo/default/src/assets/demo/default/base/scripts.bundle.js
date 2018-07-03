@@ -3424,7 +3424,8 @@ $(document).ready(function() {
 					var subTable = $(subTableRow).find('.m-datatable__subtable');
 
 					// get id from first column of parent row
-					var primaryKey = $(this).closest('[data-field]:first-child').find('.m-datatable__toggle-subtable').data('value');
+					var primaryKey = String($(this).closest('[data-field]:first-child').find('.m-datatable__toggle-subtable').data('value'));
+					console.log(typeof primaryKey);
 
 					var icon = $(this).find('i').removeAttr('class');
 
