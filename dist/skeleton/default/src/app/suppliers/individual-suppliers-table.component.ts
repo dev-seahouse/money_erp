@@ -33,7 +33,9 @@ export class IndividualSuppliersTableComponent
         childTable = function(e) {
           $('<div/>')
             .attr('id', 'suppliers_for_currency_' + e.data.currencyId)
-            .appendTo(e.detailCell);
+            .appendTo(e.detailCell)
+              .mDatatable({
+              });
         };
         parentTable = $('.m-datatable').mDatatable({
           data: {
