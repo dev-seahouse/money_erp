@@ -65,16 +65,21 @@ export class IndividualSuppliersTableComponent
                 sortable: true,
                 columns: [
                   {
-                    title: "",
+                    title: "#",
                     field: 'rateId',
                     sortable: false,
+                    filterable: false,
                     textAlign: 'center',
                     width: 20
 
                   },
                   {
+                    title: "Average Rate",
                     field: 'rate',
-                    title: "Average Rate"
+                  },
+                  {
+                    title: "Agent Name",
+                    field: 'supplierId',
                   }
                 ]
 
