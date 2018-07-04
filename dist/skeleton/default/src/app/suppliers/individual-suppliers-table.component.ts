@@ -1,5 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { SupplierService } from './supplier.service';
+import {CurrenciesService} from "./currencies.service";
+import {RatesService} from "./rates.service";
 
 @Component({
   selector: 'app-individual-suppliers-table',
@@ -9,32 +11,73 @@ import { SupplierService } from './supplier.service';
 export class IndividualSuppliersTableComponent
   implements OnInit, AfterViewInit {
   suppliers: any[];
+  currencies: any[];
+  rates: any[];
   errorMessage: string;
 
-  constructor( private _supplierService: SupplierService ) {}
+  constructor( private _supplierService: SupplierService,
+               private _currenciesService: CurrenciesService,
+               private _ratesService: RatesService
+               ) {}
 
   ngOnInit(): void {
-    this._supplierService.getSuppliers().subscribe(suppliers => {
-      // this.createDatatable(suppliers);
-      this.suppliers = suppliers;
-    }, error => (this.errorMessage = <any>error));
+
   }
 
   ngAfterViewInit(): void {
-    this.initDatatable();
+    this._supplierService.getSuppliers().subscribe(suppliers => {
+      // this.createDatatable(suppliers);
+      this.suppliers = suppliers;
+      this._currenciesService.getCurrencyTypes().subscribe(currencies => {
+        this.currencies = currencies;
+      }, error => (this.errorMessage += <any>error));
+      this._ratesService.getRates().subscribe(rates => {
+        this.rates = rates;
+        this.initDatatable( this.rates, this.currencies, this.suppliers );
+      }, error => (this.errorMessage+= <any>error));
+    }, error => (this.errorMessage += <any>error));
   }
 
-  private initDatatable() {
+  private initDatatable(rates :any [] = [], currencyTypes: any[] = [], indivAgents: any[] = []) {
 
     const SuppliersDatatable = (function() {
       let childTable;
       let parentTable;
       const initializeDatatable = function() {
         childTable = function(e) {
+          const currencyId = e.data.currencyId;
+          const filteredRates = rates.filter((o) => {
+            return o.currencyId = currencyId
+          });
+
           $('<div/>')
             .attr('id', 'suppliers_for_currency_' + e.data.currencyId)
             .appendTo(e.detailCell)
               .mDatatable({
+                data: {
+                  type:'local',
+                  source: filteredRates,
+                  pageSize: 15,
+                  saveState: {
+                    cookie: true
+                  }
+                },
+                sortable: true,
+                columns: [
+                  {
+                    title: "",
+                    field: 'rateId',
+                    sortable: false,
+                    textAlign: 'center',
+                    width: 20
+
+                  },
+                  {
+                    field: 'rate',
+                    title: "Average Rate"
+                  }
+                ]
+
               });
         };
         parentTable = $('.m-datatable').mDatatable({
@@ -61,10 +104,10 @@ export class IndividualSuppliersTableComponent
             {
               field: 'currencyId',
               title: '#',
-              width: 20,
               textAlign: 'center',
               type: 'number',
-              sortable: false
+              sortable: false,
+              width:20
             },
             {
               field: 'currencyName',
@@ -131,7 +174,6 @@ export class IndividualSuppliersTableComponent
               pageSize: 15,
               saveState: {
                 cookie: true,
-                webstroage: true
               }
             },
             // layout definition

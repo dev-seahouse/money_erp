@@ -101,18 +101,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>0</td>
-                    <td>Malaysian ringgit - MTR</td>
+                <tr *ngFor="let currency of currencies">
+                    <td>{{ currency.currencyId }}</td>
+                    <td>{{ currency.currencyName }} - {{ currency.currencyCode }}</td>
                     <td>13</td>
                     <td>1.234</td>
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Indonesian rupiah - IND</td>
-                    <td>10</td>
-                    <td>10,521.00</td>
                 </tr>
             </tbody>
         </table>

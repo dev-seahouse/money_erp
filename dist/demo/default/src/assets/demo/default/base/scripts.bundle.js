@@ -1906,7 +1906,6 @@ $(document).ready(function() {
 			 * Extract static HTML table content into datasource
 			 */
 			extractTable: function () {
-				console.log("start extract table");
 				var columns = [];
 				var headers = $(datatable).find('tr:first-child th').get().map(function (cell, i) {
 					var field = $(cell).data('field');
@@ -1934,7 +1933,6 @@ $(document).ready(function() {
 					}
 					var td = {};
 					$(this).find('td').each(function (i, cell) {
-						console.log(cell.innerHTML);
 
 						td[headers[i]] = cell.innerHTML.trim();
 					});

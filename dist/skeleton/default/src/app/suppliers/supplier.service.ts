@@ -8,12 +8,12 @@ import { tap, catchError } from 'rxjs/operators';
 })
 
 export class SupplierService {
-    private suppliersUrl = '../../api/suppliers/suppliers.json';
+    private individualAgentsUrl = '../../api/suppliers/indiv-agents.json';
 
-    constructor(private http: HttpClient) { }
+    constructor(private _http: HttpClient) { }
 
     getSuppliers(): Observable<any[]> {
-        return this.http.get<any[]>(this.suppliersUrl).pipe(
+        return this._http.get<any[]>(this.individualAgentsUrl).pipe(
             //tap(data => console.log('All suppliers data: ' + JSON.stringify(data))),
             catchError(this.handleError), );
     }
