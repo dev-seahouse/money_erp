@@ -23,13 +23,13 @@ export class IndividualSuppliersTableComponent
 
   ngOnInit(): void {
     forkJoin(
-      this._supplierService.getSuppliers(),
       this._currenciesService.getCurrencyTypes(),
+      this._supplierService.getSuppliers(),
       this._ratesService.getRates()
     ).subscribe(
       data => {
-        this.suppliers = data[0];
-        this.currencies = data[1];
+        this.currencies = data[0];
+        this.suppliers = data[1];
         this.rates = data[2];
         this.initDatatable(this.rates, this.currencies, this.suppliers);
       }, err => this.errorMessage += <any>(err)
@@ -46,7 +46,7 @@ export class IndividualSuppliersTableComponent
           console.log(e.data);
           const currencyId = e.data.currencyId;
           const filteredRates = rates.filter((o) => {
-            return o.currencyId = currencyId;
+            return +(o.currencyId) === +currencyId;
           });
 
           console.log(filteredRates);
@@ -66,17 +66,20 @@ export class IndividualSuppliersTableComponent
                 sortable: true,
                 columns: [
                   {
-                    title: '#',
+                    title: '',
                     field: 'rateId',
                     sortable: false,
                     filterable: false,
                     textAlign: 'center',
-                    width: 20
+                    width: 20,
+                    overflow: 'hidden',
 
                   },
                   {
                     title: 'Average Rate',
                     field: 'rate',
+                    width: 120,
+                    sortable: 'asc'
                   },
                   {
                     title: 'Agent Name',
