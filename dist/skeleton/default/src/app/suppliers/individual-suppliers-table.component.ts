@@ -1,8 +1,8 @@
-import { Component, OnInit, AfterViewInit, AfterContentInit } from '@angular/core';
-import { SupplierService } from './supplier.service';
+import {Component, OnInit, AfterViewInit, AfterContentInit} from '@angular/core';
+import {SupplierService} from './supplier.service';
 import {CurrenciesService} from './currencies.service';
 import {RatesService} from './rates.service';
-import { forkJoin } from 'rxjs';
+import {forkJoin} from 'rxjs';
 
 @Component({
   selector: 'app-individual-suppliers-table',
@@ -16,10 +16,11 @@ export class IndividualSuppliersTableComponent
   rates: any[];
   errorMessage: string;
 
-  constructor( private _supplierService: SupplierService,
-               private _currenciesService: CurrenciesService,
-               private _ratesService: RatesService
-               ) {}
+  constructor(private _supplierService: SupplierService,
+              private _currenciesService: CurrenciesService,
+              private _ratesService: RatesService
+  ) {
+  }
 
   ngOnInit(): void {
     forkJoin(
@@ -38,60 +39,57 @@ export class IndividualSuppliersTableComponent
 
   private initDatatable(rates: any [] = [], currencyTypes: any[] = [], indivAgents: any[] = []) {
 
-    const SuppliersDatatable = (function() {
+    const SuppliersDatatable = (function () {
       let childTable;
       let parentTable;
-      const initializeDatatable = function() {
-        childTable = function(e) {
-          console.log(e.data);
+      const initializeDatatable = function () {
+        childTable = function (e) {
           const currencyId = e.data.currencyId;
-          const filteredRates = rates.filter((o) => {
+          const ratesOfCurrency = rates.filter((o) => {
             return +(o.currencyId) === +currencyId;
           });
-
-          console.log(filteredRates);
 
           $('<div/>')
             .attr('id', 'suppliers_for_currency_' + e.data.currencyId)
             .appendTo(e.detailCell)
-              .mDatatable({
-                data: {
-                  type: 'local',
-                  source: filteredRates,
-                  pageSize: 15,
-                  saveState: {
-                    cookie: true
-                  }
+            .mDatatable({
+              data: {
+                type: 'local',
+                source: ratesOfCurrency,
+                pageSize: 15,
+                saveState: {
+                  cookie: true
+                }
+              },
+              sortable: true,
+              columns: [
+                {
+                  title: '',
+                  field: 'rateId',
+                  sortable: false,
+                  filterable: false,
+                  textAlign: 'center',
+                  width: 20,
+                  overflow: 'hidden',
+
                 },
-                sortable: true,
-                columns: [
-                  {
-                    title: '',
-                    field: 'rateId',
-                    sortable: false,
-                    filterable: false,
-                    textAlign: 'center',
-                    width: 20,
-                    overflow: 'hidden',
+                {
+                  title: 'Average Rate',
+                  field: 'rate',
+                  width: 120,
+                  sortable: 'asc'
+                },
+                {
+                  title: 'Agent Name',
+                  field: 'supplierId',
+                }
+              ]
 
-                  },
-                  {
-                    title: 'Average Rate',
-                    field: 'rate',
-                    width: 120,
-                    sortable: 'asc'
-                  },
-                  {
-                    title: 'Agent Name',
-                    field: 'supplierId',
-                  }
-                ]
-
-              });
+            });
         };
         parentTable = $('.m-datatable').mDatatable({
           data: {
-            saveState: { webstroage: true, cookie: true },
+            saveState: {webstroage: true, cookie: true},
             pageSize: 15
           },
           layout: {
@@ -139,11 +137,11 @@ export class IndividualSuppliersTableComponent
           ]
         });
 
-        $('#m_form_status').on('change', function() {
+        $('#m_form_status').on('change', function () {
           parentTable.search(($(this).val() as string).toLowerCase(), 'Status');
         });
 
-        $('#m_form_type').on('change', function() {
+        $('#m_form_type').on('change', function () {
           parentTable.search(($(this).val() as string).toLowerCase(), 'Type');
         });
 
@@ -151,18 +149,18 @@ export class IndividualSuppliersTableComponent
       };
 
       return {
-        init: function() {
+        init: function () {
           initializeDatatable();
         },
-        getChildTable: function() {
-            return childTable;
+        getChildTable: function () {
+          return childTable;
         },
-        getParentTable: function() {
-            return parentTable;
+        getParentTable: function () {
+          return parentTable;
         }
       };
     })();
-    $(document).ready(function() {
+    $(document).ready(function () {
       SuppliersDatatable.init();
     });
     // # sourceMappingURL=html-table.js.map
