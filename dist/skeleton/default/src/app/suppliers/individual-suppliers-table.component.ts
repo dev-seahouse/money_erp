@@ -2,7 +2,8 @@ import {Component, OnInit, AfterViewInit, AfterContentInit} from '@angular/core'
 import {SupplierService} from './supplier.service';
 import {CurrenciesService} from './currencies.service';
 import {RatesService} from './rates.service';
-import {forkJoin} from 'rxjs';
+import {flatMap, map} from 'rxjs/operators';
+import {forkJoin} from 'rxjs/observable/forkJoin';
 
 @Component({
   selector: 'app-individual-suppliers-table',
@@ -23,18 +24,35 @@ export class IndividualSuppliersTableComponent
   }
 
   ngOnInit(): void {
-    forkJoin(
-      this._currenciesService.getCurrencyTypes(),
-      this._supplierService.getSuppliers(),
-      this._ratesService.getRates()
-    ).subscribe(
-      data => {
-        this.currencies = data[0];
-        this.suppliers = data[1];
-        this.rates = data[2];
-        this.initDatatable(this.rates, this.currencies, this.suppliers);
-      }, err => this.errorMessage += <any>(err)
-    );
+
+    this._currenciesService.getCurrencyTypes().pipe(
+      flatMap(
+        (currencies: any[]) => {
+          return currencies.map((currency: any) => {
+            // create agents array for each currency
+            console.log(currencies);
+            currency.agents = [];
+            return currency;
+          });
+        },
+      )
+    ).subscribe(data => {
+      console.log("final stuff");
+      console.log(data);
+    });
+
+    /*    forkJoin(
+          this._currenciesService.getCurrencyTypes(),
+          this._supplierService.getSuppliers(),
+          this._ratesService.getRates()
+        ).subscribe(
+          data => {
+            this.currencies = data[0];
+            this.suppliers = data[1];
+            this.rates = data[2];
+            this.initDatatable(this.rates, this.currencies, this.suppliers);
+          }, err => this.errorMessage += <any>(err)
+        );*/
   }
 
   private initDatatable(rates: any [] = [], currencyTypes: any[] = [], indivAgents: any[] = []) {

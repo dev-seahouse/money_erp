@@ -9,7 +9,7 @@ import {catchError} from 'rxjs/operators';
 })
 export class CurrenciesService {
 
-  private currenciesUrl = '../../api/suppliers/currencyTypes.json';
+  private currenciesUrl = '../../api/suppliers/currency-types.json';
   constructor(private http: HttpClient) { }
 
   getCurrencyTypes(): Observable<any[]> {

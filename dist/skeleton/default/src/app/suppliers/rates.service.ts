@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";
-import {catchError} from "rxjs/operators";
+import {catchError, filter} from "rxjs/operators";
 import {throwError} from "rxjs/index";
 
 @Injectable({
@@ -16,6 +16,13 @@ export class RatesService {
     return this._http.get<any>(this.ratesUrl).pipe(
       catchError(this.handleError),
     );
+  }
+
+  getRatesByCurrencyId(cid: number): Observable<any[]> {
+    return this.getRates().pipe(
+      filter((rate: any) => rate.currencyId === cid),
+      catchError(this.handleError)
+    )
   }
 
   private handleError(err) {
