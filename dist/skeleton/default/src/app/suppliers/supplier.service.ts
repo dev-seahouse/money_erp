@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { tap, catchError,filter } from 'rxjs/operators';
+import { tap, catchError, filter } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
@@ -18,10 +18,10 @@ export class SupplierService {
             catchError(this.handleError), );
     }
     // todo: use supplier type
-    getSuppliersById(supplierId, supplierType = 0 ): Observable<any[]> {
-      return this.getSuppliers().pipe(
-        filter((supplier:any)=>(supplier.id === supplierId))
-      );
+    getSuppliersById(supplierId, supplierType = 0): Observable<any[]> {
+        return this.getSuppliers().pipe(
+            filter((supplier: any) => (supplier.id === supplierId))
+        );
     }
 
     private handleError(err) {
