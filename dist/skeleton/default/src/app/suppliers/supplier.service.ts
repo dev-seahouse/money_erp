@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { tap, catchError, filter } from 'rxjs/operators';
+import {catchError, filter, concatMap, tap, mergeMap} from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
@@ -20,7 +20,8 @@ export class SupplierService {
     // todo: use supplier type
     getSuppliersById(supplierId, supplierType = 0): Observable<any[]> {
         return this.getSuppliers().pipe(
-            filter((supplier: any) => (supplier.id === supplierId))
+          mergeMap(supplier=>supplier),
+            filter((supplier: any) =>{ return supplier.id === supplierId; })
         );
     }
 
