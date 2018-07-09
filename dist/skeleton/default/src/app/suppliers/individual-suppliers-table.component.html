@@ -102,9 +102,9 @@
             </thead>
             <tbody>
                 <tr *ngFor="let currency of currencies">
-                    <td>{{ currency.currencyId }}</td>
+                    <td>{{ currency.id }}</td>
                     <td>{{ currency.currencyName }} - {{ currency.currencyCode }}</td>
-                    <td>13</td>
+                    <td>{{ currency.numAgents}}</td>
                     <td>1.234</td>
                 </tr>
             </tbody>

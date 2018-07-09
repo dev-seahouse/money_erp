@@ -37,7 +37,7 @@ export class IndividualSuppliersTableComponent
                 currency.numAgents++;
 
                 let supplierRequest = this._supplierService.getSuppliersById(rate.supplierId).pipe(
-                  map((supplier:any)=> {currency.supplier = supplier; return currency})
+                  map((supplier:any)=> {rate.supplier = supplier; return currency})
                 );
 
                 return supplierRequest;
@@ -50,8 +50,7 @@ export class IndividualSuppliersTableComponent
       ),
     ).subscribe(data => {
       this.currencies = data;
-      this.initDatatable(this.rates, this.currencies, this.suppliers);
-      console.log(data);
+      this.initDatatable(this.currencies);
     });
 
     // forkJoin(
@@ -68,7 +67,7 @@ export class IndividualSuppliersTableComponent
     // );
   }
 
-  private initDatatable(rates: any[] = [], currencyTypes: any[] = [], indivAgents: any[] = []) {
+  private initDatatable(currencies:any[]=[] , rates: any[] = [], indivAgents: any[] = []) {
 
     const SuppliersDatatable = (function () {
       let childTable;
@@ -76,9 +75,8 @@ export class IndividualSuppliersTableComponent
       const initializeDatatable = function () {
         childTable = function (e) {
           const currencyId = e.data.currencyId;
-          const ratesOfCurrency = rates.filter((o) => {
-            return +(o.currencyId) === +currencyId;
-          });
+          console.log(currencyId);
+          const currencyObj = currencies.find((obj)=> +obj.id === +currencyId);
 
           $('<div/>')
             .attr('id', 'suppliers_for_currency_' + e.data.currencyId)
@@ -86,7 +84,7 @@ export class IndividualSuppliersTableComponent
             .mDatatable({
               data: {
                 type: 'local',
-                source: ratesOfCurrency,
+                source: currencyObj.agents,
                 pageSize: 15,
                 saveState: {
                   cookie: true
@@ -96,7 +94,7 @@ export class IndividualSuppliersTableComponent
               columns: [
                 {
                   title: '',
-                  field: 'rateId',
+                  field: 'supplier.id',
                   sortable: false,
                   filterable: false,
                   textAlign: 'center',
@@ -105,15 +103,59 @@ export class IndividualSuppliersTableComponent
 
                 },
                 {
-                  title: 'Average Rate',
-                  field: 'rate',
-                  width: 120,
-                  sortable: 'asc'
+                  title: 'Agent Code',
+                  field: 'supplier.code',
+                  sortable: true,
+                  filterable: true,
+                  width: 100
+
                 },
                 {
                   title: 'Agent Name',
-                  field: 'supplierId',
+                  field: 'supplier.name',
+                  sortable: true,
+                  filterable: true,
+                  width: 120
+
+                },
+                {
+                  title: 'Average Rate',
+                  field: 'rate',
+                  width: 80,
+                  sortable: 'asc'
+                },
+                {
+                  title: "Payout Partner?",
+                  field: "supplier.isPayoutPartner",
+                  sortable:true,
+                  filterable: true,
+                  width: 100,
+                  template: function (row) {
+                    return row.supplier.isPayoutPartner === 'y'? 'Yes': "No"
+                  }
+                },
+                {
+                  title: "Phone",
+                  field: 'supplier.phone',
+                  width: 150,
+                  sortable:false,
+                  filterable: true,
+                },
+                {
+                  title: "Email",
+                  field: 'supplier.email',
+                  width:250,
+                  sortable: false,
+                  filterable: true
+                },
+                {
+                  title: "Status",
+                  field: 'supplier.activeStatus',
+                  width: 120,
+                  sortable: true,
+                  filterable: false
                 }
+
               ]
 
             });
