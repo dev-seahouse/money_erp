@@ -7,6 +7,7 @@ import { DefaultComponent } from '../theme/pages/default/default.component';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutModule } from '../theme/layouts/layout.module';
 import { IndividualSuppliersTableComponent } from './individual-suppliers-table.component';
+import { CorporateSuppliersTableComponent } from './corporate-suppliers-table.component';
 
 const routes: Routes = [
     {
@@ -29,6 +30,6 @@ const routes: Routes = [
         LayoutModule,
     ],
     exports: [RouterModule],
-    declarations: [SuppliersComponent, SharedComponent, IndividualSuppliersTableComponent],
+    declarations: [SuppliersComponent, SharedComponent, IndividualSuppliersTableComponent, CorporateSuppliersTableComponent, ],
 })
 export class SuppliersModule { }
