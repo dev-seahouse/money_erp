@@ -29,6 +29,7 @@
     "core-js": "^2.5.3",
     "counterup": "^1.0.2",
     "css-toggle-switch": "^4.1.0",
+    "currency-flags": "https://github.com/transferwise/currency-flags.git",
     "datatables.net-autofill-bs4": "^2.2.2",
     "datatables.net-bs4": "^1.10.16",
     "datatables.net-buttons-bs4": "^1.5.1",

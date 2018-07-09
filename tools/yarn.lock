@@ -834,6 +834,10 @@ css@2.X, css@^2.2.1:
     source-map-resolve "^0.5.1"
     urix "^0.1.0"
 
+"currency-flags@https://github.com/transferwise/currency-flags.git":
+  version "1.7.1"
+  resolved "https://github.com/transferwise/currency-flags.git#799c37b4787c621d72ff54ab4b9cc5340f3bbb28"
+
 currently-unhandled@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/currently-unhandled/-/currently-unhandled-0.4.1.tgz#988df33feab191ef799a61369dd76c17adf957ea"

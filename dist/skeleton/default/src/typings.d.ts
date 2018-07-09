@@ -28,5 +28,7 @@ interface JQuery {
 
     selectpicker(): any;
 
+    sort(data: any): any;
+
 
 }

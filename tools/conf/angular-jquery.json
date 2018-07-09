@@ -84,8 +84,17 @@
                                 "{$config.path.node_modules}/wnumb/wNumb.js"
                             ]
                         }
+
                     },
                     "optional": {
+                        "currency-flags": {
+                            "styles": [
+                                "{$config.path.node_modules}/currency-flags/dist/currency-flags.css"
+                            ],
+                            "images": [
+                                "{$config.path.node_modules}/currency-flags/src/flags/*"
+                            ]
+                        },
                         "jquery.repeater": {
                             "scripts": [
                                 "{$config.path.node_modules}/jquery.repeater/src/intro.js",

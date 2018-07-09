@@ -89,7 +89,7 @@
                 <tr>
                     <th title="Currency record id" data-field="currencyId">
                     </th>
-                    <th title="Name of the currency" data-field="currencyName">
+                    <th title="Name of the currency" data-field="currencyName" >
                         Currency
                     </th>
                     <th title="Total number of agents dealing this currency" data-field="numAgents">
@@ -103,7 +103,7 @@
             <tbody>
                 <tr *ngFor="let currency of currencies">
                     <td>{{ currency.id }}</td>
-                    <td>{{ currency.currencyName }} - {{ currency.currencyCode }}</td>
+                    <td>{{ currency.currencyName }} - {{ currency.currencyCode }} <div [ngStyle]="{'width':'25px', 'margin-left': '5px', 'margin-bottom': '-4px'}" [className]="'currency-flag currency-flag-' + currency.currencyCode | lowercase" ></div></td>
                     <td>{{ currency.numAgents}}</td>
                     <td>1.234</td>
                 </tr>

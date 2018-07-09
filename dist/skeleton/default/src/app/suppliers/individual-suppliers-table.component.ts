@@ -122,6 +122,7 @@ export class IndividualSuppliersTableComponent
                                     title: 'Average Rate',
                                     field: 'rate',
                                     width: 80,
+                                    type: 'number',
                                     sortable: 'asc'
                                 },
                                 {
@@ -132,6 +133,25 @@ export class IndividualSuppliersTableComponent
                                     width: 100,
                                     template: function(row) {
                                         return row.supplier.isPayoutPartner === 'y' ? 'Yes' : "No"
+                                    },
+                                    sortCallback: (data, sort, column)=>{
+                                        let field = column['field'];
+                                        let values= {"Yes": 1, "No": 0, "y": 1, "n" : 0}
+                                        return $(data).sort((a,b)=>{
+                                            let aField = a.supplier.isPayoutPartner;
+                                            aField=values[aField];
+                                            let bField = b.supplier.isPayoutPartner;
+                                            bField=values[bField];
+
+                                          if (sort === 'asc') {
+                                            return aField > bField ? 1 : aField < bField ? -1 : 0;
+                                          } else {
+                                            return aField < bField ? 1 : aField > bField ? -1 : 0;
+                                          }
+
+
+
+                                        })
                                     }
                                 },
                                 {
@@ -200,7 +220,7 @@ export class IndividualSuppliersTableComponent
                         {
                             field: 'currencyName',
                             title: 'Currency Name',
-                            width: 190,
+                            width: 400,
                             type: 'number'
                         },
                         {
@@ -213,7 +233,8 @@ export class IndividualSuppliersTableComponent
                             field: 'avgRate',
                             title: 'Average Rate',
                             width: 500,
-                            type: 'number'
+                            type: 'number',
+                            sortable: 'asc'
                         }
                     ]
                 });
