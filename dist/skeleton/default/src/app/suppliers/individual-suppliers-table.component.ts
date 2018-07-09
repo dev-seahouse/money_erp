@@ -144,16 +144,24 @@ export class IndividualSuppliersTableComponent
                 {
                   title: "Email",
                   field: 'supplier.email',
-                  width:250,
+                  width:210,
                   sortable: false,
                   filterable: true
                 },
                 {
                   title: "Status",
                   field: 'supplier.activeStatus',
-                  width: 120,
+                  width: 150,
                   sortable: true,
-                  filterable: false
+                  filterable: false,
+                  template: row => {
+                    var status = {
+                      'Active': {'title': 'Active', 'class': 'm-badge--success' },
+                      "Inactive": {'title:': 'Inactive', 'class': 'm-badge--metal'},
+                      "Blocked" : {'title': "Blocked", 'class': 'm-badge--danger'}
+                    };
+                    return '<span class="m-badge ' + status[row.supplier.activeStatus].class + ' m-badge--wide">' + status[row.supplier.activeStatus].title + '</span>';
+                  }
                 }
 
               ]
@@ -198,7 +206,7 @@ export class IndividualSuppliersTableComponent
             {
               field: 'numAgents',
               title: 'Individual Agent',
-              width: 100,
+              width: 200,
               type: 'number'
             },
             {
