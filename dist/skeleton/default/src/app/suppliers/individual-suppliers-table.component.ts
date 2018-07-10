@@ -89,7 +89,6 @@ export class IndividualSuppliersTableComponent implements OnInit {
       let childInitializer = parentTableData => {
 
         const currencyObj = currencies.find((obj) => +obj.id === +parentTableData.data.currencyId);
-        console.log(currencyObj);
         childTable = $('<div/>')
           .attr('id', 'suppliers_for_currency_' + parentTableData.data.currencyId)
           .appendTo(parentTableData.detailCell)
@@ -251,7 +250,8 @@ export class IndividualSuppliersTableComponent implements OnInit {
       });
 
       $('#m_form_status').on('change', function () {
-        childTable.search(($(this).val() as string).toLowerCase(), 'Status');
+
+        childTable.search(($(this).val() as string), 'supplier.activeStatus');
       });
 
       $('#m_form_type').on('change', function () {

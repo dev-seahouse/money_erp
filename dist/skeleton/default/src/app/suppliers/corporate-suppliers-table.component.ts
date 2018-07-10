@@ -237,7 +237,7 @@ export class CorporateSuppliersTableComponent implements OnInit {
       });
 
       $('#m_form_status').on('change', function () {
-        childTable.search(($(this).val() as string).toLowerCase(), 'Status');
+        childTable.search(($(this).val() as string).toLowerCase(), 'Email');
       });
 
       $('#m_form_type').on('change', function () {
