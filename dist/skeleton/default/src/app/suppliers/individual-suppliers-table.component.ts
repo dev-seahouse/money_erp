@@ -78,8 +78,8 @@ export class IndividualSuppliersTableComponent
       const initializeDatatable = function () {
         childTable = function (e) {
           const currencyId = e.data.currencyId;
-          console.log(currencyId);
           const currencyObj = currencies.find((obj) => +obj.id === +currencyId);
+
 
           $('<div/>')
             .attr('id', 'suppliers_for_currency_' + e.data.currencyId)
@@ -90,7 +90,8 @@ export class IndividualSuppliersTableComponent
                 source: currencyObj.agents,
                 pageSize: 15,
                 saveState: {
-                  cookie: true
+                  cookie: false,
+                  localStorage: true
                 }
               },
               sortable: true,
@@ -113,15 +114,6 @@ export class IndividualSuppliersTableComponent
                   sortable: true,
                   filterable: true,
                   width: 100
-
-                },
-                {
-                  title: 'Agent Name',
-                  field: 'supplier.name',
-                  sortable: true,
-                  filterable: true,
-                  width: 120
-
                 },
                 {
                   title: 'Average Rate',
@@ -129,6 +121,14 @@ export class IndividualSuppliersTableComponent
                   width: 80,
                   type: 'number',
                   sortable: 'asc'
+                },
+                {
+                  title: 'Agent Name',
+                  width: 120,
+                  field: 'agentName',
+                  template: row => {
+                    return `${row.supplier.fName} ${row.supplier.lName}`;
+                  }
                 },
                 {
                   title: "Payout Partner?",
@@ -178,9 +178,9 @@ export class IndividualSuppliersTableComponent
                   filterable: false,
                   template: row => {
                     var status = {
-                      'Active': {'title': 'Active', 'class': 'm-badge--success'},
-                      "Inactive": {'title:': 'Inactive', 'class': 'm-badge--metal'},
-                      "Blocked": {'title': "Blocked", 'class': 'm-badge--danger'}
+                      2: {'title': 'Active', 'class': 'm-badge--success'},
+                      1: {'title:': 'Inactive', 'class': 'm-badge--metal'},
+                      0: {'title': "Blocked", 'class': 'm-badge--danger'}
                     };
                     return '<span class="m-badge ' + status[row.supplier.activeStatus].class + ' m-badge--wide">' + status[row.supplier.activeStatus].title + '</span>';
                   }
