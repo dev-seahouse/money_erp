@@ -15,6 +15,7 @@ export class IndividualSuppliersTableComponent  implements OnInit {
   suppliers: any[];
   currencies: any[];
   errorMessage: string;
+  readonly INDIVIDUAL_AGENT = 0;
   childTable: any;
   parentTable: any;
 
@@ -25,8 +26,23 @@ export class IndividualSuppliersTableComponent  implements OnInit {
   }
 
   ngOnInit(): void {
-    const INDIVIDUAL_AGENT = 0;
+    this.prepareDataTable();
 
+    // forkJoin(
+    //   this._currenciesService.getCurrencyTypes(),
+    //   this._supplierService.getSuppliers(),
+    //   this._ratesService.getRates()
+    // ).subscribe(
+    //   data => {
+    //     this.currencies = data[0];
+    //     this.suppliers = data[1];
+    //     this.rates = data[2];
+    //     this.initDatatable(this.rates, this.currencies, this.suppliers);
+    //   }, err => this.errorMessage += <any>(err)
+    // );
+  }
+
+  private prepareDataTable() {
     this._currenciesService.getCurrencyTypes().pipe(
       flatMap((currencies: any[],) => {
           return forkJoin(currencies.map((currency: any) => {
@@ -38,7 +54,7 @@ export class IndividualSuppliersTableComponent  implements OnInit {
                 currency.agents.push(rate);
                 currency.numAgents++;
 
-                let supplierRequest = this._supplierService.getSuppliersById(rate.supplierId, INDIVIDUAL_AGENT).pipe(
+                let supplierRequest = this._supplierService.getSuppliersById(rate.supplierId, this.INDIVIDUAL_AGENT).pipe(
                   map((supplier: any) => {
                     rate.supplier = supplier;
                     return currency
@@ -57,144 +73,126 @@ export class IndividualSuppliersTableComponent  implements OnInit {
       this.currencies = data;
       this.initIndivAgentTable(this.currencies);
     });
-
-    // forkJoin(
-    //   this._currenciesService.getCurrencyTypes(),
-    //   this._supplierService.getSuppliers(),
-    //   this._ratesService.getRates()
-    // ).subscribe(
-    //   data => {
-    //     this.currencies = data[0];
-    //     this.suppliers = data[1];
-    //     this.rates = data[2];
-    //     this.initDatatable(this.rates, this.currencies, this.suppliers);
-    //   }, err => this.errorMessage += <any>(err)
-    // );
-  }
-
-  private createChildTable(e:any, currencies: any[]){
-
   }
 
   private initIndivAgentTable(currencies: any[] = []) {
-    let childTable;
     let parentTable;
+    let childTable = e => {
+      const currencyObj = currencies.find((obj) => +obj.id === +e.data.currencyId);
+
+
+      $('<div/>')
+        .attr('id', 'suppliers_for_currency_' + e.data.currencyId)
+        .appendTo(e.detailCell)
+        .mDatatable({
+          data: {
+            type: 'local',
+            source: currencyObj.agents,
+            pageSize: 15,
+            saveState: {
+              cookie: false,
+              localStorage: true
+            }
+          },
+          sortable: true,
+          columns: [
+            {
+              title: '',
+              field: 'supplier.id',
+              sortable: false,
+              filterable: false,
+              textAlign: 'center',
+              width: 20,
+              overflow: 'hidden',
+              template: row => {
+                return "<div style='color:transparent'>" + row.supplier.id + "</div>";
+              }
+            },
+            {
+              title: 'Agent Code',
+              field: 'supplier.code',
+              sortable: true,
+              filterable: true,
+              width: 100
+            },
+            {
+              title: 'Average Rate',
+              field: 'rate',
+              width: 80,
+              type: 'number',
+              sortable: 'asc'
+            },
+            {
+              title: 'Agent Name',
+              width: 120,
+              field: 'agentName',
+              template: row => {
+                return `${row.supplier.fName} ${row.supplier.lName}`;
+              }
+            },
+            {
+              title: "Payout Partner?",
+              field: "supplier.isPayoutPartner",
+              sortable: true,
+              filterable: true,
+              width: 100,
+              template: function (row) {
+                return row.supplier.isPayoutPartner === 'y' ? 'Yes' : "No"
+              },
+              sortCallback: (data, sort, column) => {
+                let field = column['field'];
+                let values = {"Yes": 1, "No": 0, "y": 1, "n": 0}
+                return $(data).sort((a, b) => {
+                  let aField = a.supplier.isPayoutPartner;
+                  aField = values[aField];
+                  let bField = b.supplier.isPayoutPartner;
+                  bField = values[bField];
+
+                  if (sort === 'asc') {
+                    return aField > bField ? 1 : aField < bField ? -1 : 0;
+                  } else {
+                    return aField < bField ? 1 : aField > bField ? -1 : 0;
+                  }
+                })
+              }
+            },
+            {
+              title: "Phone",
+              field: 'supplier.phone',
+              width: 150,
+              sortable: false,
+              filterable: true,
+            },
+            {
+              title: "Email",
+              field: 'supplier.email',
+              width: 210,
+              sortable: false,
+              filterable: true
+            },
+            {
+              title: "Status",
+              field: 'supplier.activeStatus',
+              width: 150,
+              sortable: 'desc',
+              filterable: true,
+              template: row => {
+                var status = {
+                  2: {'title': 'Active', 'class': 'm-badge--success'},
+                  1: {'title:': 'Inactive', 'class': 'm-badge--metal'},
+                  0: {'title': "Blocked", 'class': 'm-badge--danger'}
+                };
+                return '<span class="m-badge ' + status[row.supplier.activeStatus].class + ' m-badge--wide">' + status[row.supplier.activeStatus].title + '</span>';
+              }
+            }
+
+          ]
+
+        });
+    };
 
     const SuppliersDatatable = (function () {
       const initializeDatatable = function () {
-        childTable = e => {
-          const currencyObj = currencies.find((obj) => +obj.id === +e.data.currencyId);
-
-
-          $('<div/>')
-            .attr('id', 'suppliers_for_currency_' + e.data.currencyId)
-            .appendTo(e.detailCell)
-            .mDatatable({
-              data: {
-                type: 'local',
-                source: currencyObj.agents,
-                pageSize: 15,
-                saveState: {
-                  cookie: false,
-                  localStorage: true
-                }
-              },
-              sortable: true,
-              columns: [
-                {
-                  title: '',
-                  field: 'supplier.id',
-                  sortable: false,
-                  filterable: false,
-                  textAlign: 'center',
-                  width: 20,
-                  overflow: 'hidden',
-                  template: row => {
-                    return "<div style='color:transparent'>" + row.supplier.id + "</div>";
-                  }
-                },
-                {
-                  title: 'Agent Code',
-                  field: 'supplier.code',
-                  sortable: true,
-                  filterable: true,
-                  width: 100
-                },
-                {
-                  title: 'Average Rate',
-                  field: 'rate',
-                  width: 80,
-                  type: 'number',
-                  sortable: 'asc'
-                },
-                {
-                  title: 'Agent Name',
-                  width: 120,
-                  field: 'agentName',
-                  template: row => {
-                    return `${row.supplier.fName} ${row.supplier.lName}`;
-                  }
-                },
-                {
-                  title: "Payout Partner?",
-                  field: "supplier.isPayoutPartner",
-                  sortable: true,
-                  filterable: true,
-                  width: 100,
-                  template: function (row) {
-                    return row.supplier.isPayoutPartner === 'y' ? 'Yes' : "No"
-                  },
-                  sortCallback: (data, sort, column) => {
-                    let field = column['field'];
-                    let values = {"Yes": 1, "No": 0, "y": 1, "n": 0}
-                    return $(data).sort((a, b) => {
-                      let aField = a.supplier.isPayoutPartner;
-                      aField = values[aField];
-                      let bField = b.supplier.isPayoutPartner;
-                      bField = values[bField];
-
-                      if (sort === 'asc') {
-                        return aField > bField ? 1 : aField < bField ? -1 : 0;
-                      } else {
-                        return aField < bField ? 1 : aField > bField ? -1 : 0;
-                      }
-                    })
-                  }
-                },
-                {
-                  title: "Phone",
-                  field: 'supplier.phone',
-                  width: 150,
-                  sortable: false,
-                  filterable: true,
-                },
-                {
-                  title: "Email",
-                  field: 'supplier.email',
-                  width: 210,
-                  sortable: false,
-                  filterable: true
-                },
-                {
-                  title: "Status",
-                  field: 'supplier.activeStatus',
-                  width: 150,
-                  sortable: 'desc',
-                  filterable: true,
-                  template: row => {
-                    var status = {
-                      2: {'title': 'Active', 'class': 'm-badge--success'},
-                      1: {'title:': 'Inactive', 'class': 'm-badge--metal'},
-                      0: {'title': "Blocked", 'class': 'm-badge--danger'}
-                    };
-                    return '<span class="m-badge ' + status[row.supplier.activeStatus].class + ' m-badge--wide">' + status[row.supplier.activeStatus].title + '</span>';
-                  }
-                }
-
-              ]
-
-            });
-        };
         parentTable = $('.m-datatable').mDatatable({
           data: {
             saveState: {webstroage: true, cookie: true},
