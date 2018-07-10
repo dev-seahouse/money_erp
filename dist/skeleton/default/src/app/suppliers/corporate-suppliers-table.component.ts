@@ -20,6 +20,7 @@ export class CorporateSuppliersTableComponent implements OnInit {
               ) { }
 
   ngOnInit() {
+
   }
 
 }

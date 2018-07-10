@@ -15,6 +15,8 @@ export class IndividualSuppliersTableComponent  implements OnInit {
   suppliers: any[];
   currencies: any[];
   errorMessage: string;
+  childTable: any;
+  parentTable: any;
 
   constructor(private _supplierService: SuppliersService,
               private _currenciesService: CurrenciesService,
@@ -53,7 +55,7 @@ export class IndividualSuppliersTableComponent  implements OnInit {
       ),
     ).subscribe(data => {
       this.currencies = data;
-      this.initDatatable(this.currencies);
+      this.initIndivAgentTable(this.currencies);
     });
 
     // forkJoin(
@@ -70,15 +72,18 @@ export class IndividualSuppliersTableComponent  implements OnInit {
     // );
   }
 
-  private initDatatable(currencies: any[] = [], rates: any[] = [], indivAgents: any[] = []) {
+  private createChildTable(e:any, currencies: any[]){
+
+  }
+
+  private initIndivAgentTable(currencies: any[] = []) {
+    let childTable;
+    let parentTable;
 
     const SuppliersDatatable = (function () {
-      let childTable;
-      let parentTable;
       const initializeDatatable = function () {
-        childTable = function (e) {
-          const currencyId = e.data.currencyId;
-          const currencyObj = currencies.find((obj) => +obj.id === +currencyId);
+        childTable = e => {
+          const currencyObj = currencies.find((obj) => +obj.id === +e.data.currencyId);
 
 
           $('<div/>')
