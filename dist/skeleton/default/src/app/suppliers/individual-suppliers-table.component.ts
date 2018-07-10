@@ -76,14 +76,14 @@ export class IndividualSuppliersTableComponent  implements OnInit {
   }
 
   private initIndivAgentTable(currencies: any[] = []) {
-    let parentTable;
-    let childTable = e => {
-      const currencyObj = currencies.find((obj) => +obj.id === +e.data.currencyId);
+    let parentTableInitializer;
+    let childTableInitializer = parentTableData => {
 
+      const currencyObj = currencies.find((obj) => +obj.id === +parentTableData.data.currencyId);
 
       $('<div/>')
-        .attr('id', 'suppliers_for_currency_' + e.data.currencyId)
-        .appendTo(e.detailCell)
+        .attr('id', 'suppliers_for_currency_' + parentTableData.data.currencyId)
+        .appendTo(parentTableData.detailCell)
         .mDatatable({
           data: {
             type: 'local',
@@ -191,84 +191,71 @@ export class IndividualSuppliersTableComponent  implements OnInit {
         });
     };
 
-    const SuppliersDatatable = (function () {
-      const initializeDatatable = function () {
-        parentTable = $('.m-datatable').mDatatable({
-          data: {
-            saveState: {webstroage: true, cookie: true},
-            pageSize: 15
-          },
-          layout: {
-            theme: 'default',
-            scroll: false,
-            height: null,
-            footer: false
-          },
-          sortable: true,
-          pagination: true,
-          detail: {
-            title: 'Load sub tablte',
-            content: childTable
-          },
-          search: {
-            input: $('#generalSearch')
-          },
-          columns: [
-            {
-              field: 'currencyId',
-              title: '#',
-              textAlign: 'center',
-              type: 'number',
-              sortable: false,
-              width: 20
-            },
-            {
-              field: 'currencyName',
-              title: 'Currency Name',
-              width: 400,
-              type: 'number'
-            },
-            {
-              field: 'numAgents',
-              title: 'Individual Agent',
-              width: 200,
-              type: 'number'
-            },
-            {
-              field: 'avgRate',
-              title: 'Average Rate',
-              width: 500,
-              type: 'number',
-              sortable: 'asc'
-            }
-          ]
-        });
-
-        $('#m_form_status').on('change', function () {
-          parentTable.search(($(this).val() as string).toLowerCase(), 'Status');
-        });
-
-        $('#m_form_type').on('change', function () {
-          parentTable.search(($(this).val() as string).toLowerCase(), 'Type');
-        });
-
-        $('#m_form_status, #m_form_type').selectpicker();
-      };
-
-      return {
-        init: function () {
-          initializeDatatable();
+    const initializeDatatable = function () {
+      parentTableInitializer = $('.m-datatable').mDatatable({
+        data: {
+          saveState: {webstroage: true, cookie: true},
+          pageSize: 15
         },
-        getChildTable: function () {
-          return childTable;
+        layout: {
+          theme: 'default',
+          scroll: false,
+          height: null,
+          footer: false
         },
-        getParentTable: function () {
-          return parentTable;
-        }
-      };
-    })();
+        sortable: true,
+        pagination: true,
+        detail: {
+          title: 'Load sub tablte',
+          content: childTableInitializer
+        },
+        search: {
+          input: $('#generalSearch')
+        },
+        columns: [
+          {
+            field: 'currencyId',
+            title: '#',
+            textAlign: 'center',
+            type: 'number',
+            sortable: false,
+            width: 20
+          },
+          {
+            field: 'currencyName',
+            title: 'Currency Name',
+            width: 400,
+            type: 'number'
+          },
+          {
+            field: 'numAgents',
+            title: 'Individual Agent',
+            width: 200,
+            type: 'number'
+          },
+          {
+            field: 'avgRate',
+            title: 'Average Rate',
+            width: 500,
+            type: 'number',
+            sortable: 'asc'
+          }
+        ]
+      });
+
+      $('#m_form_status').on('change', function () {
+        parentTableInitializer.search(($(this).val() as string).toLowerCase(), 'Status');
+      });
+
+      $('#m_form_type').on('change', function () {
+        parentTableInitializer.search(($(this).val() as string).toLowerCase(), 'Type');
+      });
+
+      $('#m_form_status, #m_form_type').selectpicker();
+    };
+
     $(document).ready(function () {
-      SuppliersDatatable.init();
+      initializeDatatable();
     });
     // # sourceMappingURL=html-table.js.map
   }
