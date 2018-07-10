@@ -73,13 +73,13 @@ export class IndividualSuppliersTableComponent implements OnInit {
       ),
     ).subscribe(data => {
       this.currencies = data;
-      this.initIndivAgentTable(this.currencies);
+      this.initDataTable(this.currencies);
     });
   }
 
 
 
-  private initIndivAgentTable(currencies: any[] = [] ){
+  private initDataTable(currencies: any[] = [] ){
 
     // todo: extract this into a class
     let childTable;
@@ -89,7 +89,7 @@ export class IndividualSuppliersTableComponent implements OnInit {
       let childInitializer = parentTableData => {
 
         const currencyObj = currencies.find((obj) => +obj.id === +parentTableData.data.currencyId);
-
+        console.log(currencyObj);
         childTable = $('<div/>')
           .attr('id', 'suppliers_for_currency_' + parentTableData.data.currencyId)
           .appendTo(parentTableData.detailCell)
@@ -187,11 +187,11 @@ export class IndividualSuppliersTableComponent implements OnInit {
                 filterable: true,
                 template: row => {
                   var status = {
-                    2: {'title': 'Active', 'class': 'm-badge--success'},
-                    1: {'title:': 'Inactive', 'class': 'm-badge--metal'},
-                    0: {'title': "Blocked", 'class': 'm-badge--danger'}
+                    0: {'title': 'Blocked', 'class': 'm-badge--danger'},
+                    1: {'title': 'Inactive', 'class': 'm-badge--metal'},
+                    2: {'title': 'Active', 'class': 'm-badge--success'}
                   };
-                  return '<span class="m-badge ' + status[row.supplier.activeStatus].class + ' m-badge--wide">' + status[row.supplier.activeStatus].title + '</span>';
+                  return '<span class="m-badge ' + status[+row.supplier.activeStatus].class + ' m-badge--wide">' + status[row.supplier.activeStatus].title + '</span>';
                 }
               }
 
@@ -251,7 +251,7 @@ export class IndividualSuppliersTableComponent implements OnInit {
       });
 
       $('#m_form_status').on('change', function () {
-        parentTable.search(($(this).val() as string).toLowerCase(), 'Status');
+        childTable.search(($(this).val() as string).toLowerCase(), 'Status');
       });
 
       $('#m_form_type').on('change', function () {

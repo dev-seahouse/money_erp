@@ -11,7 +11,7 @@ import {forkJoin} from "rxjs/internal/observable/forkJoin";
 
 export class SuppliersService {
     private individualAgentsUrl = '../../api/suppliers/indiv-agents.json';
-    private coporateAgentUrl = '../../api/suppliers/corporate-agents.json';
+    private corporateAgentUrl = '../../api/suppliers/corporate-agents.json';
 
     constructor(private _http: HttpClient) { }
 
@@ -44,7 +44,7 @@ export class SuppliersService {
     private getUrlBySupplierType(supplierType: number) {
       switch(supplierType) {
         case 0: return this.individualAgentsUrl;
-        case 1: return this.coporateAgentUrl;
+        case 1: return this.corporateAgentUrl;
       }
     }
 }
