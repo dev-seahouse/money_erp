@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {SuppliersService} from "./suppliers.service";
+import {CurrenciesService} from "./currencies.service";
+import {RatesService} from "./rates.service";
 
 @Component({
   selector: 'app-corporate-suppliers-table',
@@ -7,7 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CorporateSuppliersTableComponent implements OnInit {
 
-  constructor() { }
+  currencies: any[];
+  errorMessage: string;
+
+
+  constructor(private _suppliersService: SuppliersService,
+              private _currenciesService: CurrenciesService,
+              private _ratesService: RatesService
+              ) { }
 
   ngOnInit() {
   }

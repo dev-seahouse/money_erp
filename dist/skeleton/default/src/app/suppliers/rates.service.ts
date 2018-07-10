@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs/Observable";
-import { catchError, filter, concatMap, mergeMap } from "rxjs/operators";
+import { catchError, filter, flatMap } from "rxjs/operators";
 import { throwError } from "rxjs/index";
 
 @Injectable({
@@ -18,10 +18,10 @@ export class RatesService {
         );
     }
 
-    getRatesByCurrencyId(cid: number): Observable<any[]> {
+    getRatesByCurrencyId(cid: number, sType:number = 0): Observable<any[]> {
         return this.getRates().pipe(
-            mergeMap(rates => rates),
-            filter((rate: any) => { return rate.currencyId === cid }),
+            flatMap(rates => rates),
+            filter((rate: any) => { return rate.currencyId === cid && rate.supplierType === sType }),
             catchError(this.handleError)
         );
     }

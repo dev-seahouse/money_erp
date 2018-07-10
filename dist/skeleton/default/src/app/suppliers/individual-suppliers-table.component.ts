@@ -1,29 +1,29 @@
-import {Component, OnInit, AfterViewInit, AfterContentInit} from '@angular/core';
-import {SupplierService} from './supplier.service';
-import {CurrenciesService} from './currencies.service';
-import {RatesService} from './rates.service';
-import {filter, flatMap, map, tap} from 'rxjs/operators';
-import {forkJoin} from 'rxjs/observable/forkJoin';
+import { Component, OnInit } from '@angular/core';
+import { SuppliersService } from './suppliers.service';
+import { CurrenciesService } from './currencies.service';
+import { RatesService } from './rates.service';
+import { flatMap, map } from 'rxjs/operators';
+import { forkJoin } from 'rxjs/observable/forkJoin';
 
 @Component({
   selector: 'app-individual-suppliers-table',
   templateUrl: './individual-suppliers-table.component.html',
   styles: []
 })
-export class IndividualSuppliersTableComponent
-  implements OnInit {
+export class IndividualSuppliersTableComponent  implements OnInit {
+
   suppliers: any[];
   currencies: any[];
-  rates: any[];
   errorMessage: string;
 
-  constructor(private _supplierService: SupplierService,
+  constructor(private _supplierService: SuppliersService,
               private _currenciesService: CurrenciesService,
               private _ratesService: RatesService
   ) {
   }
 
   ngOnInit(): void {
+    const INDIVIDUAL_AGENT = 0;
 
     this._currenciesService.getCurrencyTypes().pipe(
       flatMap((currencies: any[],) => {
@@ -36,7 +36,7 @@ export class IndividualSuppliersTableComponent
                 currency.agents.push(rate);
                 currency.numAgents++;
 
-                let supplierRequest = this._supplierService.getSuppliersById(rate.supplierId).pipe(
+                let supplierRequest = this._supplierService.getSuppliersById(rate.supplierId, INDIVIDUAL_AGENT).pipe(
                   map((supplier: any) => {
                     rate.supplier = supplier;
                     return currency
@@ -174,8 +174,8 @@ export class IndividualSuppliersTableComponent
                   title: "Status",
                   field: 'supplier.activeStatus',
                   width: 150,
-                  sortable: true,
-                  filterable: false,
+                  sortable: 'desc',
+                  filterable: true,
                   template: row => {
                     var status = {
                       2: {'title': 'Active', 'class': 'm-badge--success'},
