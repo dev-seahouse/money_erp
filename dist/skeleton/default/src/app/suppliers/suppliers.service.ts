@@ -11,16 +11,17 @@ import {forkJoin} from "rxjs/internal/observable/forkJoin";
 
 export class SuppliersService {
     private individualAgentsUrl = '../../api/suppliers/indiv-agents.json';
+    private coporateAgentUrl = '../../api/suppliers/corporate-agents.json';
 
     constructor(private _http: HttpClient) { }
 
-    getSuppliers(): Observable<any[]> {
-        return this._http.get<any[]>(this.individualAgentsUrl).pipe(
+    getSuppliers(supplierType:number): Observable<any[]> {
+        return this._http.get<any[]>(this.getUrlBySupplierType(supplierType)).pipe(
             catchError(this.handleError), );
     }
     // todo: use supplier type
     getSuppliersById(supplierId, supplierType = 0): Observable<any[]> {
-        return this.getSuppliers().pipe(
+        return this.getSuppliers(supplierType).pipe(
             flatMap(suppliers => suppliers),
             filter((supplier: any) => { return supplier.id === supplierId && supplier.supplierType === supplierType; })
         );
@@ -38,6 +39,13 @@ export class SuppliersService {
         }
         console.error(errorMessage);
         return throwError(errorMessage);
+    }
+
+    private getUrlBySupplierType(supplierType: number) {
+      switch(supplierType) {
+        case 0: return this.individualAgentsUrl;
+        case 1: return this.coporateAgentUrl;
+      }
     }
 }
 

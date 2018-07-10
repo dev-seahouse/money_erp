@@ -77,7 +77,11 @@ export class IndividualSuppliersTableComponent implements OnInit {
     });
   }
 
+
+
   private initIndivAgentTable(currencies: any[] = [] ){
+
+    // todo: extract this into a class
     let childTable;
     let parentTable;
 
@@ -258,10 +262,7 @@ export class IndividualSuppliersTableComponent implements OnInit {
 
     })
 
-    return {
-      getChildTable: childTable,
-      getParentTable: parentTable,
-    }
   }
+
 }
 
