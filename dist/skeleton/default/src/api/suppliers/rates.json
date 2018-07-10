@@ -1,1602 +1,350 @@
-[
-  {
-    "id": 0,
-    "currencyId": 11,
-    "supplierId": 130,
-    "rate": 4.3007,
-    "updatedAt": "14/10/2018",
-    "updatedBy": "Eldin Marval"
-  },
-  {
-    "id": 1,
-    "currencyId": 16,
-    "supplierId": 9,
-    "rate": 4.5614,
-    "updatedAt": "12/2/2018",
-    "updatedBy": "Myrah Lerner"
-  },
-  {
-    "id": 2,
-    "currencyId": 13,
-    "supplierId": 91,
-    "rate": 3.6694,
-    "updatedAt": "20/1/2018",
-    "updatedBy": "Bettine Carlens"
-  },
-  {
-    "id": 3,
-    "currencyId": 15,
-    "supplierId": 54,
-    "rate": 2.2707,
-    "updatedAt": "11/5/2018",
-    "updatedBy": "Pia Duck"
-  },
-  {
-    "id": 4,
-    "currencyId": 17,
-    "supplierId": 116,
-    "rate": 9.9098,
-    "updatedAt": "30/9/2018",
-    "updatedBy": "Rorie Reay"
-  },
-  {
-    "id": 5,
-    "currencyId": 0,
-    "supplierId": 117,
-    "rate": 6.5524,
-    "updatedAt": "13/10/2018",
-    "updatedBy": "Steffen Mc Meekan"
-  },
-  {
-    "id": 6,
-    "currencyId": 1,
-    "supplierId": 59,
-    "rate": 6.2659,
-    "updatedAt": "10/5/2018",
-    "updatedBy": "Cory Ivanikhin"
-  },
-  {
-    "id": 7,
-    "currencyId": 0,
-    "supplierId": 55,
-    "rate": 9.0362,
-    "updatedAt": "8/1/2018",
-    "updatedBy": "Rourke Courtois"
-  },
-  {
-    "id": 8,
-    "currencyId": 8,
-    "supplierId": 141,
-    "rate": 3.2489,
-    "updatedAt": "1/1/2018",
-    "updatedBy": "Catrina Kezor"
-  },
-  {
-    "id": 9,
-    "currencyId": 11,
-    "supplierId": 16,
-    "rate": 7.4354,
-    "updatedAt": "19/8/2018",
-    "updatedBy": "Desmond Battey"
-  },
-  {
-    "id": 10,
-    "currencyId": 13,
-    "supplierId": 68,
-    "rate": 4.9968,
-    "updatedAt": "15/7/2018",
-    "updatedBy": "Abby Narup"
-  },
-  {
-    "id": 11,
-    "currencyId": 9,
-    "supplierId": 70,
-    "rate": 0.4567,
-    "updatedAt": "16/7/2018",
-    "updatedBy": "Petronille Gilbride"
-  },
-  {
-    "id": 12,
-    "currencyId": 6,
-    "supplierId": 142,
-    "rate": 6.4624,
-    "updatedAt": "10/9/2018",
-    "updatedBy": "Loleta Marsham"
-  },
-  {
-    "id": 13,
-    "currencyId": 15,
-    "supplierId": 111,
-    "rate": 0.0219,
-    "updatedAt": "21/4/2018",
-    "updatedBy": "Joelle Brand-Hardy"
-  },
-  {
-    "id": 14,
-    "currencyId": 3,
-    "supplierId": 125,
-    "rate": 1.5456,
-    "updatedAt": "27/4/2018",
-    "updatedBy": "Scottie Breeze"
-  },
-  {
-    "id": 15,
-    "currencyId": 0,
-    "supplierId": 148,
-    "rate": 3.2762,
-    "updatedAt": "29/3/2018",
-    "updatedBy": "Amalee Siccombe"
-  },
-  {
-    "id": 16,
-    "currencyId": 15,
-    "supplierId": 142,
-    "rate": 2.7056,
-    "updatedAt": "24/7/2018",
-    "updatedBy": "Dido Letixier"
-  },
-  {
-    "id": 17,
-    "currencyId": 14,
-    "supplierId": 28,
-    "rate": 7.3075,
-    "updatedAt": "3/9/2018",
-    "updatedBy": "Jill Skett"
-  },
-  {
-    "id": 18,
-    "currencyId": 13,
-    "supplierId": 0,
-    "rate": 3.2802,
-    "updatedAt": "22/9/2018",
-    "updatedBy": "Jackqueline Ruddiforth"
-  },
-  {
-    "id": 19,
-    "currencyId": 2,
-    "supplierId": 54,
-    "rate": 5.4901,
-    "updatedAt": "4/9/2018",
-    "updatedBy": "Dominique Blackeby"
-  },
-  {
-    "id": 20,
-    "currencyId": 17,
-    "supplierId": 89,
-    "rate": 1.6263,
-    "updatedAt": "25/7/2018",
-    "updatedBy": "Yolande Weems"
-  },
-  {
-    "id": 21,
-    "currencyId": 8,
-    "supplierId": 17,
-    "rate": 5.1089,
-    "updatedAt": "19/10/2018",
-    "updatedBy": "Tobye Nugent"
-  },
-  {
-    "id": 22,
-    "currencyId": 13,
-    "supplierId": 149,
-    "rate": 7.2914,
-    "updatedAt": "18/6/2018",
-    "updatedBy": "Haven Beardsley"
-  },
-  {
-    "id": 23,
-    "currencyId": 10,
-    "supplierId": 144,
-    "rate": 9.7626,
-    "updatedAt": "2/11/2018",
-    "updatedBy": "Oralle Orton"
-  },
-  {
-    "id": 24,
-    "currencyId": 10,
-    "supplierId": 14,
-    "rate": 5.3098,
-    "updatedAt": "16/10/2018",
-    "updatedBy": "Norma Pearson"
-  },
-  {
-    "id": 25,
-    "currencyId": 4,
-    "supplierId": 69,
-    "rate": 9.475,
-    "updatedAt": "30/6/2018",
-    "updatedBy": "Meredithe Lummus"
-  },
-  {
-    "id": 26,
-    "currencyId": 16,
-    "supplierId": 136,
-    "rate": 1.1683,
-    "updatedAt": "21/7/2018",
-    "updatedBy": "Read Heinreich"
-  },
-  {
-    "id": 27,
-    "currencyId": 7,
-    "supplierId": 74,
-    "rate": 7.5387,
-    "updatedAt": "25/1/2018",
-    "updatedBy": "Annabella Clee"
-  },
-  {
-    "id": 28,
-    "currencyId": 14,
-    "supplierId": 80,
-    "rate": 2.9534,
-    "updatedAt": "25/11/2018",
-    "updatedBy": "Aurelia Rummings"
-  },
-  {
-    "id": 29,
-    "currencyId": 0,
-    "supplierId": 146,
-    "rate": 0.2119,
-    "updatedAt": "15/5/2018",
-    "updatedBy": "Torin Viggers"
-  },
-  {
-    "id": 30,
-    "currencyId": 8,
-    "supplierId": 34,
-    "rate": 3.9527,
-    "updatedAt": "12/1/2018",
-    "updatedBy": "Veriee Howlin"
-  },
-  {
-    "id": 31,
-    "currencyId": 12,
-    "supplierId": 5,
-    "rate": 5.9032,
-    "updatedAt": "1/6/2018",
-    "updatedBy": "Dannye Gauge"
-  },
-  {
-    "id": 32,
-    "currencyId": 16,
-    "supplierId": 1,
-    "rate": 4.1013,
-    "updatedAt": "14/7/2018",
-    "updatedBy": "Germain Zini"
-  },
-  {
-    "id": 33,
-    "currencyId": 14,
-    "supplierId": 86,
-    "rate": 4.5218,
-    "updatedAt": "26/4/2018",
-    "updatedBy": "Bond Wildgoose"
-  },
-  {
-    "id": 34,
-    "currencyId": 3,
-    "supplierId": 93,
-    "rate": 8.8998,
-    "updatedAt": "22/9/2018",
-    "updatedBy": "Elke Penna"
-  },
-  {
-    "id": 35,
-    "currencyId": 3,
-    "supplierId": 15,
-    "rate": 8.5015,
-    "updatedAt": "14/1/2018",
-    "updatedBy": "Byrle McGarrity"
-  },
-  {
-    "id": 36,
-    "currencyId": 2,
-    "supplierId": 147,
-    "rate": 4.3403,
-    "updatedAt": "7/1/2018",
-    "updatedBy": "Skipton Swateridge"
-  },
-  {
-    "id": 37,
-    "currencyId": 13,
-    "supplierId": 53,
-    "rate": 4.7713,
-    "updatedAt": "25/10/2018",
-    "updatedBy": "Gael Bercevelo"
-  },
-  {
-    "id": 38,
-    "currencyId": 11,
-    "supplierId": 84,
-    "rate": 5.2554,
-    "updatedAt": "10/9/2018",
-    "updatedBy": "Dru Tuer"
-  },
-  {
-    "id": 39,
-    "currencyId": 10,
-    "supplierId": 78,
-    "rate": 8.9542,
-    "updatedAt": "28/7/2018",
-    "updatedBy": "Rossie Sargood"
-  },
-  {
-    "id": 40,
-    "currencyId": 12,
-    "supplierId": 76,
-    "rate": 3.0897,
-    "updatedAt": "3/9/2018",
-    "updatedBy": "George Vesque"
-  },
-  {
-    "id": 41,
-    "currencyId": 8,
-    "supplierId": 45,
-    "rate": 4.3743,
-    "updatedAt": "18/1/2018",
-    "updatedBy": "Elliot MacDonell"
-  },
-  {
-    "id": 42,
-    "currencyId": 7,
-    "supplierId": 92,
-    "rate": 7.1772,
-    "updatedAt": "27/8/2018",
-    "updatedBy": "Oriana Hoyt"
-  },
-  {
-    "id": 43,
-    "currencyId": 9,
-    "supplierId": 10,
-    "rate": 1.9965,
-    "updatedAt": "17/9/2018",
-    "updatedBy": "Phaedra Stubbs"
-  },
-  {
-    "id": 44,
-    "currencyId": 7,
-    "supplierId": 46,
-    "rate": 6.7883,
-    "updatedAt": "26/8/2018",
-    "updatedBy": "Haroun Chastan"
-  },
-  {
-    "id": 45,
-    "currencyId": 16,
-    "supplierId": 55,
-    "rate": 2.8237,
-    "updatedAt": "11/9/2018",
-    "updatedBy": "Sharyl Sanbroke"
-  },
-  {
-    "id": 46,
-    "currencyId": 17,
-    "supplierId": 108,
-    "rate": 6.9063,
-    "updatedAt": "24/7/2018",
-    "updatedBy": "Shirl Eyckelbeck"
-  },
-  {
-    "id": 47,
-    "currencyId": 17,
-    "supplierId": 123,
-    "rate": 5.7228,
-    "updatedAt": "21/6/2018",
-    "updatedBy": "Eleen Lamberts"
-  },
-  {
-    "id": 48,
-    "currencyId": 12,
-    "supplierId": 57,
-    "rate": 6.0015,
-    "updatedAt": "29/7/2018",
-    "updatedBy": "Trish Allcroft"
-  },
-  {
-    "id": 49,
-    "currencyId": 14,
-    "supplierId": 5,
-    "rate": 1.3453,
-    "updatedAt": "22/5/2018",
-    "updatedBy": "Myrtia Draycott"
-  },
-  {
-    "id": 50,
-    "currencyId": 16,
-    "supplierId": 114,
-    "rate": 1.8376,
-    "updatedAt": "18/8/2018",
-    "updatedBy": "Gun Barstow"
-  },
-  {
-    "id": 51,
-    "currencyId": 8,
-    "supplierId": 142,
-    "rate": 5.061,
-    "updatedAt": "3/7/2018",
-    "updatedBy": "Lyon Burnett"
-  },
-  {
-    "id": 52,
-    "currencyId": 15,
-    "supplierId": 33,
-    "rate": 7.8339,
-    "updatedAt": "21/5/2018",
-    "updatedBy": "Benjamen Guly"
-  },
-  {
-    "id": 53,
-    "currencyId": 12,
-    "supplierId": 40,
-    "rate": 5.355,
-    "updatedAt": "9/5/2018",
-    "updatedBy": "Kyla MacKaig"
-  },
-  {
-    "id": 54,
-    "currencyId": 5,
-    "supplierId": 110,
-    "rate": 6.4184,
-    "updatedAt": "17/11/2018",
-    "updatedBy": "Rozanne Ancliffe"
-  },
-  {
-    "id": 55,
-    "currencyId": 11,
-    "supplierId": 145,
-    "rate": 7.5138,
-    "updatedAt": "6/7/2018",
-    "updatedBy": "Dawna Treverton"
-  },
-  {
-    "id": 56,
-    "currencyId": 9,
-    "supplierId": 106,
-    "rate": 7.2525,
-    "updatedAt": "24/3/2018",
-    "updatedBy": "Hillary Channing"
-  },
-  {
-    "id": 57,
-    "currencyId": 14,
-    "supplierId": 56,
-    "rate": 6.9758,
-    "updatedAt": "7/1/2018",
-    "updatedBy": "Lon Cayzer"
-  },
-  {
-    "id": 58,
-    "currencyId": 3,
-    "supplierId": 15,
-    "rate": 2.0681,
-    "updatedAt": "27/3/2018",
-    "updatedBy": "Tate Eastope"
-  },
-  {
-    "id": 59,
-    "currencyId": 13,
-    "supplierId": 90,
-    "rate": 8.7701,
-    "updatedAt": "5/5/2018",
-    "updatedBy": "Carolyne Haslegrave"
-  },
-  {
-    "id": 60,
-    "currencyId": 17,
-    "supplierId": 80,
-    "rate": 5.2662,
-    "updatedAt": "11/1/2018",
-    "updatedBy": "Marcelia Kilty"
-  },
-  {
-    "id": 61,
-    "currencyId": 17,
-    "supplierId": 92,
-    "rate": 9.5652,
-    "updatedAt": "9/6/2018",
-    "updatedBy": "Matty Ollie"
-  },
-  {
-    "id": 62,
-    "currencyId": 0,
-    "supplierId": 94,
-    "rate": 0.7968,
-    "updatedAt": "20/4/2018",
-    "updatedBy": "Ivy Offener"
-  },
-  {
-    "id": 63,
-    "currencyId": 4,
-    "supplierId": 26,
-    "rate": 0.2366,
-    "updatedAt": "16/6/2018",
-    "updatedBy": "Agretha Orro"
-  },
-  {
-    "id": 64,
-    "currencyId": 4,
-    "supplierId": 122,
-    "rate": 0.6346,
-    "updatedAt": "7/4/2018",
-    "updatedBy": "Salomone Copplestone"
-  },
-  {
-    "id": 65,
-    "currencyId": 17,
-    "supplierId": 145,
-    "rate": 4.6237,
-    "updatedAt": "4/6/2018",
-    "updatedBy": "Jocelyne Birkett"
-  },
-  {
-    "id": 66,
-    "currencyId": 7,
-    "supplierId": 71,
-    "rate": 7.1125,
-    "updatedAt": "2/5/2018",
-    "updatedBy": "Peyton Lambarth"
-  },
-  {
-    "id": 67,
-    "currencyId": 17,
-    "supplierId": 146,
-    "rate": 5.8417,
-    "updatedAt": "14/5/2018",
-    "updatedBy": "Justina Devon"
-  },
-  {
-    "id": 68,
-    "currencyId": 16,
-    "supplierId": 114,
-    "rate": 6.9218,
-    "updatedAt": "15/11/2018",
-    "updatedBy": "Reena Gellately"
-  },
-  {
-    "id": 69,
-    "currencyId": 13,
-    "supplierId": 81,
-    "rate": 4.2215,
-    "updatedAt": "30/4/2018",
-    "updatedBy": "Woodie Aleksic"
-  },
-  {
-    "id": 70,
-    "currencyId": 9,
-    "supplierId": 81,
-    "rate": 4.0608,
-    "updatedAt": "21/7/2018",
-    "updatedBy": "Lorrayne Fairbeard"
-  },
-  {
-    "id": 71,
-    "currencyId": 11,
-    "supplierId": 94,
-    "rate": 4.5635,
-    "updatedAt": "7/2/2018",
-    "updatedBy": "Rollo L'Episcopio"
-  },
-  {
-    "id": 72,
-    "currencyId": 1,
-    "supplierId": 105,
-    "rate": 3.7821,
-    "updatedAt": "7/6/2018",
-    "updatedBy": "Elonore Boteman"
-  },
-  {
-    "id": 73,
-    "currencyId": 11,
-    "supplierId": 149,
-    "rate": 2.7499,
-    "updatedAt": "19/8/2018",
-    "updatedBy": "Kin Keener"
-  },
-  {
-    "id": 74,
-    "currencyId": 6,
-    "supplierId": 0,
-    "rate": 5.8531,
-    "updatedAt": "24/2/2018",
-    "updatedBy": "Jenelle Kedge"
-  },
-  {
-    "id": 75,
-    "currencyId": 5,
-    "supplierId": 110,
-    "rate": 9.033,
-    "updatedAt": "17/6/2018",
-    "updatedBy": "Care Bony"
-  },
-  {
-    "id": 76,
-    "currencyId": 4,
-    "supplierId": 30,
-    "rate": 5.459,
-    "updatedAt": "9/4/2018",
-    "updatedBy": "Otha Warham"
-  },
-  {
-    "id": 77,
-    "currencyId": 6,
-    "supplierId": 94,
-    "rate": 8.3466,
-    "updatedAt": "24/8/2018",
-    "updatedBy": "Zerk Beatson"
-  },
-  {
-    "id": 78,
-    "currencyId": 9,
-    "supplierId": 90,
-    "rate": 2.1314,
-    "updatedAt": "11/2/2018",
-    "updatedBy": "Goldarina Crowcher"
-  },
-  {
-    "id": 79,
-    "currencyId": 15,
-    "supplierId": 18,
-    "rate": 5.0857,
-    "updatedAt": "14/10/2018",
-    "updatedBy": "Hakim Pledger"
-  },
-  {
-    "id": 80,
-    "currencyId": 14,
-    "supplierId": 17,
-    "rate": 1.7821,
-    "updatedAt": "2/2/2018",
-    "updatedBy": "Ashly Champain"
-  },
-  {
-    "id": 81,
-    "currencyId": 4,
-    "supplierId": 59,
-    "rate": 1.3947,
-    "updatedAt": "5/10/2018",
-    "updatedBy": "Percy Shakesbye"
-  },
-  {
-    "id": 82,
-    "currencyId": 14,
-    "supplierId": 117,
-    "rate": 8.982,
-    "updatedAt": "29/1/2018",
-    "updatedBy": "Lizbeth Brabbs"
-  },
-  {
-    "id": 83,
-    "currencyId": 12,
-    "supplierId": 22,
-    "rate": 9.6474,
-    "updatedAt": "31/5/2018",
-    "updatedBy": "Graehme Mafham"
-  },
-  {
-    "id": 84,
-    "currencyId": 3,
-    "supplierId": 74,
-    "rate": 9.397,
-    "updatedAt": "2/9/2018",
-    "updatedBy": "Domingo Loukes"
-  },
-  {
-    "id": 85,
-    "currencyId": 16,
-    "supplierId": 143,
-    "rate": 7.6525,
-    "updatedAt": "10/10/2018",
-    "updatedBy": "Flossi Itscowicz"
-  },
-  {
-    "id": 86,
-    "currencyId": 2,
-    "supplierId": 51,
-    "rate": 3.3436,
-    "updatedAt": "30/4/2018",
-    "updatedBy": "Moria Tuting"
-  },
-  {
-    "id": 87,
-    "currencyId": 2,
-    "supplierId": 131,
-    "rate": 4.7986,
-    "updatedAt": "26/10/2018",
-    "updatedBy": "Sharla Bacher"
-  },
-  {
-    "id": 88,
-    "currencyId": 13,
-    "supplierId": 137,
-    "rate": 0.3759,
-    "updatedAt": "27/6/2018",
-    "updatedBy": "Duky Haymes"
-  },
-  {
-    "id": 89,
-    "currencyId": 13,
-    "supplierId": 58,
-    "rate": 5.2815,
-    "updatedAt": "17/9/2018",
-    "updatedBy": "Corbin Scolding"
-  },
-  {
-    "id": 90,
-    "currencyId": 10,
-    "supplierId": 37,
-    "rate": 3.0465,
-    "updatedAt": "16/2/2018",
-    "updatedBy": "Beitris Eley"
-  },
-  {
-    "id": 91,
-    "currencyId": 16,
-    "supplierId": 75,
-    "rate": 5.6438,
-    "updatedAt": "3/6/2018",
-    "updatedBy": "Cam Morhall"
-  },
-  {
-    "id": 92,
-    "currencyId": 8,
-    "supplierId": 101,
-    "rate": 0.6852,
-    "updatedAt": "8/2/2018",
-    "updatedBy": "Julie Pearcy"
-  },
-  {
-    "id": 93,
-    "currencyId": 17,
-    "supplierId": 53,
-    "rate": 5.3053,
-    "updatedAt": "1/4/2018",
-    "updatedBy": "Orville Gothrup"
-  },
-  {
-    "id": 94,
-    "currencyId": 5,
-    "supplierId": 88,
-    "rate": 5.2585,
-    "updatedAt": "30/7/2018",
-    "updatedBy": "Kevon Dosdale"
-  },
-  {
-    "id": 95,
-    "currencyId": 3,
-    "supplierId": 34,
-    "rate": 0.5956,
-    "updatedAt": "19/10/2018",
-    "updatedBy": "Ingra Bortoloni"
-  },
-  {
-    "id": 96,
-    "currencyId": 10,
-    "supplierId": 56,
-    "rate": 8.0259,
-    "updatedAt": "16/9/2018",
-    "updatedBy": "Eleonore Rubenov"
-  },
-  {
-    "id": 97,
-    "currencyId": 7,
-    "supplierId": 58,
-    "rate": 3.673,
-    "updatedAt": "6/7/2018",
-    "updatedBy": "Heath Yurasov"
-  },
-  {
-    "id": 98,
-    "currencyId": 5,
-    "supplierId": 81,
-    "rate": 2.0193,
-    "updatedAt": "23/3/2018",
-    "updatedBy": "Jocelyn Gallihaulk"
-  },
-  {
-    "id": 99,
-    "currencyId": 0,
-    "supplierId": 2,
-    "rate": 8.7282,
-    "updatedAt": "8/2/2018",
-    "updatedBy": "Mendel Odd"
-  },
-  {
-    "id": 100,
-    "currencyId": 9,
-    "supplierId": 136,
-    "rate": 5.8794,
-    "updatedAt": "24/3/2018",
-    "updatedBy": "Bren Vogeller"
-  },
-  {
-    "id": 101,
-    "currencyId": 8,
-    "supplierId": 4,
-    "rate": 3.3022,
-    "updatedAt": "1/10/2018",
-    "updatedBy": "Cilka Caswall"
-  },
-  {
-    "id": 102,
-    "currencyId": 3,
-    "supplierId": 126,
-    "rate": 5.9334,
-    "updatedAt": "23/10/2018",
-    "updatedBy": "Shoshanna Strete"
-  },
-  {
-    "id": 103,
-    "currencyId": 10,
-    "supplierId": 70,
-    "rate": 6.4789,
-    "updatedAt": "10/3/2018",
-    "updatedBy": "Melvin Smedley"
-  },
-  {
-    "id": 104,
-    "currencyId": 10,
-    "supplierId": 88,
-    "rate": 0.8628,
-    "updatedAt": "29/11/2018",
-    "updatedBy": "Gram Haveline"
-  },
-  {
-    "id": 105,
-    "currencyId": 17,
-    "supplierId": 23,
-    "rate": 1.4003,
-    "updatedAt": "10/1/2018",
-    "updatedBy": "Fabiano MacKeever"
-  },
-  {
-    "id": 106,
-    "currencyId": 12,
-    "supplierId": 24,
-    "rate": 7.524,
-    "updatedAt": "10/3/2018",
-    "updatedBy": "Gloriana Loseke"
-  },
-  {
-    "id": 107,
-    "currencyId": 11,
-    "supplierId": 9,
-    "rate": 6.4663,
-    "updatedAt": "28/4/2018",
-    "updatedBy": "Godiva Boorer"
-  },
-  {
-    "id": 108,
-    "currencyId": 8,
-    "supplierId": 57,
-    "rate": 7.8013,
-    "updatedAt": "12/1/2018",
-    "updatedBy": "Garner Swettenham"
-  },
-  {
-    "id": 109,
-    "currencyId": 11,
-    "supplierId": 68,
-    "rate": 8.7088,
-    "updatedAt": "14/8/2018",
-    "updatedBy": "Hamnet Antonopoulos"
-  },
-  {
-    "id": 110,
-    "currencyId": 8,
-    "supplierId": 35,
-    "rate": 1.929,
-    "updatedAt": "1/11/2018",
-    "updatedBy": "Perle Mingauld"
-  },
-  {
-    "id": 111,
-    "currencyId": 10,
-    "supplierId": 68,
-    "rate": 8.1789,
-    "updatedAt": "25/7/2018",
-    "updatedBy": "Mechelle Hainey`"
-  },
-  {
-    "id": 112,
-    "currencyId": 0,
-    "supplierId": 131,
-    "rate": 5.868,
-    "updatedAt": "1/4/2018",
-    "updatedBy": "Gerianne Kynston"
-  },
-  {
-    "id": 113,
-    "currencyId": 2,
-    "supplierId": 60,
-    "rate": 6.7275,
-    "updatedAt": "12/9/2018",
-    "updatedBy": "Marina Stuckley"
-  },
-  {
-    "id": 114,
-    "currencyId": 3,
-    "supplierId": 13,
-    "rate": 0.2833,
-    "updatedAt": "15/6/2018",
-    "updatedBy": "Cynthia Russel"
-  },
-  {
-    "id": 115,
-    "currencyId": 0,
-    "supplierId": 125,
-    "rate": 3.4842,
-    "updatedAt": "24/8/2018",
-    "updatedBy": "Terry Levet"
-  },
-  {
-    "id": 116,
-    "currencyId": 12,
-    "supplierId": 102,
-    "rate": 4.1351,
-    "updatedAt": "18/11/2018",
-    "updatedBy": "Ruddie Clougher"
-  },
-  {
-    "id": 117,
-    "currencyId": 1,
-    "supplierId": 105,
-    "rate": 2.2611,
-    "updatedAt": "9/2/2018",
-    "updatedBy": "Tannie Paling"
-  },
-  {
-    "id": 118,
-    "currencyId": 8,
-    "supplierId": 132,
-    "rate": 8.3411,
-    "updatedAt": "16/10/2018",
-    "updatedBy": "Nicole Workes"
-  },
-  {
-    "id": 119,
-    "currencyId": 12,
-    "supplierId": 79,
-    "rate": 9.7682,
-    "updatedAt": "23/4/2018",
-    "updatedBy": "Sheeree Lamputt"
-  },
-  {
-    "id": 120,
-    "currencyId": 0,
-    "supplierId": 101,
-    "rate": 9.7399,
-    "updatedAt": "1/5/2018",
-    "updatedBy": "Aristotle Akker"
-  },
-  {
-    "id": 121,
-    "currencyId": 12,
-    "supplierId": 106,
-    "rate": 0.7119,
-    "updatedAt": "12/6/2018",
-    "updatedBy": "Mellisa MacKaig"
-  },
-  {
-    "id": 122,
-    "currencyId": 15,
-    "supplierId": 45,
-    "rate": 1.7706,
-    "updatedAt": "4/4/2018",
-    "updatedBy": "Violet Raeside"
-  },
-  {
-    "id": 123,
-    "currencyId": 3,
-    "supplierId": 38,
-    "rate": 6.6671,
-    "updatedAt": "19/10/2018",
-    "updatedBy": "Onfre Hellyer"
-  },
-  {
-    "id": 124,
-    "currencyId": 12,
-    "supplierId": 84,
-    "rate": 5.0521,
-    "updatedAt": "11/10/2018",
-    "updatedBy": "Grete Durrance"
-  },
-  {
-    "id": 125,
-    "currencyId": 8,
-    "supplierId": 86,
-    "rate": 3.6136,
-    "updatedAt": "4/7/2018",
-    "updatedBy": "Conchita Duddridge"
-  },
-  {
-    "id": 126,
-    "currencyId": 11,
-    "supplierId": 115,
-    "rate": 1.9367,
-    "updatedAt": "2/11/2018",
-    "updatedBy": "Eduard Cornely"
-  },
-  {
-    "id": 127,
-    "currencyId": 6,
-    "supplierId": 90,
-    "rate": 1.8166,
-    "updatedAt": "15/11/2018",
-    "updatedBy": "Gwenny Alekseicik"
-  },
-  {
-    "id": 128,
-    "currencyId": 5,
-    "supplierId": 30,
-    "rate": 1.0191,
-    "updatedAt": "30/10/2018",
-    "updatedBy": "Maurise Hatter"
-  },
-  {
-    "id": 129,
-    "currencyId": 4,
-    "supplierId": 51,
-    "rate": 9.3249,
-    "updatedAt": "16/3/2018",
-    "updatedBy": "Syman Pickhaver"
-  },
-  {
-    "id": 130,
-    "currencyId": 3,
-    "supplierId": 127,
-    "rate": 5.8189,
-    "updatedAt": "20/10/2018",
-    "updatedBy": "Danita Kirtland"
-  },
-  {
-    "id": 131,
-    "currencyId": 7,
-    "supplierId": 67,
-    "rate": 3.7364,
-    "updatedAt": "30/11/2018",
-    "updatedBy": "Gerry Marsh"
-  },
-  {
-    "id": 132,
-    "currencyId": 6,
-    "supplierId": 93,
-    "rate": 1.9308,
-    "updatedAt": "15/9/2018",
-    "updatedBy": "Celine Quickfall"
-  },
-  {
-    "id": 133,
-    "currencyId": 6,
-    "supplierId": 131,
-    "rate": 4.7582,
-    "updatedAt": "22/2/2018",
-    "updatedBy": "Garvey Vannoni"
-  },
-  {
-    "id": 134,
-    "currencyId": 13,
-    "supplierId": 131,
-    "rate": 6.3847,
-    "updatedAt": "23/8/2018",
-    "updatedBy": "Cass Brahm"
-  },
-  {
-    "id": 135,
-    "currencyId": 2,
-    "supplierId": 1,
-    "rate": 4.862,
-    "updatedAt": "24/3/2018",
-    "updatedBy": "Eirena Humbey"
-  },
-  {
-    "id": 136,
-    "currencyId": 3,
-    "supplierId": 50,
-    "rate": 4.2445,
-    "updatedAt": "26/11/2018",
-    "updatedBy": "Britt Templar"
-  },
-  {
-    "id": 137,
-    "currencyId": 9,
-    "supplierId": 28,
-    "rate": 3.2546,
-    "updatedAt": "21/2/2018",
-    "updatedBy": "Gearalt Mcasparan"
-  },
-  {
-    "id": 138,
-    "currencyId": 0,
-    "supplierId": 12,
-    "rate": 3.1051,
-    "updatedAt": "21/11/2018",
-    "updatedBy": "Parry Klemke"
-  },
-  {
-    "id": 139,
-    "currencyId": 12,
-    "supplierId": 4,
-    "rate": 7.6628,
-    "updatedAt": "25/2/2018",
-    "updatedBy": "Xever Aspinall"
-  },
-  {
-    "id": 140,
-    "currencyId": 3,
-    "supplierId": 58,
-    "rate": 6.4104,
-    "updatedAt": "16/1/2018",
-    "updatedBy": "Wallis Shapcott"
-  },
-  {
-    "id": 141,
-    "currencyId": 16,
-    "supplierId": 65,
-    "rate": 6.8771,
-    "updatedAt": "31/7/2018",
-    "updatedBy": "Hulda Sowman"
-  },
-  {
-    "id": 142,
-    "currencyId": 7,
-    "supplierId": 75,
-    "rate": 3.0678,
-    "updatedAt": "12/10/2018",
-    "updatedBy": "Issiah Diviney"
-  },
-  {
-    "id": 143,
-    "currencyId": 14,
-    "supplierId": 108,
-    "rate": 5.4305,
-    "updatedAt": "11/8/2018",
-    "updatedBy": "Ettore Cass"
-  },
-  {
-    "id": 144,
-    "currencyId": 9,
-    "supplierId": 103,
-    "rate": 7.2382,
-    "updatedAt": "14/3/2018",
-    "updatedBy": "Micky O'Carney"
-  },
-  {
-    "id": 145,
-    "currencyId": 13,
-    "supplierId": 74,
-    "rate": 7.8538,
-    "updatedAt": "27/2/2018",
-    "updatedBy": "Atalanta Brett"
-  },
-  {
-    "id": 146,
-    "currencyId": 10,
-    "supplierId": 29,
-    "rate": 4.5317,
-    "updatedAt": "6/1/2018",
-    "updatedBy": "Reina Durrand"
-  },
-  {
-    "id": 147,
-    "currencyId": 16,
-    "supplierId": 90,
-    "rate": 1.646,
-    "updatedAt": "7/7/2018",
-    "updatedBy": "Lulu Escreet"
-  },
-  {
-    "id": 148,
-    "currencyId": 7,
-    "supplierId": 42,
-    "rate": 0.8505,
-    "updatedAt": "20/9/2018",
-    "updatedBy": "Nanci MacVicar"
-  },
-  {
-    "id": 149,
-    "currencyId": 6,
-    "supplierId": 41,
-    "rate": 2.4652,
-    "updatedAt": "22/9/2018",
-    "updatedBy": "Devondra Dowman"
-  },
-  {
-    "id": 150,
-    "currencyId": 8,
-    "supplierId": 10,
-    "rate": 5.6938,
-    "updatedAt": "22/6/2018",
-    "updatedBy": "Aimee Hauxby"
-  },
-  {
-    "id": 151,
-    "currencyId": 2,
-    "supplierId": 108,
-    "rate": 6.4147,
-    "updatedAt": "15/6/2018",
-    "updatedBy": "Fairfax Poynor"
-  },
-  {
-    "id": 152,
-    "currencyId": 7,
-    "supplierId": 89,
-    "rate": 4.2448,
-    "updatedAt": "3/6/2018",
-    "updatedBy": "Karoly Daintrey"
-  },
-  {
-    "id": 153,
-    "currencyId": 6,
-    "supplierId": 5,
-    "rate": 6.3963,
-    "updatedAt": "24/1/2018",
-    "updatedBy": "Mitchell O'Docherty"
-  },
-  {
-    "id": 154,
-    "currencyId": 6,
-    "supplierId": 110,
-    "rate": 7.0167,
-    "updatedAt": "4/9/2018",
-    "updatedBy": "Audra Dorey"
-  },
-  {
-    "id": 155,
-    "currencyId": 11,
-    "supplierId": 19,
-    "rate": 6.4512,
-    "updatedAt": "11/4/2018",
-    "updatedBy": "Jere Di Filippo"
-  },
-  {
-    "id": 156,
-    "currencyId": 6,
-    "supplierId": 41,
-    "rate": 0.652,
-    "updatedAt": "5/3/2018",
-    "updatedBy": "Cristiano Peddersen"
-  },
-  {
-    "id": 157,
-    "currencyId": 9,
-    "supplierId": 50,
-    "rate": 1.1667,
-    "updatedAt": "19/1/2018",
-    "updatedBy": "Lola Bliss"
-  },
-  {
-    "id": 158,
-    "currencyId": 11,
-    "supplierId": 56,
-    "rate": 8.9132,
-    "updatedAt": "4/11/2018",
-    "updatedBy": "Simonette Gillivrie"
-  },
-  {
-    "id": 159,
-    "currencyId": 10,
-    "supplierId": 64,
-    "rate": 6.062,
-    "updatedAt": "25/4/2018",
-    "updatedBy": "Lee Rendle"
-  },
-  {
-    "id": 160,
-    "currencyId": 0,
-    "supplierId": 138,
-    "rate": 7.6702,
-    "updatedAt": "29/5/2018",
-    "updatedBy": "Taffy Meus"
-  },
-  {
-    "id": 161,
-    "currencyId": 1,
-    "supplierId": 15,
-    "rate": 9.3937,
-    "updatedAt": "27/3/2018",
-    "updatedBy": "Laure Nekrews"
-  },
-  {
-    "id": 162,
-    "currencyId": 10,
-    "supplierId": 107,
-    "rate": 8.9964,
-    "updatedAt": "25/7/2018",
-    "updatedBy": "Papageno Laity"
-  },
-  {
-    "id": 163,
-    "currencyId": 3,
-    "supplierId": 17,
-    "rate": 4.2047,
-    "updatedAt": "11/5/2018",
-    "updatedBy": "Nari Higgan"
-  },
-  {
-    "id": 164,
-    "currencyId": 5,
-    "supplierId": 87,
-    "rate": 1.494,
-    "updatedAt": "13/11/2018",
-    "updatedBy": "Emyle Gulland"
-  },
-  {
-    "id": 165,
-    "currencyId": 5,
-    "supplierId": 12,
-    "rate": 2.622,
-    "updatedAt": "8/7/2018",
-    "updatedBy": "Lorrin Stickford"
-  },
-  {
-    "id": 166,
-    "currencyId": 11,
-    "supplierId": 118,
-    "rate": 9.4722,
-    "updatedAt": "30/1/2018",
-    "updatedBy": "Cathie Rosbrough"
-  },
-  {
-    "id": 167,
-    "currencyId": 9,
-    "supplierId": 145,
-    "rate": 4.7115,
-    "updatedAt": "4/1/2018",
-    "updatedBy": "Blake Rookledge"
-  },
-  {
-    "id": 168,
-    "currencyId": 4,
-    "supplierId": 34,
-    "rate": 2.101,
-    "updatedAt": "27/9/2018",
-    "updatedBy": "Fernande MacDavitt"
-  },
-  {
-    "id": 169,
-    "currencyId": 2,
-    "supplierId": 9,
-    "rate": 9.1771,
-    "updatedAt": "6/9/2018",
-    "updatedBy": "Nicolai Dodle"
-  },
-  {
-    "id": 170,
-    "currencyId": 0,
-    "supplierId": 110,
-    "rate": 8.066,
-    "updatedAt": "27/10/2018",
-    "updatedBy": "Gratia Brierley"
-  },
-  {
-    "id": 171,
-    "currencyId": 12,
-    "supplierId": 5,
-    "rate": 3.4259,
-    "updatedAt": "24/6/2018",
-    "updatedBy": "Mordecai Devonish"
-  },
-  {
-    "id": 172,
-    "currencyId": 16,
-    "supplierId": 114,
-    "rate": 2.499,
-    "updatedAt": "8/11/2018",
-    "updatedBy": "Amabel Beidebeke"
-  },
-  {
-    "id": 173,
-    "currencyId": 11,
-    "supplierId": 122,
-    "rate": 8.4046,
-    "updatedAt": "7/3/2018",
-    "updatedBy": "Blaine Simonot"
-  },
-  {
-    "id": 174,
-    "currencyId": 14,
-    "supplierId": 60,
-    "rate": 1.4523,
-    "updatedAt": "16/8/2018",
-    "updatedBy": "Bernelle Wincom"
-  },
-  {
-    "id": 175,
-    "currencyId": 8,
-    "supplierId": 33,
-    "rate": 6.183,
-    "updatedAt": "22/2/2018",
-    "updatedBy": "Delano Glas"
-  },
-  {
-    "id": 176,
-    "currencyId": 6,
-    "supplierId": 127,
-    "rate": 1.814,
-    "updatedAt": "27/2/2018",
-    "updatedBy": "Rayshell Dailly"
-  },
-  {
-    "id": 177,
-    "currencyId": 2,
-    "supplierId": 48,
-    "rate": 1.3487,
-    "updatedAt": "20/2/2018",
-    "updatedBy": "Patty Bidewel"
-  },
-  {
-    "id": 178,
-    "currencyId": 13,
-    "supplierId": 30,
-    "rate": 7.2979,
-    "updatedAt": "26/1/2018",
-    "updatedBy": "Craggy Sykes"
-  },
-  {
-    "id": 179,
-    "currencyId": 1,
-    "supplierId": 46,
-    "rate": 6.206,
-    "updatedAt": "4/10/2018",
-    "updatedBy": "Darin MacDowall"
-  },
-  {
-    "id": 180,
-    "currencyId": 1,
-    "supplierId": 63,
-    "rate": 5.4484,
-    "updatedAt": "11/5/2018",
-    "updatedBy": "Felicity Butland"
-  },
-  {
-    "id": 181,
-    "currencyId": 12,
-    "supplierId": 132,
-    "rate": 1.9848,
-    "updatedAt": "27/9/2018",
-    "updatedBy": "Rani Lucia"
-  },
-  {
-    "id": 182,
-    "currencyId": 2,
-    "supplierId": 71,
-    "rate": 4.9107,
-    "updatedAt": "22/6/2018",
-    "updatedBy": "Clary Cohr"
-  },
-  {
-    "id": 183,
-    "currencyId": 11,
-    "supplierId": 128,
-    "rate": 4.5141,
-    "updatedAt": "17/9/2018",
-    "updatedBy": "Conny Armfirld"
-  },
-  {
-    "id": 184,
-    "currencyId": 17,
-    "supplierId": 78,
-    "rate": 2.7519,
-    "updatedAt": "3/9/2018",
-    "updatedBy": "Diane Croshaw"
-  },
-  {
-    "id": 185,
-    "currencyId": 7,
-    "supplierId": 15,
-    "rate": 9.9464,
-    "updatedAt": "17/5/2018",
-    "updatedBy": "Waylin Tampen"
-  },
-  {
-    "id": 186,
-    "currencyId": 14,
-    "supplierId": 12,
-    "rate": 3.6343,
-    "updatedAt": "16/4/2018",
-    "updatedBy": "Nanni Ruckert"
-  },
-  {
-    "id": 187,
-    "currencyId": 1,
-    "supplierId": 122,
-    "rate": 4.7942,
-    "updatedAt": "16/6/2018",
-    "updatedBy": "Rene Lile"
-  },
-  {
-    "id": 188,
-    "currencyId": 10,
-    "supplierId": 21,
-    "rate": 1.6858,
-    "updatedAt": "6/5/2018",
-    "updatedBy": "Lemmie Slayton"
-  },
-  {
-    "id": 189,
-    "currencyId": 4,
-    "supplierId": 128,
-    "rate": 1.202,
-    "updatedAt": "16/3/2018",
-    "updatedBy": "Spenser Peperell"
-  },
-  {
-    "id": 190,
-    "currencyId": 13,
-    "supplierId": 76,
-    "rate": 3.4784,
-    "updatedAt": "5/3/2018",
-    "updatedBy": "Charissa Harston"
-  },
-  {
-    "id": 191,
-    "currencyId": 16,
-    "supplierId": 60,
-    "rate": 1.2488,
-    "updatedAt": "12/7/2018",
-    "updatedBy": "Griffy Vivien"
-  },
-  {
-    "id": 192,
-    "currencyId": 16,
-    "supplierId": 88,
-    "rate": 2.8642,
-    "updatedAt": "29/4/2018",
-    "updatedBy": "Dunc Tebbut"
-  },
-  {
-    "id": 193,
-    "currencyId": 6,
-    "supplierId": 145,
-    "rate": 8.0632,
-    "updatedAt": "7/2/2018",
-    "updatedBy": "Bendix Dwyer"
-  },
-  {
-    "id": 194,
-    "currencyId": 0,
-    "supplierId": 104,
-    "rate": 2.2273,
-    "updatedAt": "26/6/2018",
-    "updatedBy": "Aluino Gorner"
-  },
-  {
-    "id": 195,
-    "currencyId": 4,
-    "supplierId": 115,
-    "rate": 7.3414,
-    "updatedAt": "10/4/2018",
-    "updatedBy": "Hermia Leither"
-  },
-  {
-    "id": 196,
-    "currencyId": 5,
-    "supplierId": 103,
-    "rate": 0.4905,
-    "updatedAt": "15/9/2018",
-    "updatedBy": "Rube Rigardeau"
-  },
-  {
-    "id": 197,
-    "currencyId": 6,
-    "supplierId": 48,
-    "rate": 2.1964,
-    "updatedAt": "10/1/2018",
-    "updatedBy": "Dedra Jendrassik"
-  },
-  {
-    "id": 198,
-    "currencyId": 7,
-    "supplierId": 58,
-    "rate": 9.8571,
-    "updatedAt": "13/11/2018",
-    "updatedBy": "Florella Cutcliffe"
-  },
-  {
-    "id": 199,
-    "currencyId": 17,
-    "supplierId": 37,
-    "rate": 5.8945,
-    "updatedAt": "21/8/2018",
-    "updatedBy": "Sheryl Gierardi"
-  }
-]
+[{"id":0,"currencyId":11,"supplierId":11,"rate":6.8422,"updatedAt":"11/1/2018","updatedBy":"Barby Grube","supplierType":0},
+{"id":1,"currencyId":0,"supplierId":106,"rate":5.111,"updatedAt":"9/3/2018","updatedBy":"Wynny Tothe","supplierType":1},
+{"id":2,"currencyId":14,"supplierId":85,"rate":3.2318,"updatedAt":"14/10/2018","updatedBy":"Bil Kane","supplierType":2},
+{"id":3,"currencyId":1,"supplierId":41,"rate":1.4108,"updatedAt":"27/3/2018","updatedBy":"Hobie Dowyer","supplierType":1},
+{"id":4,"currencyId":1,"supplierId":125,"rate":4.5107,"updatedAt":"8/3/2018","updatedBy":"Candida Broom","supplierType":0},
+{"id":5,"currencyId":15,"supplierId":6,"rate":4.7639,"updatedAt":"12/2/2018","updatedBy":"Martina Simeoli","supplierType":2},
+{"id":6,"currencyId":12,"supplierId":91,"rate":7.2122,"updatedAt":"18/7/2018","updatedBy":"Gilemette Horsted","supplierType":2},
+{"id":7,"currencyId":2,"supplierId":7,"rate":2.0082,"updatedAt":"13/6/2018","updatedBy":"Annalise Glentworth","supplierType":0},
+{"id":8,"currencyId":15,"supplierId":69,"rate":5.8973,"updatedAt":"17/2/2018","updatedBy":"Audy Waker","supplierType":0},
+{"id":9,"currencyId":8,"supplierId":69,"rate":4.27,"updatedAt":"18/9/2018","updatedBy":"Corrie O'Criane","supplierType":0},
+{"id":10,"currencyId":13,"supplierId":137,"rate":4.3703,"updatedAt":"21/5/2018","updatedBy":"Fergus Sinkings","supplierType":3},
+{"id":11,"currencyId":16,"supplierId":64,"rate":2.9682,"updatedAt":"10/2/2018","updatedBy":"Nikki Pickering","supplierType":1},
+{"id":12,"currencyId":12,"supplierId":11,"rate":9.3427,"updatedAt":"23/10/2018","updatedBy":"Charita Fessions","supplierType":0},
+{"id":13,"currencyId":5,"supplierId":7,"rate":8.7737,"updatedAt":"15/5/2018","updatedBy":"Cyndy Goodlake","supplierType":1},
+{"id":14,"currencyId":4,"supplierId":75,"rate":6.3193,"updatedAt":"25/6/2018","updatedBy":"Esmeralda Laphorn","supplierType":3},
+{"id":15,"currencyId":13,"supplierId":13,"rate":0.3474,"updatedAt":"11/4/2018","updatedBy":"Nikoletta Wortt","supplierType":0},
+{"id":16,"currencyId":12,"supplierId":43,"rate":3.3633,"updatedAt":"10/10/2018","updatedBy":"Toddy Brettoner","supplierType":2},
+{"id":17,"currencyId":6,"supplierId":78,"rate":1.2589,"updatedAt":"17/9/2018","updatedBy":"Curtis Ortes","supplierType":0},
+{"id":18,"currencyId":17,"supplierId":20,"rate":5.7753,"updatedAt":"30/10/2018","updatedBy":"Beck Hatter","supplierType":2},
+{"id":19,"currencyId":0,"supplierId":70,"rate":9.2309,"updatedAt":"18/2/2018","updatedBy":"Ellyn Snadden","supplierType":2},
+{"id":20,"currencyId":16,"supplierId":34,"rate":8.4382,"updatedAt":"26/1/2018","updatedBy":"Keelia O'Heyne","supplierType":1},
+{"id":21,"currencyId":14,"supplierId":135,"rate":1.2528,"updatedAt":"27/4/2018","updatedBy":"Gannon Devonside","supplierType":0},
+{"id":22,"currencyId":10,"supplierId":41,"rate":7.2152,"updatedAt":"18/10/2018","updatedBy":"Reamonn Creffield","supplierType":1},
+{"id":23,"currencyId":8,"supplierId":101,"rate":7.3,"updatedAt":"23/4/2018","updatedBy":"Daron Leborgne","supplierType":1},
+{"id":24,"currencyId":14,"supplierId":105,"rate":0.7287,"updatedAt":"3/1/2018","updatedBy":"Elnar Beames","supplierType":1},
+{"id":25,"currencyId":15,"supplierId":115,"rate":7.8779,"updatedAt":"29/6/2018","updatedBy":"Michail Schwandt","supplierType":0},
+{"id":26,"currencyId":1,"supplierId":69,"rate":1.1614,"updatedAt":"25/11/2018","updatedBy":"Delora Jeppensen","supplierType":0},
+{"id":27,"currencyId":1,"supplierId":113,"rate":0.6842,"updatedAt":"11/9/2018","updatedBy":"Collin Adnam","supplierType":3},
+{"id":28,"currencyId":14,"supplierId":84,"rate":7.0346,"updatedAt":"25/6/2018","updatedBy":"Diego Niemiec","supplierType":2},
+{"id":29,"currencyId":3,"supplierId":143,"rate":1.6785,"updatedAt":"26/11/2018","updatedBy":"Claudie Carlisi","supplierType":0},
+{"id":30,"currencyId":3,"supplierId":73,"rate":3.6327,"updatedAt":"21/9/2018","updatedBy":"Godfry Kahane","supplierType":2},
+{"id":31,"currencyId":4,"supplierId":28,"rate":7.3182,"updatedAt":"20/8/2018","updatedBy":"Shelley Chanter","supplierType":2},
+{"id":32,"currencyId":5,"supplierId":71,"rate":1.6521,"updatedAt":"22/5/2018","updatedBy":"Hagan Gillitt","supplierType":0},
+{"id":33,"currencyId":15,"supplierId":39,"rate":1.9333,"updatedAt":"11/8/2018","updatedBy":"Christoper Bosnell","supplierType":2},
+{"id":34,"currencyId":12,"supplierId":38,"rate":8.6603,"updatedAt":"24/3/2018","updatedBy":"Shelby Collihole","supplierType":0},
+{"id":35,"currencyId":4,"supplierId":113,"rate":3.0227,"updatedAt":"4/10/2018","updatedBy":"Fidelia Carletto","supplierType":0},
+{"id":36,"currencyId":17,"supplierId":61,"rate":9.1265,"updatedAt":"24/1/2018","updatedBy":"Johann Cathie","supplierType":1},
+{"id":37,"currencyId":1,"supplierId":125,"rate":2.7859,"updatedAt":"10/6/2018","updatedBy":"Roze Maevela","supplierType":1},
+{"id":38,"currencyId":6,"supplierId":46,"rate":6.226,"updatedAt":"19/3/2018","updatedBy":"Flossy Thurlow","supplierType":2},
+{"id":39,"currencyId":8,"supplierId":57,"rate":0.3436,"updatedAt":"23/10/2018","updatedBy":"Bobbye Abramovic","supplierType":0},
+{"id":40,"currencyId":2,"supplierId":17,"rate":2.2044,"updatedAt":"13/7/2018","updatedBy":"Dale Albiston","supplierType":1},
+{"id":41,"currencyId":9,"supplierId":146,"rate":8.1989,"updatedAt":"26/2/2018","updatedBy":"Nanci Lackner","supplierType":2},
+{"id":42,"currencyId":14,"supplierId":32,"rate":9.5429,"updatedAt":"19/8/2018","updatedBy":"Marga Potkins","supplierType":2},
+{"id":43,"currencyId":13,"supplierId":97,"rate":0.0811,"updatedAt":"31/7/2018","updatedBy":"Howey Hanbridge","supplierType":0},
+{"id":44,"currencyId":6,"supplierId":114,"rate":8.7719,"updatedAt":"9/3/2018","updatedBy":"Gabriela Simko","supplierType":1},
+{"id":45,"currencyId":10,"supplierId":13,"rate":6.1024,"updatedAt":"20/6/2018","updatedBy":"Melonie Fuidge","supplierType":0},
+{"id":46,"currencyId":4,"supplierId":112,"rate":0.2763,"updatedAt":"11/9/2018","updatedBy":"Else Garrioch","supplierType":2},
+{"id":47,"currencyId":13,"supplierId":132,"rate":2.7886,"updatedAt":"13/1/2018","updatedBy":"Demetre Bullene","supplierType":1},
+{"id":48,"currencyId":1,"supplierId":149,"rate":9.2652,"updatedAt":"20/9/2018","updatedBy":"Carmelle Fossey","supplierType":0},
+{"id":49,"currencyId":13,"supplierId":48,"rate":1.8951,"updatedAt":"23/10/2018","updatedBy":"Kiley Cribbin","supplierType":1},
+{"id":50,"currencyId":4,"supplierId":100,"rate":1.9907,"updatedAt":"26/10/2018","updatedBy":"Helli Leer","supplierType":0},
+{"id":51,"currencyId":12,"supplierId":42,"rate":8.3311,"updatedAt":"3/9/2018","updatedBy":"Marlee Sute","supplierType":2},
+{"id":52,"currencyId":2,"supplierId":140,"rate":7.4163,"updatedAt":"28/7/2018","updatedBy":"Jerry Rush","supplierType":3},
+{"id":53,"currencyId":3,"supplierId":141,"rate":9.4717,"updatedAt":"9/9/2018","updatedBy":"Dru Teare","supplierType":3},
+{"id":54,"currencyId":16,"supplierId":30,"rate":3.7855,"updatedAt":"6/8/2018","updatedBy":"Rosamund Crucitti","supplierType":0},
+{"id":55,"currencyId":8,"supplierId":44,"rate":2.8933,"updatedAt":"11/10/2018","updatedBy":"Colleen L' Anglois","supplierType":2},
+{"id":56,"currencyId":3,"supplierId":28,"rate":1.7399,"updatedAt":"3/1/2018","updatedBy":"Dom Asser","supplierType":1},
+{"id":57,"currencyId":14,"supplierId":24,"rate":6.6189,"updatedAt":"5/9/2018","updatedBy":"Clara Piotrowski","supplierType":0},
+{"id":58,"currencyId":4,"supplierId":73,"rate":7.8781,"updatedAt":"1/2/2018","updatedBy":"Gracie Hearnden","supplierType":2},
+{"id":59,"currencyId":5,"supplierId":96,"rate":6.0737,"updatedAt":"20/3/2018","updatedBy":"Joye MacComiskey","supplierType":0},
+{"id":60,"currencyId":10,"supplierId":113,"rate":7.6008,"updatedAt":"6/11/2018","updatedBy":"Karoly Zanneli","supplierType":1},
+{"id":61,"currencyId":5,"supplierId":31,"rate":1.025,"updatedAt":"31/7/2018","updatedBy":"Carrissa Cargon","supplierType":2},
+{"id":62,"currencyId":5,"supplierId":24,"rate":7.1858,"updatedAt":"21/8/2018","updatedBy":"Luciano Kuhnke","supplierType":3},
+{"id":63,"currencyId":15,"supplierId":0,"rate":1.2403,"updatedAt":"13/5/2018","updatedBy":"Sallyann Clowton","supplierType":0},
+{"id":64,"currencyId":8,"supplierId":19,"rate":1.4002,"updatedAt":"23/10/2018","updatedBy":"Layton Isakovitch","supplierType":2},
+{"id":65,"currencyId":10,"supplierId":85,"rate":3.4664,"updatedAt":"17/5/2018","updatedBy":"Darcy Fawdery","supplierType":1},
+{"id":66,"currencyId":14,"supplierId":101,"rate":7.4178,"updatedAt":"24/2/2018","updatedBy":"Samson D'Alessio","supplierType":0},
+{"id":67,"currencyId":11,"supplierId":147,"rate":7.3054,"updatedAt":"21/1/2018","updatedBy":"Darryl Bogace","supplierType":1},
+{"id":68,"currencyId":7,"supplierId":90,"rate":3.1978,"updatedAt":"1/11/2018","updatedBy":"Chicky Lashbrook","supplierType":1},
+{"id":69,"currencyId":15,"supplierId":149,"rate":8.6553,"updatedAt":"27/2/2018","updatedBy":"Annalise Hallgalley","supplierType":0},
+{"id":70,"currencyId":10,"supplierId":149,"rate":3.2531,"updatedAt":"24/10/2018","updatedBy":"Kathe Carlow","supplierType":3},
+{"id":71,"currencyId":5,"supplierId":85,"rate":8.4864,"updatedAt":"6/1/2018","updatedBy":"Bryn Schuster","supplierType":0},
+{"id":72,"currencyId":12,"supplierId":147,"rate":9.6024,"updatedAt":"3/6/2018","updatedBy":"Jayme O'Towey","supplierType":1},
+{"id":73,"currencyId":1,"supplierId":95,"rate":2.2519,"updatedAt":"5/5/2018","updatedBy":"Kearney Bricham","supplierType":0},
+{"id":74,"currencyId":5,"supplierId":133,"rate":3.9439,"updatedAt":"2/8/2018","updatedBy":"Marybelle Prettejohns","supplierType":1},
+{"id":75,"currencyId":2,"supplierId":23,"rate":2.1523,"updatedAt":"10/1/2018","updatedBy":"Jemima Howse","supplierType":0},
+{"id":76,"currencyId":4,"supplierId":122,"rate":9.7514,"updatedAt":"21/3/2018","updatedBy":"Maggy Maydway","supplierType":0},
+{"id":77,"currencyId":13,"supplierId":101,"rate":8.6287,"updatedAt":"20/6/2018","updatedBy":"Fee Stilgoe","supplierType":3},
+{"id":78,"currencyId":12,"supplierId":9,"rate":4.9568,"updatedAt":"27/9/2018","updatedBy":"Yetta Stennard","supplierType":1},
+{"id":79,"currencyId":7,"supplierId":148,"rate":8.6628,"updatedAt":"18/8/2018","updatedBy":"Maurita MacCarlich","supplierType":2},
+{"id":80,"currencyId":7,"supplierId":50,"rate":2.9384,"updatedAt":"5/6/2018","updatedBy":"Emylee Mundle","supplierType":2},
+{"id":81,"currencyId":9,"supplierId":107,"rate":1.2557,"updatedAt":"18/2/2018","updatedBy":"Louisette Hambidge","supplierType":3},
+{"id":82,"currencyId":10,"supplierId":16,"rate":5.5366,"updatedAt":"23/5/2018","updatedBy":"Fleurette Bromby","supplierType":1},
+{"id":83,"currencyId":8,"supplierId":79,"rate":3.5331,"updatedAt":"22/4/2018","updatedBy":"Cordelie Nassau","supplierType":0},
+{"id":84,"currencyId":3,"supplierId":115,"rate":1.7909,"updatedAt":"5/11/2018","updatedBy":"Mada Wittman","supplierType":0},
+{"id":85,"currencyId":16,"supplierId":39,"rate":1.1523,"updatedAt":"25/3/2018","updatedBy":"Chelsie Pablo","supplierType":0},
+{"id":86,"currencyId":15,"supplierId":33,"rate":8.6991,"updatedAt":"17/5/2018","updatedBy":"Gardiner Kettley","supplierType":0},
+{"id":87,"currencyId":5,"supplierId":70,"rate":2.3559,"updatedAt":"4/10/2018","updatedBy":"Enoch Josselsohn","supplierType":0},
+{"id":88,"currencyId":2,"supplierId":130,"rate":5.6547,"updatedAt":"22/11/2018","updatedBy":"Erin Muffin","supplierType":1},
+{"id":89,"currencyId":14,"supplierId":11,"rate":7.8609,"updatedAt":"18/8/2018","updatedBy":"Susanna Thombleson","supplierType":1},
+{"id":90,"currencyId":6,"supplierId":46,"rate":0.9288,"updatedAt":"11/6/2018","updatedBy":"Jelene Lafond","supplierType":3},
+{"id":91,"currencyId":13,"supplierId":53,"rate":2.7978,"updatedAt":"19/11/2018","updatedBy":"Bat Puckey","supplierType":1},
+{"id":92,"currencyId":4,"supplierId":52,"rate":5.342,"updatedAt":"21/1/2018","updatedBy":"Vitoria Alasdair","supplierType":3},
+{"id":93,"currencyId":12,"supplierId":4,"rate":8.6116,"updatedAt":"2/10/2018","updatedBy":"Fancie Vowells","supplierType":2},
+{"id":94,"currencyId":6,"supplierId":78,"rate":8.4107,"updatedAt":"7/5/2018","updatedBy":"Saunderson Drover","supplierType":1},
+{"id":95,"currencyId":10,"supplierId":145,"rate":3.0566,"updatedAt":"20/2/2018","updatedBy":"Cassi Abriani","supplierType":0},
+{"id":96,"currencyId":13,"supplierId":2,"rate":6.4576,"updatedAt":"2/10/2018","updatedBy":"Wallis Iohananof","supplierType":2},
+{"id":97,"currencyId":17,"supplierId":134,"rate":1.6549,"updatedAt":"15/7/2018","updatedBy":"Constantine Kevern","supplierType":1},
+{"id":98,"currencyId":14,"supplierId":50,"rate":0.8551,"updatedAt":"26/10/2018","updatedBy":"Gerri Gullberg","supplierType":0},
+{"id":99,"currencyId":2,"supplierId":7,"rate":3.0184,"updatedAt":"10/3/2018","updatedBy":"Boot Oliffe","supplierType":1},
+{"id":100,"currencyId":7,"supplierId":16,"rate":6.3764,"updatedAt":"26/11/2018","updatedBy":"Rorie Arman","supplierType":2},
+{"id":101,"currencyId":11,"supplierId":111,"rate":3.7025,"updatedAt":"2/3/2018","updatedBy":"Francisca O'Dunneen","supplierType":3},
+{"id":102,"currencyId":4,"supplierId":83,"rate":6.3248,"updatedAt":"26/10/2018","updatedBy":"Greg Cunliffe","supplierType":0},
+{"id":103,"currencyId":5,"supplierId":114,"rate":1.1125,"updatedAt":"31/7/2018","updatedBy":"Cyrus Barock","supplierType":2},
+{"id":104,"currencyId":9,"supplierId":97,"rate":5.5297,"updatedAt":"16/10/2018","updatedBy":"Salvatore Rustich","supplierType":2},
+{"id":105,"currencyId":11,"supplierId":7,"rate":5.1202,"updatedAt":"1/3/2018","updatedBy":"Hart Aslett","supplierType":2},
+{"id":106,"currencyId":6,"supplierId":113,"rate":9.2492,"updatedAt":"27/6/2018","updatedBy":"Hetty Loveless","supplierType":0},
+{"id":107,"currencyId":2,"supplierId":100,"rate":0.4954,"updatedAt":"1/1/2018","updatedBy":"Doyle Golt","supplierType":0},
+{"id":108,"currencyId":10,"supplierId":85,"rate":1.1133,"updatedAt":"9/7/2018","updatedBy":"Augusto Cackett","supplierType":0},
+{"id":109,"currencyId":5,"supplierId":71,"rate":2.2528,"updatedAt":"12/10/2018","updatedBy":"Sapphira Welman","supplierType":1},
+{"id":110,"currencyId":14,"supplierId":56,"rate":1.428,"updatedAt":"13/11/2018","updatedBy":"Zsa zsa Baish","supplierType":1},
+{"id":111,"currencyId":7,"supplierId":131,"rate":0.5399,"updatedAt":"26/6/2018","updatedBy":"Emilio Folli","supplierType":3},
+{"id":112,"currencyId":8,"supplierId":106,"rate":5.1338,"updatedAt":"2/10/2018","updatedBy":"John Kennicott","supplierType":2},
+{"id":113,"currencyId":6,"supplierId":36,"rate":7.9729,"updatedAt":"1/4/2018","updatedBy":"Alfi Jikylls","supplierType":1},
+{"id":114,"currencyId":12,"supplierId":81,"rate":5.0191,"updatedAt":"1/2/2018","updatedBy":"Ernesto Oppy","supplierType":0},
+{"id":115,"currencyId":1,"supplierId":125,"rate":9.1536,"updatedAt":"5/3/2018","updatedBy":"Osborne Cuthbertson","supplierType":0},
+{"id":116,"currencyId":16,"supplierId":136,"rate":9.0911,"updatedAt":"16/11/2018","updatedBy":"Theo Howse","supplierType":0},
+{"id":117,"currencyId":0,"supplierId":136,"rate":1.3246,"updatedAt":"26/1/2018","updatedBy":"Lanette Segeswoeth","supplierType":1},
+{"id":118,"currencyId":8,"supplierId":95,"rate":5.6427,"updatedAt":"17/8/2018","updatedBy":"Lavinia Bottrill","supplierType":2},
+{"id":119,"currencyId":13,"supplierId":60,"rate":7.8545,"updatedAt":"6/11/2018","updatedBy":"Millicent Brayshay","supplierType":1},
+{"id":120,"currencyId":14,"supplierId":65,"rate":4.8617,"updatedAt":"13/5/2018","updatedBy":"Giavani Shapera","supplierType":0},
+{"id":121,"currencyId":15,"supplierId":127,"rate":7.4341,"updatedAt":"7/11/2018","updatedBy":"Iain Casperri","supplierType":1},
+{"id":122,"currencyId":2,"supplierId":79,"rate":8.7902,"updatedAt":"8/8/2018","updatedBy":"Elianora West","supplierType":1},
+{"id":123,"currencyId":11,"supplierId":115,"rate":6.819,"updatedAt":"26/4/2018","updatedBy":"Nari Wigg","supplierType":0},
+{"id":124,"currencyId":8,"supplierId":80,"rate":3.8964,"updatedAt":"28/10/2018","updatedBy":"Trina Rickards","supplierType":2},
+{"id":125,"currencyId":2,"supplierId":136,"rate":4.0401,"updatedAt":"7/2/2018","updatedBy":"Joice Flitcroft","supplierType":2},
+{"id":126,"currencyId":10,"supplierId":55,"rate":2.1751,"updatedAt":"17/2/2018","updatedBy":"Isabeau Barriball","supplierType":2},
+{"id":127,"currencyId":2,"supplierId":116,"rate":4.3577,"updatedAt":"23/8/2018","updatedBy":"Joshuah Pellamonuten","supplierType":3},
+{"id":128,"currencyId":5,"supplierId":127,"rate":7.2334,"updatedAt":"4/9/2018","updatedBy":"Addy Antcliff","supplierType":0},
+{"id":129,"currencyId":6,"supplierId":63,"rate":7.4015,"updatedAt":"26/2/2018","updatedBy":"Adiana Greenside","supplierType":0},
+{"id":130,"currencyId":1,"supplierId":81,"rate":5.4766,"updatedAt":"26/1/2018","updatedBy":"Rycca Frensche","supplierType":2},
+{"id":131,"currencyId":2,"supplierId":32,"rate":0.9312,"updatedAt":"26/9/2018","updatedBy":"Thor Adamthwaite","supplierType":2},
+{"id":132,"currencyId":0,"supplierId":119,"rate":5.4595,"updatedAt":"3/1/2018","updatedBy":"Hyacinth Duplan","supplierType":2},
+{"id":133,"currencyId":11,"supplierId":71,"rate":8.9796,"updatedAt":"10/9/2018","updatedBy":"Derk O'Hederscoll","supplierType":1},
+{"id":134,"currencyId":5,"supplierId":45,"rate":3.3317,"updatedAt":"10/11/2018","updatedBy":"Spencer Lowcock","supplierType":2},
+{"id":135,"currencyId":5,"supplierId":141,"rate":4.8005,"updatedAt":"17/10/2018","updatedBy":"Crissy Briars","supplierType":2},
+{"id":136,"currencyId":4,"supplierId":94,"rate":0.0111,"updatedAt":"1/4/2018","updatedBy":"Broderick Tiplady","supplierType":1},
+{"id":137,"currencyId":9,"supplierId":127,"rate":8.5234,"updatedAt":"8/5/2018","updatedBy":"Nicola Andreou","supplierType":1},
+{"id":138,"currencyId":7,"supplierId":15,"rate":6.8313,"updatedAt":"19/11/2018","updatedBy":"Colline Lightbourne","supplierType":1},
+{"id":139,"currencyId":11,"supplierId":60,"rate":2.2904,"updatedAt":"27/5/2018","updatedBy":"Lawton Davion","supplierType":3},
+{"id":140,"currencyId":17,"supplierId":21,"rate":4.3664,"updatedAt":"25/6/2018","updatedBy":"Lucius Ionnidis","supplierType":0},
+{"id":141,"currencyId":0,"supplierId":121,"rate":9.7878,"updatedAt":"15/5/2018","updatedBy":"Gwendolin Dhenin","supplierType":0},
+{"id":142,"currencyId":9,"supplierId":145,"rate":2.1432,"updatedAt":"1/2/2018","updatedBy":"Lance Crich","supplierType":1},
+{"id":143,"currencyId":8,"supplierId":52,"rate":2.2339,"updatedAt":"16/11/2018","updatedBy":"Madelle Pietesch","supplierType":1},
+{"id":144,"currencyId":5,"supplierId":36,"rate":9.243,"updatedAt":"14/11/2018","updatedBy":"Maryjo Antalffy","supplierType":3},
+{"id":145,"currencyId":13,"supplierId":116,"rate":3.1009,"updatedAt":"16/6/2018","updatedBy":"Halie Lugton","supplierType":1},
+{"id":146,"currencyId":16,"supplierId":61,"rate":1.6434,"updatedAt":"21/7/2018","updatedBy":"Austen Dopson","supplierType":1},
+{"id":147,"currencyId":7,"supplierId":133,"rate":9.2507,"updatedAt":"2/9/2018","updatedBy":"Lacee Reddings","supplierType":2},
+{"id":148,"currencyId":5,"supplierId":33,"rate":8.0713,"updatedAt":"16/5/2018","updatedBy":"Humbert Tinsley","supplierType":0},
+{"id":149,"currencyId":11,"supplierId":9,"rate":9.9234,"updatedAt":"13/8/2018","updatedBy":"Morissa Hastin","supplierType":1},
+{"id":150,"currencyId":6,"supplierId":8,"rate":8.515,"updatedAt":"13/7/2018","updatedBy":"Cordy Lunk","supplierType":0},
+{"id":151,"currencyId":13,"supplierId":21,"rate":9.4782,"updatedAt":"28/4/2018","updatedBy":"Tyler Lees","supplierType":3},
+{"id":152,"currencyId":11,"supplierId":25,"rate":5.8808,"updatedAt":"17/1/2018","updatedBy":"Shina Olenikov","supplierType":0},
+{"id":153,"currencyId":13,"supplierId":109,"rate":9.1106,"updatedAt":"28/6/2018","updatedBy":"Rosanne Pardue","supplierType":0},
+{"id":154,"currencyId":1,"supplierId":107,"rate":0.128,"updatedAt":"18/4/2018","updatedBy":"Joelynn Orriss","supplierType":0},
+{"id":155,"currencyId":3,"supplierId":137,"rate":0.4835,"updatedAt":"1/9/2018","updatedBy":"Glendon Hulkes","supplierType":2},
+{"id":156,"currencyId":14,"supplierId":66,"rate":0.7037,"updatedAt":"15/7/2018","updatedBy":"Daphene Kettlesing","supplierType":0},
+{"id":157,"currencyId":6,"supplierId":140,"rate":5.1033,"updatedAt":"3/7/2018","updatedBy":"Harlan Jervoise","supplierType":1},
+{"id":158,"currencyId":8,"supplierId":33,"rate":3.1213,"updatedAt":"3/1/2018","updatedBy":"Cinnamon Dowrey","supplierType":0},
+{"id":159,"currencyId":5,"supplierId":20,"rate":0.7853,"updatedAt":"1/3/2018","updatedBy":"Albertina Matussow","supplierType":1},
+{"id":160,"currencyId":16,"supplierId":118,"rate":5.8578,"updatedAt":"15/5/2018","updatedBy":"Emelyne Wrist","supplierType":1},
+{"id":161,"currencyId":16,"supplierId":94,"rate":2.665,"updatedAt":"10/8/2018","updatedBy":"Archaimbaud Berrill","supplierType":0},
+{"id":162,"currencyId":5,"supplierId":51,"rate":4.638,"updatedAt":"18/7/2018","updatedBy":"Lind Orthmann","supplierType":3},
+{"id":163,"currencyId":0,"supplierId":131,"rate":2.5052,"updatedAt":"2/11/2018","updatedBy":"Odelle Dockerty","supplierType":2},
+{"id":164,"currencyId":2,"supplierId":7,"rate":6.7378,"updatedAt":"26/3/2018","updatedBy":"Maximilianus Engelbrecht","supplierType":1},
+{"id":165,"currencyId":7,"supplierId":6,"rate":2.0459,"updatedAt":"19/9/2018","updatedBy":"Daphne Marzelli","supplierType":0},
+{"id":166,"currencyId":17,"supplierId":121,"rate":3.3804,"updatedAt":"31/8/2018","updatedBy":"Chuck Stannislawski","supplierType":2},
+{"id":167,"currencyId":0,"supplierId":24,"rate":0.547,"updatedAt":"21/3/2018","updatedBy":"Arnie Salliss","supplierType":1},
+{"id":168,"currencyId":5,"supplierId":26,"rate":2.272,"updatedAt":"19/8/2018","updatedBy":"Ranice Hirschmann","supplierType":0},
+{"id":169,"currencyId":15,"supplierId":87,"rate":9.2694,"updatedAt":"3/5/2018","updatedBy":"Haroun Calderbank","supplierType":1},
+{"id":170,"currencyId":11,"supplierId":70,"rate":3.7928,"updatedAt":"22/8/2018","updatedBy":"Nobie Makin","supplierType":2},
+{"id":171,"currencyId":16,"supplierId":132,"rate":5.6095,"updatedAt":"30/1/2018","updatedBy":"Ring Canedo","supplierType":1},
+{"id":172,"currencyId":4,"supplierId":62,"rate":5.7792,"updatedAt":"27/10/2018","updatedBy":"Kesley Batterton","supplierType":0},
+{"id":173,"currencyId":0,"supplierId":3,"rate":9.5114,"updatedAt":"9/9/2018","updatedBy":"Nobe Hearsum","supplierType":3},
+{"id":174,"currencyId":16,"supplierId":38,"rate":5.7385,"updatedAt":"6/2/2018","updatedBy":"Tadeas Tumbridge","supplierType":0},
+{"id":175,"currencyId":7,"supplierId":5,"rate":2.3506,"updatedAt":"30/10/2018","updatedBy":"Shane Caldayrou","supplierType":1},
+{"id":176,"currencyId":13,"supplierId":147,"rate":5.6167,"updatedAt":"23/6/2018","updatedBy":"Cherise Storton","supplierType":1},
+{"id":177,"currencyId":14,"supplierId":11,"rate":9.9562,"updatedAt":"10/7/2018","updatedBy":"Taddeusz Carruth","supplierType":2},
+{"id":178,"currencyId":1,"supplierId":39,"rate":0.1477,"updatedAt":"20/1/2018","updatedBy":"Emmalyn Dalgleish","supplierType":0},
+{"id":179,"currencyId":5,"supplierId":43,"rate":3.9056,"updatedAt":"25/5/2018","updatedBy":"Robenia Johnsee","supplierType":0},
+{"id":180,"currencyId":17,"supplierId":71,"rate":6.8392,"updatedAt":"27/11/2018","updatedBy":"Griffie Gillbanks","supplierType":2},
+{"id":181,"currencyId":4,"supplierId":97,"rate":8.7007,"updatedAt":"11/3/2018","updatedBy":"Dyann Weitzel","supplierType":3},
+{"id":182,"currencyId":11,"supplierId":120,"rate":2.2503,"updatedAt":"22/8/2018","updatedBy":"Aleta Burehill","supplierType":0},
+{"id":183,"currencyId":1,"supplierId":106,"rate":3.3095,"updatedAt":"9/2/2018","updatedBy":"Florri Autry","supplierType":2},
+{"id":184,"currencyId":10,"supplierId":47,"rate":3.3462,"updatedAt":"27/5/2018","updatedBy":"Brodie Banner","supplierType":1},
+{"id":185,"currencyId":7,"supplierId":78,"rate":2.59,"updatedAt":"26/6/2018","updatedBy":"Gabie Dobsons","supplierType":0},
+{"id":186,"currencyId":6,"supplierId":127,"rate":9.5755,"updatedAt":"7/1/2018","updatedBy":"Mareah Pfertner","supplierType":2},
+{"id":187,"currencyId":17,"supplierId":26,"rate":4.1204,"updatedAt":"14/10/2018","updatedBy":"Kele Gallanders","supplierType":0},
+{"id":188,"currencyId":13,"supplierId":18,"rate":5.5102,"updatedAt":"25/11/2018","updatedBy":"Yale Fleetwood","supplierType":0},
+{"id":189,"currencyId":3,"supplierId":43,"rate":9.0259,"updatedAt":"19/3/2018","updatedBy":"Omar Verbeek","supplierType":2},
+{"id":190,"currencyId":9,"supplierId":53,"rate":5.5581,"updatedAt":"26/10/2018","updatedBy":"Noak Rex","supplierType":1},
+{"id":191,"currencyId":8,"supplierId":9,"rate":4.9677,"updatedAt":"17/10/2018","updatedBy":"Prentiss Gudahy","supplierType":2},
+{"id":192,"currencyId":16,"supplierId":3,"rate":7.2774,"updatedAt":"9/11/2018","updatedBy":"Newton Kopf","supplierType":0},
+{"id":193,"currencyId":16,"supplierId":66,"rate":3.3926,"updatedAt":"2/3/2018","updatedBy":"Adams Kall","supplierType":0},
+{"id":194,"currencyId":13,"supplierId":134,"rate":3.5366,"updatedAt":"16/10/2018","updatedBy":"Lynnell Siddell","supplierType":1},
+{"id":195,"currencyId":16,"supplierId":103,"rate":5.7931,"updatedAt":"7/11/2018","updatedBy":"Putnam Karpychev","supplierType":3},
+{"id":196,"currencyId":1,"supplierId":123,"rate":8.8567,"updatedAt":"20/9/2018","updatedBy":"Brannon Stirgess","supplierType":1},
+{"id":197,"currencyId":5,"supplierId":44,"rate":1.0806,"updatedAt":"31/8/2018","updatedBy":"Dorelle Livingstone","supplierType":0},
+{"id":198,"currencyId":9,"supplierId":20,"rate":6.8094,"updatedAt":"27/4/2018","updatedBy":"Tamma Hellmer","supplierType":0},
+{"id":199,"currencyId":15,"supplierId":73,"rate":9.4114,"updatedAt":"7/5/2018","updatedBy":"Clywd Tacey","supplierType":0},
+{"id":200,"currencyId":7,"supplierId":72,"rate":7.3071,"updatedAt":"5/1/2018","updatedBy":"Sholom Stanistreet","supplierType":2},
+{"id":201,"currencyId":4,"supplierId":128,"rate":5.087,"updatedAt":"22/4/2018","updatedBy":"Cornie Corbett","supplierType":0},
+{"id":202,"currencyId":1,"supplierId":144,"rate":9.7894,"updatedAt":"7/11/2018","updatedBy":"Luca Mackie","supplierType":1},
+{"id":203,"currencyId":4,"supplierId":95,"rate":9.9058,"updatedAt":"27/9/2018","updatedBy":"Merill Hachette","supplierType":0},
+{"id":204,"currencyId":9,"supplierId":49,"rate":1.639,"updatedAt":"1/1/2018","updatedBy":"Tony Demangel","supplierType":0},
+{"id":205,"currencyId":2,"supplierId":112,"rate":7.0959,"updatedAt":"2/8/2018","updatedBy":"Homerus Cuniffe","supplierType":1},
+{"id":206,"currencyId":1,"supplierId":107,"rate":9.0115,"updatedAt":"16/3/2018","updatedBy":"Anett Garralts","supplierType":2},
+{"id":207,"currencyId":13,"supplierId":88,"rate":8.6275,"updatedAt":"2/4/2018","updatedBy":"Von Mcimmie","supplierType":1},
+{"id":208,"currencyId":11,"supplierId":50,"rate":6.6761,"updatedAt":"15/1/2018","updatedBy":"Rory Gentry","supplierType":2},
+{"id":209,"currencyId":13,"supplierId":117,"rate":7.6715,"updatedAt":"26/9/2018","updatedBy":"Philbert Shekle","supplierType":3},
+{"id":210,"currencyId":5,"supplierId":37,"rate":3.5808,"updatedAt":"15/6/2018","updatedBy":"Bunny Marcroft","supplierType":0},
+{"id":211,"currencyId":14,"supplierId":67,"rate":0.8507,"updatedAt":"28/9/2018","updatedBy":"Bernete Schollick","supplierType":0},
+{"id":212,"currencyId":1,"supplierId":148,"rate":0.8503,"updatedAt":"9/11/2018","updatedBy":"Virgina Casaroli","supplierType":0},
+{"id":213,"currencyId":1,"supplierId":1,"rate":3.8969,"updatedAt":"20/5/2018","updatedBy":"Ara Bills","supplierType":0},
+{"id":214,"currencyId":1,"supplierId":82,"rate":7.8626,"updatedAt":"31/3/2018","updatedBy":"Anet Mc Caughan","supplierType":2},
+{"id":215,"currencyId":0,"supplierId":14,"rate":2.3275,"updatedAt":"22/5/2018","updatedBy":"Mozes Cordova","supplierType":2},
+{"id":216,"currencyId":13,"supplierId":8,"rate":1.8303,"updatedAt":"6/7/2018","updatedBy":"Bald Ben-Aharon","supplierType":3},
+{"id":217,"currencyId":16,"supplierId":66,"rate":1.0674,"updatedAt":"18/5/2018","updatedBy":"Sophia Mattis","supplierType":1},
+{"id":218,"currencyId":6,"supplierId":27,"rate":1.589,"updatedAt":"12/11/2018","updatedBy":"Harlie Servis","supplierType":0},
+{"id":219,"currencyId":1,"supplierId":121,"rate":5.6829,"updatedAt":"8/1/2018","updatedBy":"Cindee Greenroad","supplierType":1},
+{"id":220,"currencyId":5,"supplierId":89,"rate":9.0982,"updatedAt":"30/10/2018","updatedBy":"Grenville Colloff","supplierType":0},
+{"id":221,"currencyId":0,"supplierId":103,"rate":6.0476,"updatedAt":"30/11/2018","updatedBy":"Barn Fenck","supplierType":2},
+{"id":222,"currencyId":1,"supplierId":75,"rate":7.2556,"updatedAt":"17/1/2018","updatedBy":"Adelice Lombardo","supplierType":2},
+{"id":223,"currencyId":6,"supplierId":122,"rate":1.8391,"updatedAt":"1/6/2018","updatedBy":"Englebert Stanbridge","supplierType":2},
+{"id":224,"currencyId":1,"supplierId":66,"rate":8.9567,"updatedAt":"25/4/2018","updatedBy":"Ellette Thireau","supplierType":1},
+{"id":225,"currencyId":9,"supplierId":68,"rate":7.3543,"updatedAt":"22/4/2018","updatedBy":"Gabie Crotch","supplierType":0},
+{"id":226,"currencyId":6,"supplierId":33,"rate":4.93,"updatedAt":"3/7/2018","updatedBy":"Pepe Cornes","supplierType":0},
+{"id":227,"currencyId":6,"supplierId":138,"rate":5.2902,"updatedAt":"23/1/2018","updatedBy":"Pall Maldin","supplierType":2},
+{"id":228,"currencyId":10,"supplierId":7,"rate":9.0132,"updatedAt":"15/3/2018","updatedBy":"Baxie Tankus","supplierType":0},
+{"id":229,"currencyId":13,"supplierId":70,"rate":4.7519,"updatedAt":"25/5/2018","updatedBy":"Merrill Gilder","supplierType":0},
+{"id":230,"currencyId":16,"supplierId":110,"rate":8.5981,"updatedAt":"30/10/2018","updatedBy":"Ysabel Careswell","supplierType":3},
+{"id":231,"currencyId":6,"supplierId":66,"rate":0.0156,"updatedAt":"25/11/2018","updatedBy":"Maridel Brayne","supplierType":0},
+{"id":232,"currencyId":13,"supplierId":37,"rate":3.9014,"updatedAt":"29/5/2018","updatedBy":"Briant Lindeman","supplierType":0},
+{"id":233,"currencyId":3,"supplierId":38,"rate":0.2042,"updatedAt":"10/4/2018","updatedBy":"Kathleen Maffioni","supplierType":1},
+{"id":234,"currencyId":15,"supplierId":136,"rate":3.2654,"updatedAt":"26/4/2018","updatedBy":"Geno Creedland","supplierType":1},
+{"id":235,"currencyId":12,"supplierId":115,"rate":2.0844,"updatedAt":"14/10/2018","updatedBy":"Halli Buckthorp","supplierType":0},
+{"id":236,"currencyId":6,"supplierId":102,"rate":1.4667,"updatedAt":"4/5/2018","updatedBy":"Iris Hold","supplierType":0},
+{"id":237,"currencyId":3,"supplierId":43,"rate":8.6052,"updatedAt":"21/1/2018","updatedBy":"Neila Bru","supplierType":1},
+{"id":238,"currencyId":16,"supplierId":142,"rate":2.2988,"updatedAt":"4/9/2018","updatedBy":"Kathie Chatelain","supplierType":0},
+{"id":239,"currencyId":17,"supplierId":101,"rate":4.6796,"updatedAt":"16/11/2018","updatedBy":"Ethel Bellingham","supplierType":1},
+{"id":240,"currencyId":0,"supplierId":112,"rate":1.8734,"updatedAt":"28/3/2018","updatedBy":"Melisa Falkus","supplierType":1},
+{"id":241,"currencyId":2,"supplierId":23,"rate":0.3441,"updatedAt":"27/6/2018","updatedBy":"Meredithe Di Boldi","supplierType":1},
+{"id":242,"currencyId":15,"supplierId":83,"rate":9.9392,"updatedAt":"3/8/2018","updatedBy":"Hamel Selburn","supplierType":0},
+{"id":243,"currencyId":0,"supplierId":16,"rate":8.697,"updatedAt":"1/6/2018","updatedBy":"Madelaine Sandaver","supplierType":1},
+{"id":244,"currencyId":8,"supplierId":69,"rate":9.4762,"updatedAt":"29/7/2018","updatedBy":"Flossy Reary","supplierType":0},
+{"id":245,"currencyId":14,"supplierId":99,"rate":5.1607,"updatedAt":"13/10/2018","updatedBy":"Demetra Drinnan","supplierType":1},
+{"id":246,"currencyId":7,"supplierId":93,"rate":9.1001,"updatedAt":"13/4/2018","updatedBy":"Ellyn Skowcraft","supplierType":1},
+{"id":247,"currencyId":9,"supplierId":58,"rate":9.7867,"updatedAt":"23/10/2018","updatedBy":"Broddie Jebb","supplierType":2},
+{"id":248,"currencyId":1,"supplierId":79,"rate":6.2432,"updatedAt":"12/11/2018","updatedBy":"Ondrea Humphrys","supplierType":1},
+{"id":249,"currencyId":17,"supplierId":128,"rate":1.0441,"updatedAt":"3/7/2018","updatedBy":"Delmore Holdren","supplierType":0},
+{"id":250,"currencyId":16,"supplierId":44,"rate":6.9593,"updatedAt":"20/10/2018","updatedBy":"Cecily McKeeman","supplierType":1},
+{"id":251,"currencyId":15,"supplierId":138,"rate":8.6731,"updatedAt":"19/2/2018","updatedBy":"Derk McCheyne","supplierType":3},
+{"id":252,"currencyId":11,"supplierId":122,"rate":6.3246,"updatedAt":"4/11/2018","updatedBy":"Lorraine Gunthorpe","supplierType":3},
+{"id":253,"currencyId":0,"supplierId":2,"rate":9.3219,"updatedAt":"25/11/2018","updatedBy":"Westley Dreus","supplierType":1},
+{"id":254,"currencyId":9,"supplierId":97,"rate":2.6379,"updatedAt":"30/5/2018","updatedBy":"Yettie Dimmack","supplierType":0},
+{"id":255,"currencyId":10,"supplierId":40,"rate":7.4832,"updatedAt":"28/8/2018","updatedBy":"Tim Suffe","supplierType":0},
+{"id":256,"currencyId":0,"supplierId":144,"rate":7.8235,"updatedAt":"7/7/2018","updatedBy":"Pebrook Peele","supplierType":1},
+{"id":257,"currencyId":11,"supplierId":0,"rate":1.7916,"updatedAt":"7/3/2018","updatedBy":"Timothea Genders","supplierType":1},
+{"id":258,"currencyId":8,"supplierId":121,"rate":7.6406,"updatedAt":"28/6/2018","updatedBy":"Nevins Turmel","supplierType":2},
+{"id":259,"currencyId":13,"supplierId":15,"rate":8.3129,"updatedAt":"7/9/2018","updatedBy":"Eartha Pettiford","supplierType":0},
+{"id":260,"currencyId":5,"supplierId":89,"rate":0.5014,"updatedAt":"3/3/2018","updatedBy":"Ronnie Roache","supplierType":2},
+{"id":261,"currencyId":4,"supplierId":33,"rate":7.6874,"updatedAt":"16/1/2018","updatedBy":"Tuesday Pidgeley","supplierType":1},
+{"id":262,"currencyId":2,"supplierId":121,"rate":4.898,"updatedAt":"28/2/2018","updatedBy":"Luca Fluin","supplierType":0},
+{"id":263,"currencyId":3,"supplierId":89,"rate":3.5597,"updatedAt":"16/3/2018","updatedBy":"Garek Ambrose","supplierType":1},
+{"id":264,"currencyId":0,"supplierId":132,"rate":7.6332,"updatedAt":"1/2/2018","updatedBy":"Eli Bossons","supplierType":1},
+{"id":265,"currencyId":12,"supplierId":29,"rate":0.3109,"updatedAt":"25/10/2018","updatedBy":"Lizabeth Pescott","supplierType":2},
+{"id":266,"currencyId":17,"supplierId":78,"rate":9.0893,"updatedAt":"5/1/2018","updatedBy":"Noll Molloy","supplierType":2},
+{"id":267,"currencyId":6,"supplierId":133,"rate":2.4154,"updatedAt":"12/5/2018","updatedBy":"Kiel Potkin","supplierType":0},
+{"id":268,"currencyId":10,"supplierId":61,"rate":2.6781,"updatedAt":"20/8/2018","updatedBy":"Christan Mathwen","supplierType":3},
+{"id":269,"currencyId":16,"supplierId":107,"rate":0.7609,"updatedAt":"2/11/2018","updatedBy":"Isabeau Desport","supplierType":0},
+{"id":270,"currencyId":4,"supplierId":145,"rate":4.4019,"updatedAt":"15/3/2018","updatedBy":"Padraic Alcide","supplierType":1},
+{"id":271,"currencyId":7,"supplierId":21,"rate":7.3285,"updatedAt":"1/8/2018","updatedBy":"Alick Bockmann","supplierType":1},
+{"id":272,"currencyId":9,"supplierId":133,"rate":2.8936,"updatedAt":"2/6/2018","updatedBy":"Jourdain Mart","supplierType":0},
+{"id":273,"currencyId":1,"supplierId":90,"rate":8.4544,"updatedAt":"28/5/2018","updatedBy":"Kingston Bleeze","supplierType":2},
+{"id":274,"currencyId":11,"supplierId":113,"rate":7.6571,"updatedAt":"17/4/2018","updatedBy":"Dacey Cobelli","supplierType":0},
+{"id":275,"currencyId":13,"supplierId":99,"rate":5.6308,"updatedAt":"13/7/2018","updatedBy":"Austin Benka","supplierType":0},
+{"id":276,"currencyId":16,"supplierId":58,"rate":5.6726,"updatedAt":"26/9/2018","updatedBy":"Faith Masters","supplierType":1},
+{"id":277,"currencyId":16,"supplierId":88,"rate":0.5941,"updatedAt":"9/7/2018","updatedBy":"Byran Agates","supplierType":1},
+{"id":278,"currencyId":9,"supplierId":57,"rate":3.6766,"updatedAt":"19/9/2018","updatedBy":"Ruprecht Andres","supplierType":2},
+{"id":279,"currencyId":4,"supplierId":110,"rate":3.4689,"updatedAt":"1/4/2018","updatedBy":"Sigrid Olufsen","supplierType":0},
+{"id":280,"currencyId":10,"supplierId":36,"rate":4.277,"updatedAt":"21/3/2018","updatedBy":"Shadow Breede","supplierType":1},
+{"id":281,"currencyId":6,"supplierId":60,"rate":3.6566,"updatedAt":"7/6/2018","updatedBy":"Dion Roarty","supplierType":3},
+{"id":282,"currencyId":8,"supplierId":15,"rate":5.4707,"updatedAt":"7/3/2018","updatedBy":"Flynn Delue","supplierType":1},
+{"id":283,"currencyId":16,"supplierId":50,"rate":6.3601,"updatedAt":"1/1/2018","updatedBy":"Meta Ledingham","supplierType":1},
+{"id":284,"currencyId":7,"supplierId":95,"rate":8.7411,"updatedAt":"24/3/2018","updatedBy":"Shellie Mansbridge","supplierType":0},
+{"id":285,"currencyId":1,"supplierId":125,"rate":8.3037,"updatedAt":"30/8/2018","updatedBy":"Derry Daltry","supplierType":1},
+{"id":286,"currencyId":3,"supplierId":66,"rate":1.6159,"updatedAt":"6/11/2018","updatedBy":"Tim Sloyan","supplierType":0},
+{"id":287,"currencyId":4,"supplierId":73,"rate":2.3527,"updatedAt":"23/8/2018","updatedBy":"Angelika Sapir","supplierType":0},
+{"id":288,"currencyId":11,"supplierId":33,"rate":2.9179,"updatedAt":"12/9/2018","updatedBy":"Silvan Rust","supplierType":1},
+{"id":289,"currencyId":15,"supplierId":115,"rate":9.3526,"updatedAt":"28/11/2018","updatedBy":"Gilles Shuker","supplierType":0},
+{"id":290,"currencyId":10,"supplierId":52,"rate":0.6369,"updatedAt":"1/10/2018","updatedBy":"Hewet Twittey","supplierType":0},
+{"id":291,"currencyId":6,"supplierId":118,"rate":5.4246,"updatedAt":"27/8/2018","updatedBy":"Cissiee Kemwal","supplierType":0},
+{"id":292,"currencyId":15,"supplierId":28,"rate":8.8228,"updatedAt":"12/7/2018","updatedBy":"Mirabella Frankiewicz","supplierType":0},
+{"id":293,"currencyId":9,"supplierId":91,"rate":8.6214,"updatedAt":"3/2/2018","updatedBy":"Cherilynn Somerbell","supplierType":3},
+{"id":294,"currencyId":6,"supplierId":31,"rate":6.5316,"updatedAt":"15/2/2018","updatedBy":"Ruben Plester","supplierType":0},
+{"id":295,"currencyId":2,"supplierId":40,"rate":9.4609,"updatedAt":"19/3/2018","updatedBy":"Raimund Peachey","supplierType":0},
+{"id":296,"currencyId":9,"supplierId":30,"rate":3.8399,"updatedAt":"6/7/2018","updatedBy":"Rutledge Reen","supplierType":1},
+{"id":297,"currencyId":11,"supplierId":34,"rate":9.1518,"updatedAt":"18/8/2018","updatedBy":"Margalit Sunner","supplierType":1},
+{"id":298,"currencyId":6,"supplierId":1,"rate":1.7797,"updatedAt":"11/10/2018","updatedBy":"Odella Whawell","supplierType":2},
+{"id":299,"currencyId":6,"supplierId":114,"rate":3.5105,"updatedAt":"16/4/2018","updatedBy":"Lainey Palmer","supplierType":1},
+{"id":300,"currencyId":17,"supplierId":119,"rate":5.9787,"updatedAt":"28/10/2018","updatedBy":"Davin Filewood","supplierType":0},
+{"id":301,"currencyId":9,"supplierId":64,"rate":6.5181,"updatedAt":"14/3/2018","updatedBy":"Ferdy Springthorp","supplierType":0},
+{"id":302,"currencyId":2,"supplierId":143,"rate":6.8565,"updatedAt":"17/7/2018","updatedBy":"Rona Rennicks","supplierType":0},
+{"id":303,"currencyId":8,"supplierId":37,"rate":1.5551,"updatedAt":"4/3/2018","updatedBy":"Killy Valentine","supplierType":0},
+{"id":304,"currencyId":14,"supplierId":134,"rate":1.2893,"updatedAt":"13/3/2018","updatedBy":"Maure Crewes","supplierType":2},
+{"id":305,"currencyId":2,"supplierId":61,"rate":3.1516,"updatedAt":"16/6/2018","updatedBy":"Riannon Trench","supplierType":1},
+{"id":306,"currencyId":4,"supplierId":123,"rate":3.3536,"updatedAt":"4/3/2018","updatedBy":"Trent Toten","supplierType":1},
+{"id":307,"currencyId":13,"supplierId":72,"rate":8.7139,"updatedAt":"3/2/2018","updatedBy":"Drusilla Duckit","supplierType":2},
+{"id":308,"currencyId":7,"supplierId":120,"rate":7.9308,"updatedAt":"11/11/2018","updatedBy":"Marti Boffey","supplierType":2},
+{"id":309,"currencyId":8,"supplierId":88,"rate":1.9295,"updatedAt":"7/7/2018","updatedBy":"Carree Urien","supplierType":0},
+{"id":310,"currencyId":11,"supplierId":27,"rate":7.429,"updatedAt":"16/7/2018","updatedBy":"Perren Posvner","supplierType":0},
+{"id":311,"currencyId":11,"supplierId":68,"rate":3.9942,"updatedAt":"2/3/2018","updatedBy":"Karie Ayerst","supplierType":1},
+{"id":312,"currencyId":15,"supplierId":54,"rate":7.6814,"updatedAt":"20/8/2018","updatedBy":"Sauveur Gotecliffe","supplierType":0},
+{"id":313,"currencyId":4,"supplierId":122,"rate":3.1668,"updatedAt":"18/5/2018","updatedBy":"Jewel Largen","supplierType":1},
+{"id":314,"currencyId":16,"supplierId":60,"rate":9.7394,"updatedAt":"1/1/2018","updatedBy":"Pierette Starford","supplierType":1},
+{"id":315,"currencyId":5,"supplierId":10,"rate":7.2675,"updatedAt":"5/11/2018","updatedBy":"Harlie Dmisek","supplierType":0},
+{"id":316,"currencyId":14,"supplierId":55,"rate":6.4292,"updatedAt":"12/8/2018","updatedBy":"Alfonse Bruton","supplierType":0},
+{"id":317,"currencyId":13,"supplierId":24,"rate":9.9503,"updatedAt":"3/9/2018","updatedBy":"Emanuele Sine","supplierType":0},
+{"id":318,"currencyId":2,"supplierId":82,"rate":2.2691,"updatedAt":"25/11/2018","updatedBy":"Gianni Richard","supplierType":1},
+{"id":319,"currencyId":7,"supplierId":17,"rate":3.9448,"updatedAt":"12/5/2018","updatedBy":"Lowell Inott","supplierType":0},
+{"id":320,"currencyId":0,"supplierId":137,"rate":5.6649,"updatedAt":"9/7/2018","updatedBy":"Donna Burkart","supplierType":2},
+{"id":321,"currencyId":17,"supplierId":104,"rate":0.7471,"updatedAt":"19/8/2018","updatedBy":"Alix Peattie","supplierType":0},
+{"id":322,"currencyId":4,"supplierId":3,"rate":5.3989,"updatedAt":"7/2/2018","updatedBy":"Jonis Dible","supplierType":3},
+{"id":323,"currencyId":1,"supplierId":27,"rate":5.9796,"updatedAt":"8/6/2018","updatedBy":"Keelia Crowche","supplierType":1},
+{"id":324,"currencyId":11,"supplierId":52,"rate":0.3645,"updatedAt":"15/1/2018","updatedBy":"Tessy Baroux","supplierType":2},
+{"id":325,"currencyId":1,"supplierId":32,"rate":5.0881,"updatedAt":"22/6/2018","updatedBy":"Irita Delacote","supplierType":1},
+{"id":326,"currencyId":17,"supplierId":35,"rate":3.5282,"updatedAt":"22/6/2018","updatedBy":"Brett Beldum","supplierType":0},
+{"id":327,"currencyId":17,"supplierId":70,"rate":5.1398,"updatedAt":"9/10/2018","updatedBy":"Cedric Heymes","supplierType":3},
+{"id":328,"currencyId":14,"supplierId":34,"rate":5.8428,"updatedAt":"8/10/2018","updatedBy":"Cory Zuan","supplierType":0},
+{"id":329,"currencyId":10,"supplierId":132,"rate":2.6652,"updatedAt":"3/2/2018","updatedBy":"Brooke Prior","supplierType":0},
+{"id":330,"currencyId":14,"supplierId":136,"rate":1.6106,"updatedAt":"20/6/2018","updatedBy":"Spense Brushneen","supplierType":3},
+{"id":331,"currencyId":5,"supplierId":133,"rate":5.5083,"updatedAt":"21/10/2018","updatedBy":"Cary McChruiter","supplierType":0},
+{"id":332,"currencyId":3,"supplierId":8,"rate":6.9453,"updatedAt":"23/10/2018","updatedBy":"Sharyl Follis","supplierType":0},
+{"id":333,"currencyId":16,"supplierId":27,"rate":3.5662,"updatedAt":"22/11/2018","updatedBy":"Francyne Iacobini","supplierType":1},
+{"id":334,"currencyId":5,"supplierId":101,"rate":0.3237,"updatedAt":"14/10/2018","updatedBy":"Tyrus Ayerst","supplierType":3},
+{"id":335,"currencyId":4,"supplierId":140,"rate":8.4432,"updatedAt":"3/5/2018","updatedBy":"Rudy Halladay","supplierType":0},
+{"id":336,"currencyId":13,"supplierId":64,"rate":4.8936,"updatedAt":"30/10/2018","updatedBy":"Sarge Coey","supplierType":0},
+{"id":337,"currencyId":9,"supplierId":121,"rate":1.6061,"updatedAt":"7/5/2018","updatedBy":"Joel Dmisek","supplierType":0},
+{"id":338,"currencyId":7,"supplierId":36,"rate":1.3653,"updatedAt":"8/8/2018","updatedBy":"Tisha Millhouse","supplierType":1},
+{"id":339,"currencyId":6,"supplierId":2,"rate":2.6301,"updatedAt":"2/6/2018","updatedBy":"Bili Hane","supplierType":2},
+{"id":340,"currencyId":0,"supplierId":98,"rate":3.0889,"updatedAt":"27/9/2018","updatedBy":"Silvie Hethron","supplierType":0},
+{"id":341,"currencyId":6,"supplierId":88,"rate":3.7895,"updatedAt":"5/10/2018","updatedBy":"Eudora Barenski","supplierType":1},
+{"id":342,"currencyId":8,"supplierId":100,"rate":3.7606,"updatedAt":"12/2/2018","updatedBy":"Karen Strodder","supplierType":2},
+{"id":343,"currencyId":3,"supplierId":75,"rate":7.5419,"updatedAt":"17/7/2018","updatedBy":"Dotti Franey","supplierType":1},
+{"id":344,"currencyId":3,"supplierId":49,"rate":2.546,"updatedAt":"2/11/2018","updatedBy":"Ethelbert Glendinning","supplierType":0},
+{"id":345,"currencyId":2,"supplierId":9,"rate":3.4004,"updatedAt":"1/8/2018","updatedBy":"Carlye Johnikin","supplierType":1},
+{"id":346,"currencyId":7,"supplierId":117,"rate":4.5197,"updatedAt":"21/1/2018","updatedBy":"Verne D'Aguanno","supplierType":0},
+{"id":347,"currencyId":2,"supplierId":88,"rate":1.858,"updatedAt":"11/2/2018","updatedBy":"Clary MacGillreich","supplierType":1},
+{"id":348,"currencyId":1,"supplierId":38,"rate":4.1777,"updatedAt":"4/11/2018","updatedBy":"Clifford Spelman","supplierType":2},
+{"id":349,"currencyId":1,"supplierId":141,"rate":1.9333,"updatedAt":"14/10/2018","updatedBy":"Gunther Insoll","supplierType":2}]
