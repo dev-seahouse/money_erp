@@ -129,7 +129,10 @@
                     if (typeof field === 'undefined') {
                         field = $(cell).text().trim();
                     }
-                    var column = { field: field, title: field };
+                    var column = {
+                        field: field,
+                        title: field
+                    };
                     for (var ii in options.columns) {
                         if (options.columns[ii].field === field) {
                             column = $.extend(true, {}, options.columns[ii], column);
@@ -188,11 +191,16 @@
                 Plugin.resetScroll();
 
                 if (!Plugin.isInit) {
-                    $(datatable).trigger('m-datatable--on-init', { table: $(datatable.wrap).attr('id'), options: options });
+                    $(datatable).trigger('m-datatable--on-init', {
+                        table: $(datatable.wrap).attr('id'),
+                        options: options
+                    });
                     Plugin.isInit = true;
                 }
 
-                $(datatable).trigger('m-datatable--on-layout-updated', { table: $(datatable.wrap).attr('id') });
+                $(datatable).trigger('m-datatable--on-layout-updated', {
+                    table: $(datatable.wrap).attr('id')
+                });
             },
 
             lockTable: function() {
@@ -299,7 +307,10 @@
             lockEnabledColumns: function() {
                 var screen = $(window).width();
                 var columns = options.columns;
-                var enabled = { left: [], right: [] };
+                var enabled = {
+                    left: [],
+                    right: []
+                };
                 $.each(columns, function(i, column) {
                     if (typeof column.locked !== 'undefined') {
                         if (typeof column.locked.left !== 'undefined') {
@@ -1196,7 +1207,10 @@
                     meta: null,
                     pager: null,
                     paginateEvent: null,
-                    pagerLayout: { pagination: null, info: null },
+                    pagerLayout: {
+                        pagination: null,
+                        info: null
+                    },
                     callback: null,
                     init: function(meta) {
                         pg.meta = meta;
@@ -1641,7 +1655,6 @@
 
                     // get id from first column of parent row
                     var primaryKey = String($(this).closest('[data-field]:first-child').find('.m-datatable__toggle-subtable').data('value'));
-                    console.log(typeof primaryKey);
 
                     var icon = $(this).find('i').removeAttr('class');
 
@@ -1916,7 +1929,10 @@
                             return k === n.field;
                         });
                         if (found.length === 0) {
-                            options.columns.push({ field: k, title: k });
+                            options.columns.push({
+                                field: k,
+                                title: k
+                            });
                         }
                     });
                     $(datatable.tableHead).find('.m-datatable__row').remove();
@@ -2203,7 +2219,10 @@
                                 'desc';
 
                             // update field and sort params
-                            meta = { field: field, sort: sort };
+                            meta = {
+                                field: field,
+                                sort: sort
+                            };
                             Plugin.setDataSourceParam('sort', meta);
 
                             sortObj.setIcon();
@@ -2226,6 +2245,9 @@
             localDataUpdate: function() {
                 // todo; fix twice execution
                 var params = Plugin.getDataSourceParam();
+                console.log("local update params, the getDataSourceParams() returns var parms=")
+                console.log(params);
+                console.log("continue to filter ......");
                 if (typeof datatable.originalDataSet === 'undefined') {
                     datatable.originalDataSet = datatable.dataSet;
                 }
@@ -2281,8 +2303,14 @@
                     });
 
                     // filter array by query
+                    console.log("Inside LocalDataUpdate, before enter plugin.filterArray { \n");
+                    console.log("the datatable.dataSet before filter is: :::: \n ");
+                    console.log(datatable.dataSet);
+                    console.log(" :::::\n");
                     datatable.dataSet = Plugin.filterArray(datatable.dataSet, params.query);
-
+                    console.log("The datatable.dataSet after filtering is : :::::\n")
+                    console.log(datatable.dataSet);
+                    console.log(":::::\n");
                     // reset array index
                     datatable.dataSet = datatable.dataSet.filter(function() {
                         return true;
@@ -2300,6 +2328,7 @@
              * @returns {*}
              */
             filterArray: function(list, args, operator) {
+                console.log("Inside filterArray =======> ")
                 if (typeof list !== 'object') {
                     return [];
                 }
@@ -2319,12 +2348,24 @@
                 var count = Object.keys(args).length;
                 var filtered = [];
 
+                var keyIsNestedQuery = function(key) {
+                    // check if key contains '.' requesting for inner object
+                    return key.indexOf('.') !== -1;
+                }
+
+                var keyHasObject = function(value) {
+                    return value !== null && typeof value === 'object';
+                }
+
+
+
                 $.each(list, function(key, obj) {
                     var to_match = obj;
-
                     var matched = 0;
+
                     $.each(args, function(m_key, m_value) {
                         m_value = m_value instanceof Array ? m_value : [m_value];
+
                         if (to_match.hasOwnProperty(m_key)) {
                             var lhs = to_match[m_key].toString().toLowerCase();
                             m_value.forEach(function(item, index) {
@@ -2332,7 +2373,20 @@
                                     matched++;
                                 }
                             });
+                        } else if (keyIsNestedQuery(m_key) && keyHasObject(to_match[m_key.split('.')[0]])) {
+                            var keys = m_key.split('.');
+                            var nestedObj = to_match[keys[0]];
+                            if (nestedObj.hasOwnProperty(keys[1])) {
+                                var nestedKey = keys[1];
+                                var lhs = nestedObj[nestedKey].toString().toLowerCase();
+                                m_value.forEach(function(item, index) {
+                                    if (item.toString().toLowerCase() == lhs || lhs.indexOf(item.toString().toLowerCase()) !== -1) {
+                                        matched++;
+                                    }
+                                });
+                            }
                         }
+
                     });
 
                     if (('AND' == operator && matched == count) ||
@@ -2343,6 +2397,7 @@
                 });
 
                 list = filtered;
+                console.log("<<<<<========= exited filter array");
 
                 return list;
             },
@@ -2387,7 +2442,10 @@
                 $.each(options.columns, function(i, column) {
                     if (typeof column.sortable !== 'undefined' &&
                         $.inArray(column.sortable, ['asc', 'desc']) !== -1) {
-                        result = { sort: column.sortable, field: column.field };
+                        result = {
+                            sort: column.sortable,
+                            field: column.field
+                        };
                         return false;
                     }
                 });
@@ -2621,7 +2679,10 @@
                 Plugin.spinnerCallback(true);
 
                 // update field and sort params
-                var meta = { field: field, sort: sort };
+                var meta = {
+                    field: field,
+                    sort: sort
+                };
                 Plugin.setDataSourceParam('sort', meta);
 
                 setTimeout(function() {
@@ -2796,6 +2857,7 @@
 
                     // local filter only. remote pagination will skip this block
                     if (!options.data.serverFiltering) {
+                        console.log("enter local data update");
                         Plugin.localDataUpdate();
                     }
                     Plugin.dataRender('search');
@@ -2808,8 +2870,17 @@
              * @param value
              */
             setDataSourceParam: function(param, value) {
+                console.log("SetDatasourceParam param = query, value = query");
+                console.log("the param is :\n");
+                console.log(param);
+                console.log("the value is \n");
+                console.log(value);
+                console.log("========");
                 datatable.API.params = $.extend({}, {
-                    pagination: { page: 1, perpage: Plugin.getOption('data.pageSize') },
+                    pagination: {
+                        page: 1,
+                        perpage: Plugin.getOption('data.pageSize')
+                    },
                     sort: Plugin.getDefaultSortColumn(),
                     query: {},
                 }, datatable.API.params, Plugin.stateGet(Plugin.stateId));
@@ -2825,7 +2896,10 @@
              */
             getDataSourceParam: function(param) {
                 datatable.API.params = $.extend({}, {
-                    pagination: { page: 1, perpage: Plugin.getOption('data.pageSize') },
+                    pagination: {
+                        page: 1,
+                        perpage: Plugin.getOption('data.pageSize')
+                    },
                     sort: Plugin.getDefaultSortColumn(),
                     query: {},
                 }, datatable.API.params, Plugin.stateGet(Plugin.stateId));
@@ -2850,6 +2924,7 @@
              * @param query
              */
             setDataSourceQuery: function(query) {
+                console.log("setting dataSourceQuery");
                 Plugin.setDataSourceParam('query', query);
             },
 
@@ -2893,7 +2968,9 @@
                 // add hide option for this column
                 $.map(options.columns, function(column) {
                     if (fieldName === column.field) {
-                        column.responsive = { hidden: 'xl' };
+                        column.responsive = {
+                            hidden: 'xl'
+                        };
                     }
                     return column;
                 });
@@ -3046,7 +3123,9 @@
                         $(Plugin.recentNode).show();
                     } else {
                         if (Plugin.recentNode === Plugin.nodeCols) {
-                            Plugin.setOption('columns.' + index + '.responsive', { hidden: 'xl' });
+                            Plugin.setOption('columns.' + index + '.responsive', {
+                                hidden: 'xl'
+                            });
                         }
                         $(Plugin.recentNode).hide();
                     }
@@ -3165,7 +3244,10 @@
 
             // datatable UI icons
             icons: {
-                sort: { asc: 'la la-arrow-up', desc: 'la la-arrow-down' },
+                sort: {
+                    asc: 'la la-arrow-up',
+                    desc: 'la la-arrow-down'
+                },
                 pagination: {
                     next: 'la la-angle-right',
                     prev: 'la la-angle-left',
@@ -3173,7 +3255,10 @@
                     last: 'la la-angle-double-right',
                     more: 'la la-ellipsis-h',
                 },
-                rowDetail: { expand: 'fa fa-caret-down', collapse: 'fa fa-caret-right' },
+                rowDetail: {
+                    expand: 'fa fa-caret-down',
+                    collapse: 'fa fa-caret-right'
+                },
             },
         },
 

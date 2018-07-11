@@ -247,7 +247,7 @@ export class IndividualSuppliersTableComponent implements OnInit {
       });
 
       $('#m_form_status').on('change', function () {
-        childTable.search(($(this).val() as string), 'supplier.activeStatus');
+        childTable.search( ($(this).val() as string ), 'supplier.activeStatus');
       });
 
       $('#m_form_type').on('change', function () {
