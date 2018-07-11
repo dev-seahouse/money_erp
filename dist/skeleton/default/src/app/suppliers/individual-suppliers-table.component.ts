@@ -16,9 +16,6 @@ export class IndividualSuppliersTableComponent implements OnInit {
   currencies: any[];
   errorMessage: string;
   readonly INDIVIDUAL_AGENT = 0;
-  childTableInitializer: any;
-  parentTableInitializer: any;
-  _this = this;
 
   constructor(private _supplierService: SuppliersService,
               private _currenciesService: CurrenciesService,
@@ -250,7 +247,6 @@ export class IndividualSuppliersTableComponent implements OnInit {
       });
 
       $('#m_form_status').on('change', function () {
-
         childTable.search(($(this).val() as string), 'supplier.activeStatus');
       });
 

@@ -2784,9 +2784,6 @@
                         $.each(columns, function(k, column) {
                             query[column] = value;
                         });
-
-                        console.log("The query is ");
-                        console.log(query);
                         // remove empty element from arrays
                         $.each(query, function(k, v) {
                             if (v === '' || $.isEmptyObject(v)) {
