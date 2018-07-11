@@ -50,8 +50,8 @@ export class CorporateSuppliersTableComponent implements OnInit {
 
       rates.map(rate => {
         rate.supplier = suppliers.filter( supplier => {
-          return (rate.supplierType === supplier.supplierType) && (rate.supplierID === supplier.id);
-        });
+          return (rate.supplierType === supplier.supplierType) && (rate.supplierId === supplier.id);
+        })[0];
         return rate;
       });
 
@@ -75,13 +75,16 @@ export class CorporateSuppliersTableComponent implements OnInit {
 
         const currencyObj = currencies.find((obj) => +obj.id === +parentTableData.data.currencyId);
 
+        console.log("the currency obect is :");
+        console.log(currencyObj);
+
         childTable = $('<div/>')
           .attr('id', 'suppliers_for_currency_' + parentTableData.data.currencyId)
           .appendTo(parentTableData.detailCell)
           .mDatatable({
             data: {
               type: 'local',
-              source: currencyObj.agents,
+              source: currencyObj.rates,
               pageSize: 15,
               saveState: {
                 cookie: false,
@@ -103,7 +106,7 @@ export class CorporateSuppliersTableComponent implements OnInit {
                 }
               },
               {
-                title: 'Agent Code',
+                title: 'Corporate Code',
                 field: 'supplier.code',
                 sortable: true,
                 filterable: true,
@@ -117,12 +120,10 @@ export class CorporateSuppliersTableComponent implements OnInit {
                 sortable: 'asc'
               },
               {
-                title: 'Agent Name',
+                title: 'Corporate Name',
                 width: 120,
-                field: 'agentName',
-                template: row => {
-                  return `${row.supplier.fName} ${row.supplier.lName}`;
-                }
+                field: 'supplier.companyName',
+                filterable: true
               },
               {
                 title: "Payout Partner?",
@@ -151,15 +152,21 @@ export class CorporateSuppliersTableComponent implements OnInit {
                 }
               },
               {
+                title: "Registration number",
+                field: 'supplier.companyRegNo',
+                filterable: true,
+                sortable: false
+              },
+              {
                 title: "Phone",
-                field: 'supplier.phone',
+                field: 'supplier.companyPhone',
                 width: 150,
                 sortable: false,
                 filterable: true,
               },
               {
                 title: "Email",
-                field: 'supplier.email',
+                field: 'supplier.companyEmail',
                 width: 210,
                 sortable: false,
                 filterable: true
@@ -237,7 +244,7 @@ export class CorporateSuppliersTableComponent implements OnInit {
       });
 
       $('#m_form_status').on('change', function () {
-        childTable.search(($(this).val() as string).toLowerCase(), 'Email');
+        childTable.search(($(this).val() as string).toLowerCase(), 'supplier.activeStatus');
       });
 
       $('#m_form_type').on('change', function () {

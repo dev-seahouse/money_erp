@@ -14,10 +14,12 @@ export class IndividualSuppliersTableComponent implements OnInit {
 
   suppliers: any[];
   currencies: any[];
+  rates: any[];
+  processedCurrencies: any[];
   errorMessage: string;
-  readonly INDIVIDUAL_AGENT = 0;
+  readonly SUPPLIER_TYPE = 0;
 
-  constructor(private _supplierService: SuppliersService,
+  constructor(private _suppliersService: SuppliersService,
               private _currenciesService: CurrenciesService,
               private _ratesService: RatesService
   ) {
@@ -25,56 +27,42 @@ export class IndividualSuppliersTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.prepareDataTable();
-
-    // forkJoin(
-    //   this._currenciesService.getCurrencyTypes(),
-    //   this._supplierService.getSuppliers(),
-    //   this._ratesService.getRates()
-    // ).subscribe(
-    //   data => {
-    //     this.currencies = data[0];
-    //     this.suppliers = data[1];
-    //     this.rates = data[2];
-    //     this.initDatatable(this.rates, this.currencies, this.suppliers);
-    //   }, err => this.errorMessage += <any>(err)
-    // );
   }
 
   private prepareDataTable() {
-    this._currenciesService.getCurrencyTypes().pipe(
-      flatMap((currencies: any[],) => {
-          return forkJoin(currencies.map((currency: any) => {
-            currency.agents = [];
-            currency.numAgents = 0;
-
-            const ratesRequests = this._ratesService.getRatesByCurrencyId(currency.id).pipe(
-              flatMap((rate: any) => {
-
-                currency.agents.push(rate);
-                currency.numAgents++;
-
-                const supplierRequest = this._supplierService.getSuppliersById(rate.supplierId, this.INDIVIDUAL_AGENT).pipe(
-                  map((supplier: any) => {
-                    rate.supplier = supplier;
-                    return currency
-                  })
-                );
-
-                return supplierRequest;
-              }),
-            );
-            return ratesRequests;
-            // return currency; // should return an observable object
-          }));
-        },
-      ),
-    ).subscribe(data => {
-      this.currencies = data;
-      this.initDataTable(this.currencies);
+    forkJoin(
+      this._currenciesService.getCurrencyTypes(),
+      this._suppliersService.getSuppliers(this.SUPPLIER_TYPE),
+      this._ratesService.getRates()
+    ).subscribe(data=>{
+      this.currencies = data[0];
+      this.suppliers = data[1];
+      this.rates = data[2];
+      this.processedCurrencies = this.processCurrenciesData(this.currencies, this.suppliers, this.rates);
+      this.initDataTable(this.processedCurrencies);
     });
+
   }
 
+  private processCurrenciesData(currencies: any[], suppliers: any[], rates: any[]) {
+    currencies.map(currency=> {
 
+      currency.rates = rates.filter(rate => ( +currency.id === +rate.currencyId) && (+rate.supplierType === this.SUPPLIER_TYPE));
+
+      rates.map(rate => {
+        rate.supplier = suppliers.filter( supplier => {
+          return (rate.supplierType === supplier.supplierType) && (rate.supplierId === supplier.id);
+        })[0];
+        return rate;
+      });
+
+      currency.numAgents = currency.rates.length;
+      return currency;
+
+    });
+
+    return currencies;
+  }
 
   private initDataTable(currencies: any[] = [] ){
 
@@ -92,7 +80,7 @@ export class IndividualSuppliersTableComponent implements OnInit {
           .mDatatable({
             data: {
               type: 'local',
-              source: currencyObj.agents,
+              source: currencyObj.rates,
               pageSize: 15,
               saveState: {
                 cookie: false,
@@ -259,6 +247,7 @@ export class IndividualSuppliersTableComponent implements OnInit {
     })
 
   }
+
 
 }
 

@@ -2245,9 +2245,7 @@
             localDataUpdate: function() {
                 // todo; fix twice execution
                 var params = Plugin.getDataSourceParam();
-                console.log("local update params, the getDataSourceParams() returns var parms=")
-                console.log(params);
-                console.log("continue to filter ......");
+
                 if (typeof datatable.originalDataSet === 'undefined') {
                     datatable.originalDataSet = datatable.dataSet;
                 }
@@ -2303,14 +2301,8 @@
                     });
 
                     // filter array by query
-                    console.log("Inside LocalDataUpdate, before enter plugin.filterArray { \n");
-                    console.log("the datatable.dataSet before filter is: :::: \n ");
-                    console.log(datatable.dataSet);
-                    console.log(" :::::\n");
                     datatable.dataSet = Plugin.filterArray(datatable.dataSet, params.query);
-                    console.log("The datatable.dataSet after filtering is : :::::\n")
-                    console.log(datatable.dataSet);
-                    console.log(":::::\n");
+
                     // reset array index
                     datatable.dataSet = datatable.dataSet.filter(function() {
                         return true;
@@ -2328,7 +2320,6 @@
              * @returns {*}
              */
             filterArray: function(list, args, operator) {
-                console.log("Inside filterArray =======> ")
                 if (typeof list !== 'object') {
                     return [];
                 }
@@ -2397,7 +2388,6 @@
                 });
 
                 list = filtered;
-                console.log("<<<<<========= exited filter array");
 
                 return list;
             },
@@ -2857,7 +2847,6 @@
 
                     // local filter only. remote pagination will skip this block
                     if (!options.data.serverFiltering) {
-                        console.log("enter local data update");
                         Plugin.localDataUpdate();
                     }
                     Plugin.dataRender('search');
@@ -2870,12 +2859,6 @@
              * @param value
              */
             setDataSourceParam: function(param, value) {
-                console.log("SetDatasourceParam param = query, value = query");
-                console.log("the param is :\n");
-                console.log(param);
-                console.log("the value is \n");
-                console.log(value);
-                console.log("========");
                 datatable.API.params = $.extend({}, {
                     pagination: {
                         page: 1,
@@ -2924,7 +2907,6 @@
              * @param query
              */
             setDataSourceQuery: function(query) {
-                console.log("setting dataSourceQuery");
                 Plugin.setDataSourceParam('query', query);
             },
 
