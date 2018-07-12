@@ -15,8 +15,8 @@ export class CorporateSuppliersTableComponent implements OnInit {
   suppliers: any[];
   rates: any[];
   processedCurrencies: any[];
-
   errorMessage: string;
+  readonly SUPPLIER_TYPE = 1;
 
   constructor(private _suppliersService: SuppliersService,
               private _currenciesService: CurrenciesService,
@@ -30,7 +30,7 @@ export class CorporateSuppliersTableComponent implements OnInit {
   private prepareDataTable() {
     forkJoin(
       this._currenciesService.getCurrencyTypes(),
-      this._suppliersService.getSuppliers(1),
+      this._suppliersService.getSuppliers(this.SUPPLIER_TYPE),
       this._ratesService.getRates()
     ).subscribe(
       data => {
@@ -46,7 +46,7 @@ export class CorporateSuppliersTableComponent implements OnInit {
   private processCurrenciesData(currencies: any[], suppliers: any[], rates: any[]) {
     currencies.map(currency=> {
 
-      currency.rates = rates.filter(rate => ( +currency.id === +rate.currencyId) && (+rate.supplierType === 1));
+      currency.rates = rates.filter(rate => ( +currency.id === +rate.currencyId) && (+rate.supplierType === this.SUPPLIER_TYPE));
 
       rates.map(rate => {
         rate.supplier = suppliers.filter( supplier => {
@@ -55,7 +55,10 @@ export class CorporateSuppliersTableComponent implements OnInit {
         return rate;
       });
 
+      const ratesSum = Object.keys(currency.rates).reduce((prev,key) => +prev + currency.rates[key].rate,0)
+      currency.avgRate = ratesSum / currency.rates.length;
       currency.numAgents = currency.rates.length;
+
       return currency;
 
     });
@@ -74,9 +77,6 @@ export class CorporateSuppliersTableComponent implements OnInit {
       let childInitializer = parentTableData => {
 
         const currencyObj = currencies.find((obj) => +obj.id === +parentTableData.data.currencyId);
-
-        console.log("the currency obect is :");
-        console.log(currencyObj);
 
         childTable = $('<div/>')
           .attr('id', 'suppliers_for_currency_' + parentTableData.data.currencyId)
@@ -183,7 +183,6 @@ export class CorporateSuppliersTableComponent implements OnInit {
                     1: {'title': 'Inactive', 'class': 'm-badge--metal'},
                     0: {'title': "Blocked", 'class': 'm-badge--danger'}
                   };
-                  console.log(row.supplier.activeStatus);
                   return '<span class="m-badge ' + status[row.supplier.activeStatus].class + ' m-badge--wide">' + status[row.supplier.activeStatus].title + '</span>';
                 }
               }
@@ -191,6 +190,9 @@ export class CorporateSuppliersTableComponent implements OnInit {
             ]
 
           });
+
+        childTable.sort('avgRate','asc');
+
       };
       parentTable  = $('.m-datatable').mDatatable({
         data: {
@@ -243,6 +245,8 @@ export class CorporateSuppliersTableComponent implements OnInit {
         ]
       });
 
+
+
       $('#m_form_status').on('change', function () {
         childTable.search(($(this).val() as string).toLowerCase(), 'supplier.activeStatus');
       });
@@ -252,6 +256,8 @@ export class CorporateSuppliersTableComponent implements OnInit {
       });
 
       $('#m_form_status, #m_form_type').selectpicker();
+
+      parentTable.sort('avgRate', 'asc');
 
     })
 

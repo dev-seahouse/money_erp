@@ -105,7 +105,7 @@
                     <td>{{ currency.id }}</td>
                     <td>{{ currency.currencyName }} - {{ currency.currencyCode }} <div [ngStyle]="{'width':'25px', 'margin-left': '5px', 'margin-bottom': '-4px'}" [className]="'currency-flag currency-flag-' + currency.currencyCode | lowercase" ></div></td>
                     <td>{{ currency.numAgents}}</td>
-                    <td>1.234</td>
+                    <td>{{ currency.avgRate  | number: '.5-5' }}</td>
                 </tr>
             </tbody>
         </table>

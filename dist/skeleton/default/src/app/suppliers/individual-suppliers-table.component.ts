@@ -15,7 +15,7 @@ export class IndividualSuppliersTableComponent implements OnInit {
   suppliers: any[];
   currencies: any[];
   rates: any[];
-  processedCurrencies: any[];
+  processedData: any[];
   errorMessage: string;
   readonly SUPPLIER_TYPE = 0;
 
@@ -35,16 +35,20 @@ export class IndividualSuppliersTableComponent implements OnInit {
       this._suppliersService.getSuppliers(this.SUPPLIER_TYPE),
       this._ratesService.getRates()
     ).subscribe(data=>{
-      this.currencies = data[0];
-      this.suppliers = data[1];
-      this.rates = data[2];
-      this.processedCurrencies = this.processCurrenciesData(this.currencies, this.suppliers, this.rates);
-      this.initDataTable(this.processedCurrencies);
+      this.setDate(data);
+      this.processedData = this.processData(this.currencies, this.suppliers, this.rates);
+      this.initDataTable(this.processedData);
     });
 
   }
 
-  private processCurrenciesData(currencies: any[], suppliers: any[], rates: any[]) {
+  private setDate(data) {
+    this.currencies = data[0];
+    this.suppliers = data[1];
+    this.rates = data[2];
+  }
+
+  private processData(currencies: any[], suppliers: any[], rates: any[]) {
     currencies.map(currency=> {
 
       currency.rates = rates.filter(rate => ( +currency.id === +rate.currencyId) && (+rate.supplierType === this.SUPPLIER_TYPE));
@@ -56,10 +60,15 @@ export class IndividualSuppliersTableComponent implements OnInit {
         return rate;
       });
 
+      const ratesSum = Object.keys(currency.rates).reduce((prev,key) => +prev + currency.rates[key].rate,0)
+      currency.avgRate = ratesSum / currency.rates.length;
       currency.numAgents = currency.rates.length;
+
       return currency;
 
     });
+
+
 
     return currencies;
   }
@@ -182,6 +191,8 @@ export class IndividualSuppliersTableComponent implements OnInit {
             ]
 
           });
+
+        childTable.sort('avgRate','asc');
       };
       parentTable  = $('.m-datatable').mDatatable({
         data: {
@@ -234,6 +245,7 @@ export class IndividualSuppliersTableComponent implements OnInit {
         ]
       });
 
+
       $('#m_form_status').on('change', function () {
         childTable.search( ($(this).val() as string ), 'supplier.activeStatus');
       });
@@ -243,6 +255,8 @@ export class IndividualSuppliersTableComponent implements OnInit {
       });
 
       $('#m_form_status, #m_form_type').selectpicker();
+
+      parentTable.sort('avgRate', 'asc');
 
     })
 
