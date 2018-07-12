@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, filter, map} from 'rxjs/operators';
 import {flatMap} from "rxjs/internal/operators";
-import {forkJoin} from "rxjs/internal/observable/forkJoin";
 
 @Injectable({
     providedIn: 'root'

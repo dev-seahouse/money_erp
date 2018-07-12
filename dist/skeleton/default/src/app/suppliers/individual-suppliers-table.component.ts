@@ -192,7 +192,7 @@ export class IndividualSuppliersTableComponent implements OnInit {
 
           });
 
-        childTable.sort('avgRate','asc');
+        childTable.sort('rate','asc');
       };
       parentTable  = $('.m-datatable').mDatatable({
         data: {

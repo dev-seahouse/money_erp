@@ -191,7 +191,7 @@ export class CorporateSuppliersTableComponent implements OnInit {
 
           });
 
-        childTable.sort('avgRate','asc');
+        childTable.sort('rate','asc');
 
       };
       parentTable  = $('.m-datatable').mDatatable({
