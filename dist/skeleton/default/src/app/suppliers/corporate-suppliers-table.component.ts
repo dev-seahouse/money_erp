@@ -196,7 +196,7 @@ export class CorporateSuppliersTableComponent implements OnInit {
       };
       parentTable  = $('.m-datatable').mDatatable({
         data: {
-          saveState: {webstroage: true, cookie: true},
+          saveState: {webstorage: true, cookie: false},
           pageSize: 15
         },
         layout: {
