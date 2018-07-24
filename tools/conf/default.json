@@ -33,7 +33,7 @@
         },
         "dist": [
             "./../dist/demo/**/src/assets",
-            "./../dist/skeleton/**/src/assets"
+            "./../dist/dex/**/src/assets"
         ]
     },
     "build": {
